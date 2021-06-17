@@ -1,0 +1,90 @@
+{
+    "id": "753360232515764255",
+    "name": "Server von realSpaX",
+    "instant_invite": "https://discord.com/invite/KbeJT7E6",
+    "channels": [
+        {
+            "id": "753670447794487426",
+            "name": "#Musik-Channel",
+            "position": 13
+        },
+        {
+            "id": "809351837572005898",
+            "name": "\ud835\ude1b\ud835\ude22\ud835\ude2d\ud835\ude2c",
+            "position": 4
+        },
+        {
+            "id": "753378854503973025",
+            "name": "\ud83d\uddea\ufe31Talk - 1",
+            "position": 5
+        },
+        {
+            "id": "753378911638781994",
+            "name": "\ud83d\uddea\ufe31Talk - 2",
+            "position": 6
+        },
+        {
+            "id": "753379079125991534",
+            "name": "\ud83d\uddea\ufe31Talk - 3",
+            "position": 7
+        },
+        {
+            "id": "753379172310843422",
+            "name": "\ud83d\uddea\ufe31Talk - 4",
+            "position": 8
+        },
+        {
+            "id": "753379205957288087",
+            "name": "\ud83d\uddea\ufe31Talk - 5",
+            "position": 9
+        },
+        {
+            "id": "753379253935931472",
+            "name": "\ud83d\uddea\ufe31Talk - 6",
+            "position": 10
+        }
+    ],
+    "members": [
+        {
+            "id": "0",
+            "username": ".1AA | Der_Googler",
+            "discriminator": "0000",
+            "avatar": null,
+            "status": "idle",
+            "avatar_url": "https://cdn.discordapp.com/widget-avatars/fv4v6kboz2PE3fgQhPM073OHdQ8OKxzYu0Vsk8xtDcg/QSbOA2cGou5Or69RRBVcUZ0qiwoWDQIThNXFUu1su0dW5zhsLI8M2Lf0VrI1DsgIfyU15JzmUkiW3tddYiNqyEg6ODaDNoZIfx91gJ_MeL2JDc6Cg_9-E3nnXfxJwiSNtDa9xrtgsjwTEg"
+        },
+        {
+            "id": "1",
+            "username": "HeroDome",
+            "discriminator": "0000",
+            "avatar": null,
+            "status": "online",
+            "avatar_url": "https://cdn.discordapp.com/widget-avatars/YCCrCAnpxUe5W1E--7T4dChQxRVyNQD1BV6RDfma8EI/FwjeJfB7KSKkDDVtmWZZm4KqMKdV3fTcUblR5EA3u9S2briQaW3z36VkifCEsB7SJzh30XYMc4kZ5WjZPDORXj4A6dv_XKsHW15av34H854N5xsUQqe-X0Lph4hduWnh0m3Sq6b3W_c-sA"
+        },
+        {
+            "id": "2",
+            "username": "MEE6",
+            "discriminator": "0000",
+            "avatar": null,
+            "status": "online",
+            "avatar_url": "https://cdn.discordapp.com/widget-avatars/XnkecWmMj0PDwuC2UbRILdwVi5df6gtqNeOTXF5SKi4/UEDx3sExWFoPUNmvDe0f5s1Ux0xWHdH4iu50zyupcGYD4P_CuttUheL8VgSAfcMuvTgO5drpQ0iP1CYhet7hoCJIoGc8_1L3Fc7X7oPzLF6Vhx8PTxTalugezkQtSERO78gnd9mgmSudlA"
+        },
+        {
+            "id": "3",
+            "username": "realSpaX",
+            "discriminator": "0000",
+            "avatar": null,
+            "status": "online",
+            "avatar_url": "https://cdn.discordapp.com/widget-avatars/hwZADq-63TdtAM5N9LauSPciZkC6n8Cks_C862V43X4/KQ4EoZsvGf8IEEeIF0NuFZU-dN9qp10k5XXL4_4jYiQuGDU2D9JqoNlpphVYjX12BA9FNvQQP1am9O3QZIHI1KGA2qcqLEKcq5z4OLErmkOV8BiG8eX6ASXBTEnc-YLFMhlf5Ikcnfevnw"
+        },
+        {
+            "id": "4",
+            "username": "Rythm",
+            "discriminator": "0000",
+            "avatar": null,
+            "status": "online",
+            "avatar_url": "https://cdn.discordapp.com/widget-avatars/H34CUr0fROO1MATPsx8FkDtjlWukU3VdjaNbL2JLZLo/JdgQ0IEiwQBI9hBDHnVEvgXy0bBlADoTR6RZvNELr3E_kl88UxV_7yipn9J15EghxdzPXLt7YIvgAK-L_AS7yonJiK99EVz_f1XzPfl_19ehU2VA1Bcx97N9To9tWoFan6b5iqycmDcVSw"
+        }
+    ],
+    "presence_count": 5
+}
