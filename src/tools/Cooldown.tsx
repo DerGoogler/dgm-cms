@@ -1,16 +1,19 @@
-import React, { Component } from "react";
-import ons from 'onsenui';
+import * as React from 'react';
+import * as ons from 'onsenui';
 import { hot } from "react-hot-loader/root";
 
+interface Props {
+    date: string;
+}
 
-class Cooldown extends Component {
+class Cooldown extends React.Component<Props> {
     state = {
         cooldown: ''
     }
 
     componentDidMount = () => {
         const { date } = this.props;
-        var countDownDate = new Date(date).getTime(); 
+        var countDownDate = new Date(date).getTime();
         var x = setInterval(() => {
             var now = new Date().getTime();
             var distance = countDownDate - now;
@@ -23,7 +26,7 @@ class Cooldown extends Component {
                     + minutes + "m " + seconds + "s "
             });
             if (distance < 0) {
-                clearInterval(x.bind(this));
+                clearInterval(x);
                 this.setState({ cooldown: "EXPIRED" });
             }
         }, 1000);

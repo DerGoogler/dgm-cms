@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import * as React from "react";
 import {
   Page,
   Toolbar,
@@ -23,7 +23,7 @@ import {
   isSafari,
   isMobileSafari
 } from "react-device-detect";
-import ons from 'onsenui';
+import * as ons from 'onsenui';
 import { hot } from "react-hot-loader/root";
 import Cookies from 'universal-cookie';
 import Markdown from 'markdown-to-jsx';
@@ -36,8 +36,12 @@ import config from './config';
 
 const cookies = new Cookies();
 
+interface State {
+  isDrawerOpen: boolean;
+  data: string;
+}
 
-class App extends Component {
+class App extends React.Component<{}, State> {
   state = {
     isDrawerOpen: config.options.page.isDrawerOpen,
     data: ''

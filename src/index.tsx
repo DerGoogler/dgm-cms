@@ -1,6 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import ons from "onsenui";
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import * as ons from "onsenui";
 import App from "./App";
 import Cookies from 'universal-cookie';
 
