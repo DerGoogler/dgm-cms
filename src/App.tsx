@@ -33,15 +33,12 @@ import Options from './tools/Options';
 import HeadImg from './tools/HeadImg';
 import Cooldown from './tools/Cooldown';
 import config from './config';
+import { AppStates } from './interface';
 
 const cookies = new Cookies();
 
-interface State {
-  isDrawerOpen: boolean;
-  data: string;
-}
 
-class App extends React.Component<{}, State> {
+class App extends React.Component<{}, AppStates> {
   state = {
     isDrawerOpen: config.options.page.isDrawerOpen,
     data: ''

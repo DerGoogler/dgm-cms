@@ -1,12 +1,9 @@
 import * as React from 'react';
 import * as ons from 'onsenui';
 import { hot } from "react-hot-loader/root";
+import { CooldownInterface } from '../interface';
 
-interface Props {
-    date: string;
-}
-
-class Cooldown extends React.Component<Props> {
+class Cooldown extends React.Component<CooldownInterface> {
     state = {
         cooldown: ''
     }

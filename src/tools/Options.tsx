@@ -1,13 +1,10 @@
 import * as React from "react";
 import * as ons from 'onsenui';
 import { hot } from "react-hot-loader/root";
+import { OptionsInterface } from '../interface';
 
-interface Props {
-  title: string;
-  platform: string;
-}
 
-class Options extends React.Component<Props> {
+class Options extends React.Component<OptionsInterface> {
   componentDidMount() {
     const { title, platform } = this.props;
     document.title = title;

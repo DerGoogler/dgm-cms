@@ -1,13 +1,8 @@
 import * as React from 'react';
 import { hot } from "react-hot-loader/root";
+import { HeadImgInterface } from '../interface';
 
-interface Props {
-    src: string;
-    head: string;
-    text: string;
-}
-
-class HeadImg extends React.Component<Props> {
+class HeadImg extends React.Component<HeadImgInterface> {
     render() {
         const { src, head, text } = this.props;
         return (
