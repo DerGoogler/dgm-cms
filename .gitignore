@@ -3,6 +3,7 @@
 coverage/
 dist/*
 pages/*
+!pages/home.dgm
 !dist/index.html
 node_modules/
 *.log

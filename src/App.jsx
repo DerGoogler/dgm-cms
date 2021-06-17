@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import {
   Page,
   Toolbar,
@@ -45,6 +45,7 @@ class App extends Component {
 
   componentDidMount() {
     if (window.location.search === '') {
+      // If no search parameters
       axios
         .get(config.base.slug + 'home' + config.base.file)
         .then(res => {
@@ -63,11 +64,11 @@ class App extends Component {
   }
 
   drawerHide() {
-    this.setState({ drawer_is_open: false });
+    this.setState({ isDrawerOpen: false });
   }
 
   drawerShow() {
-    this.setState({ drawer_is_open: true });
+    this.setState({ isDrawerOpen: true });
   }
 
   renderToolbar() {
@@ -84,6 +85,7 @@ class App extends Component {
   }
 
   render() {
+    // iOS devices defaultly not allowed
     if (isIE) return (<div> IE is not supported. Download Chrome/Opera/Firefox </div>);
     if (isIOS || isMobileSafari || isSafari) return (<div> iOS/iPhone/Safari are not allowed to view this </div>);
     return (
