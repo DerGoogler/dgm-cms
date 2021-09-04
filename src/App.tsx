@@ -80,7 +80,7 @@ class App extends React.Component<{}, AppStates> {
             <Icon icon='ion-ios-menu, material:md-menu' />
           </ToolbarButton>
         </div>
-        <div id="toolbar-title" className='center'>{config.options.page.pageName}</div>
+        <div id="toolbar-title" className='center'>{config.options.page.pageTitle}</div>
       </Toolbar>
     );
   }
