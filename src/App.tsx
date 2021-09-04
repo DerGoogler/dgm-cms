@@ -155,6 +155,9 @@ class App extends React.Component<{}, AppStates> {
                     Cooldown: {
                       component: Cooldown,
                     },
+                    Icon: {
+                      component: Icon,
+                    },
                   },
                 }}>
                   {this.state.data}
