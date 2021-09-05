@@ -7,6 +7,7 @@
   "author": "",
   "license": "GPL-3.0 License",
   "scripts": {
+    "push": "git push -f --set-upstream origin master",
     "clean": "rm dist/bundle.js",
     "install-dep": "npm i @babel/preset-env @babel/preset-react @hot-loader/react-dom react-hot-loader --no-bin-links",
     "build-dev": "webpack --mode development",
