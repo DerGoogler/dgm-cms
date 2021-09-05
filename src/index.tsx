@@ -2,15 +2,13 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import * as ons from "onsenui";
 import App from "./App";
-import Cookies from 'universal-cookie';
-
-// Webpack CSS import
 import 'onsenui/css/onsenui.css';
 import 'onsenui/css/onsen-css-components.css';
 import './misc/github-markdown.css';
+import cookiesInit from './misc/cookiesInit';
 
-const cookies = new Cookies();
 
+cookiesInit
 
 // Build App
 ons.ready(function () {

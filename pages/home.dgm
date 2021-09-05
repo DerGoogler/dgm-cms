@@ -23,16 +23,18 @@ Onsen UI buttons also supported
 # Card + ListView
 Cards and listview are supported
 <Card>
-          <img src={"https://monaca.io/img/logos/download_image_onsenui_01.png"} alt="Onsen UI" style={{width: '100%'}} />
-          <div className="title right">Awesome framework</div>
-          <div className="content">
-            <Button><Icon icon="ion-ios-thumbs-up"></Icon></Button>
-            <Button><Icon icon="ion-ios-share"></Icon></Button>
-            <List>
-              <ListHeader>Bindings</ListHeader>
-              <ListItem>Vue</ListItem>
-              <ListItem>Angular</ListItem>
-              <ListItem>React</ListItem>
-            </List>
-          </div>
-        </Card>
+<div className="title right">Awesome framework</div>
+<div className="content">
+<Button><Icon icon="ion-ios-thumbs-up"></Icon></Button>
+<Button><Icon icon="ion-ios-share"></Icon></Button>
+<List>
+<ListHeader>Bindings</ListHeader>
+<ListItem>Vue</ListItem>
+<ListItem>Angular</ListItem>
+<ListItem>React</ListItem>
+</List>
+</div>
+</Card>
+
+# XHR
+<Card><XHR src="https://raw.githubusercontent.com/OnsenUI/OnsenUI/master/README.md" /></Card>

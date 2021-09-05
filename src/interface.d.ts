@@ -11,6 +11,13 @@ export interface HeadImgInterface {
 export interface OptionsInterface {
     title: string;
     platform: string;
+    description: string;
+    canonical: string;
+    keywords: string;
+}
+
+export interface XHRInterface {
+    src: string;
 }
 
 // Interface for <App/> State

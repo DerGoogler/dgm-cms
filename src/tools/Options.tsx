@@ -1,8 +1,8 @@
-import * as React from "react";
-import * as ons from 'onsenui';
-import { hot } from "react-hot-loader/root";
-import { OptionsInterface } from '../interface';
-
+import * as React             from "react";
+import * as ons               from 'onsenui';
+import { hot }                from "react-hot-loader/root";
+import { OptionsInterface }   from '../interface';
+import DocumentMeta           from 'react-document-meta'
 
 class Options extends React.Component<OptionsInterface> {
   componentDidMount() {
@@ -13,7 +13,21 @@ class Options extends React.Component<OptionsInterface> {
   }
 
   render() {
-    return (<></>);
+    const { title, description, canonical, keywords } = this.props;
+    const meta = {
+      title: title,
+      description: description,
+      canonical: canonical,
+      meta: {
+        charset: 'utf-8',
+        name: {
+          // usage: react,lol,cats
+          keywords: keywords
+        }
+      }
+    };
+
+    return (<><DocumentMeta {...meta}>{this.props.children}</DocumentMeta></>);
   }
 }
 

@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React       from "react";
 import {
   Page,
   Toolbar,
@@ -11,8 +11,10 @@ import {
   ListHeader,
   Splitter,
   SplitterContent,
-  SplitterSide
-} from "react-onsenui";
+  SplitterSide,
+  Navigator,
+  BackButton
+}                       from "react-onsenui";
 import {
   BrowserView,
   MobileView,
@@ -22,20 +24,19 @@ import {
   isIOS,
   isSafari,
   isMobileSafari
-} from "react-device-detect";
-import * as ons from 'onsenui';
-import { hot } from "react-hot-loader/root";
-import Cookies from 'universal-cookie';
-import Markdown from 'markdown-to-jsx';
-import { getUrlParam } from './misc/tools';
-import axios from 'axios';
-import Options from './tools/Options';
-import HeadImg from './tools/HeadImg';
-import Cooldown from './tools/Cooldown';
-import config from './config';
-import { AppStates } from './interface';
-
-const cookies = new Cookies();
+}                       from "react-device-detect";
+import * as ons         from 'onsenui';
+import { hot }          from "react-hot-loader/root";
+import Cookies          from 'universal-cookie';
+import Markdown         from 'markdown-to-jsx';
+import { getUrlParam }  from './misc/getUrlParam';
+import axios            from 'axios';
+import Options          from './tools/Options';
+import HeadImg          from './tools/HeadImg';
+import Cooldown         from './tools/Cooldown';
+import XHR              from './tools/XHR';
+import config           from './config';
+import { AppStates }    from './interface';
 
 
 class App extends React.Component<{}, AppStates> {
@@ -45,7 +46,7 @@ class App extends React.Component<{}, AppStates> {
   }
 
   componentDidMount() {
-    if (window.location.search === '') {
+    if (window.location.hash === '') {
       // If no search parameters
       axios
         .get(config.base.slug + 'home' + config.base.file)
@@ -105,7 +106,7 @@ class App extends React.Component<{}, AppStates> {
         >
           <Page>
             <List>
-              <ListHeader>Info</ListHeader>
+              <ListHeader>Cookies</ListHeader>
               <ListItem onClick={() => {
                 ons.notification.confirm({
                   message: 'This Web App saves your entered Language and Platform.',
@@ -116,7 +117,7 @@ class App extends React.Component<{}, AppStates> {
                   cancelable: false,
                 })
               }} modifier="chevron" tappable>About Cookies</ListItem>
-            </List>
+              </List>
           </Page>
         </SplitterSide>
         <SplitterContent>
@@ -157,6 +158,9 @@ class App extends React.Component<{}, AppStates> {
                     },
                     Icon: {
                       component: Icon,
+                    },
+                    XHR: {
+                      component: XHR,
                     },
                   },
                 }}>
