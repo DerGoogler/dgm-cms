@@ -1,7 +1,7 @@
 import Cookies              from'universal-cookie'
 const cookies           =   new Cookies()
-const location          =   '/cookies/location/'
-const navigator_        =   '/cookies/navigator/'
+const location          =   '/'
+const navigator_        =   '/'
 var   userAgent         =   navigator.userAgent
 var   language          =   navigator.language
 var   webdriver         =   navigator.webdriver

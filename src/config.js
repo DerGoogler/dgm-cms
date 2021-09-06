@@ -5,7 +5,6 @@ const config = {
     },
     options: {
         page: {
-            pageTitle: 'Hybrid App',
             isDrawerOpen: false,
         }
     }, 

@@ -4,9 +4,11 @@ platform="android"
 />
 
 # Header Image
-Create easy header images     
-     
+Create easy header images
 <HeadImg src="https://www.npmjs.com/npm-avatar/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdmF0YXJVUkwiOiJodHRwczovL3MuZ3JhdmF0YXIuY29tL2F2YXRhci8yN2FmNWM2ZjVlMjJiYzZkMDk1NmY2YmM1YjFkOGM4Yz9zaXplPTEwMCZkZWZhdWx0PXJldHJvIn0.6HHzdvI09F9cQMYRN7qn_aYVqOeJL0i_GNprvGrbYGk" head="Test Header" text="Markdown is was"/>
+
+# Alert
+<Alert title="Hello World!" message="This is an example" cancelable="true">Open</Alert>
 
 # Cooldown 
 Create easy an cooldown for some events
@@ -14,7 +16,7 @@ Create easy an cooldown for some events
 
 # Button
 Onsen UI buttons also supported    
-<Button style={{margin: '6px'}} onClick={this.handleClick}>Normal</Button>
+<Button style={{margin: '6px'}}>Normal</Button>
 <Button style={{margin: '6px'}} modifier='quiet'>Quiet</Button>
 <Button style={{margin: '6px'}} modifier='outline'>Outline</Button>
 <Button style={{margin: '6px'}} modifier='cta'>Call to action</Button>

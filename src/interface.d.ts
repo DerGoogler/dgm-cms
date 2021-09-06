@@ -20,6 +20,12 @@ export interface XHRInterface {
     src: string;
 }
 
+export interface AlertInterface {
+    title: string;
+    message: string;
+    cancelable: boolean;
+}
+
 // Interface for <App/> State
 export interface AppStates {
     isDrawerOpen: boolean;

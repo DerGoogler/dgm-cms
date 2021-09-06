@@ -1,4 +1,4 @@
-import * as React       from "react";
+import * as React  from "react";
 import {
   Page,
   Toolbar,
@@ -35,9 +35,13 @@ import Options          from './tools/Options';
 import HeadImg          from './tools/HeadImg';
 import Cooldown         from './tools/Cooldown';
 import XHR              from './tools/XHR';
+import Alert            from './tools/Alert';
 import config           from './config';
+import { MDBBadge }     from 'mdb-react-ui-kit';
 import { AppStates }    from './interface';
 
+
+const cookies = new Cookies();
 
 class App extends React.Component<{}, AppStates> {
   state = {
@@ -81,7 +85,7 @@ class App extends React.Component<{}, AppStates> {
             <Icon icon='ion-ios-menu, material:md-menu' />
           </ToolbarButton>
         </div>
-        <div id="toolbar-title" className='center'>{config.options.page.pageTitle}</div>
+        <div className='center'>{cookies.get('title')}</div>
       </Toolbar>
     );
   }
@@ -92,85 +96,91 @@ class App extends React.Component<{}, AppStates> {
     if (isIOS || isMobileSafari || isSafari) return (<div> iOS/iPhone/Safari are not allowed to view this </div>);
     return (
       <Splitter>
-        <SplitterSide
-          style={{
-            boxShadow: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)'
-          }}
-          side='left'
-          width={200}
-          collapse={true}
-          swipeable={true}
-          isOpen={this.state.isDrawerOpen}
-          onClose={this.drawerHide.bind(this)}
-          onOpen={this.drawerShow.bind(this)}
-        >
-          <Page>
-            <List>
-              <ListHeader>Cookies</ListHeader>
-              <ListItem onClick={() => {
-                ons.notification.confirm({
-                  message: 'This Web App saves your entered Language and Platform.',
-                  title: 'About Cookies',
-                  buttonLabels: ['Ok'],
-                  animation: 'default',
-                  primaryButtonIndex: 0,
-                  cancelable: false,
-                })
-              }} modifier="chevron" tappable>About Cookies</ListItem>
-              </List>
-          </Page>
-        </SplitterSide>
-        <SplitterContent>
-          <Page renderToolbar={this.renderToolbar}>
-            <Card>
-              <article className="markdown-body">
-                <Markdown options={{
-                  overrides: {
-                    Options: {
-                      component: Options,
-                    },
-                    Card: {
-                      component: Card,
-                    },
-                    Button: {
-                      component: Button,
-                    },
-                    List: {
-                      component: List,
-                    },
-                    ListItem: {
-                      component: ListItem,
-                    },
-                    ListHeader: {
-                      component: ListHeader,
-                    },
-                    HeadImg: {
-                      component: HeadImg,
-                    },
-                    MobileView: {
-                      component: MobileView,
-                    },
-                    BrowserView: {
-                      component: BrowserView,
-                    },
-                    Cooldown: {
-                      component: Cooldown,
-                    },
-                    Icon: {
-                      component: Icon,
-                    },
-                    XHR: {
-                      component: XHR,
-                    },
+      <SplitterSide
+        style={{
+          boxShadow: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)'
+        }}
+        side='left'
+        width={200}
+        collapse={true}
+        swipeable={true}
+        isOpen={this.state.isDrawerOpen}
+        onClose={this.drawerHide.bind(this)}
+        onOpen={this.drawerShow.bind(this)}
+      >
+        <Page>
+          <List>
+            <ListHeader>Cookies <MDBBadge className='ms-2'>NEW</MDBBadge></ListHeader>
+            <ListItem onClick={() => {
+              ons.notification.confirm({
+                message: 'This Web App saves your entered Language and Platform.',
+                title: 'About Cookies',
+                buttonLabels: ['Ok'],
+                animation: 'default',
+                primaryButtonIndex: 0,
+                cancelable: false,
+              })
+            }} modifier="chevron" tappable>About Cookies</ListItem>
+            </List>
+        </Page>
+      </SplitterSide>
+      <SplitterContent>
+        <Page renderToolbar={this.renderToolbar}>
+          <Card>
+            <article className="markdown-body">
+              <Markdown options={{
+                overrides: {
+                  Options: {
+                    component: Options,
                   },
-                }}>
-                  {this.state.data}
-                </Markdown>
-              </article>
-            </Card>
-          </Page>
-        </SplitterContent>
-      </Splitter>
+                  Card: {
+                    component: Card,
+                  },
+                  Button: {
+                    component: Button,
+                  },
+                  List: {
+                    component: List,
+                  },
+                  ListItem: {
+                    component: ListItem,
+                  },
+                  ListHeader: {
+                    component: ListHeader,
+                  },
+                  HeadImg: {
+                    component: HeadImg,
+                  },
+                  MobileView: {
+                    component: MobileView,
+                  },
+                  BrowserView: {
+                    component: BrowserView,
+                  },
+                  Cooldown: {
+                    component: Cooldown,
+                  },
+                  Icon: {
+                    component: Icon,
+                  },
+                  XHR: {
+                    component: XHR,
+                  },
+                  Badge: {
+                    component: MDBBadge,
+                  },
+                  Alert: {
+                    component: Alert,
+                  }
+                },
+              }}>
+                {this.state.data}
+              </Markdown>
+            </article>
+          </Card>
+        </Page>
+      </SplitterContent>
+    </Splitter>   
     );
   }
 }

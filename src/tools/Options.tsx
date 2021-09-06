@@ -3,12 +3,18 @@ import * as ons               from 'onsenui';
 import { hot }                from "react-hot-loader/root";
 import { OptionsInterface }   from '../interface';
 import DocumentMeta           from 'react-document-meta'
+import Cookies                from 'universal-cookie'
+
+
+const cookies           =     new Cookies();
+const laset             =     '/'
 
 class Options extends React.Component<OptionsInterface> {
   componentDidMount() {
     const { title, platform } = this.props;
     document.title = title;
-    // document.getElementById('toolbar-title').innerHTML = title;
+    cookies.set('title', title, { path: laset });
+    cookies.set('platform', platform, { path: laset });
     ons.platform.select(platform);
   }
 
@@ -26,7 +32,9 @@ class Options extends React.Component<OptionsInterface> {
         }
       }
     };
-
+    cookies.set('description', description, { path: laset });
+    cookies.set('canonical', canonical, { path: laset });
+    cookies.set('keywords', keywords, { path: laset });
     return (<><DocumentMeta {...meta}>{this.props.children}</DocumentMeta></>);
   }
 }

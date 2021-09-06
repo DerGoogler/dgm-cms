@@ -10,6 +10,8 @@ import cookiesInit from './misc/cookiesInit';
 
 cookiesInit
 
+
+
 // Build App
 ons.ready(function () {
     var mountNode = document.getElementById("app");
