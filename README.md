@@ -5,17 +5,19 @@ Static CMS
 
 The start of the page
 
-ˋˋˋjs
+ˋˋˋjs       
 <Options
   title="Hello World!" // Sets the title
   cardView="yes" // Removes the card view background
   platform="android" // idk, it dont work right 
 />
-ˋˋˋ
+ˋˋˋ        
 ----------
-PLEASE DONT USE LIKE THIS
+        
+PLEASE DONT USE LIKE THIS       
 it will crashs the site
- ˋˋˋjs
+      
+ ˋˋˋjs         
  <Options
   title={<Badge bg="primary">NEW</Badge>} // makes the error
   cardView="yes"
