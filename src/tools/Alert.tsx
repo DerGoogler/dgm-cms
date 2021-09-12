@@ -3,9 +3,7 @@ import * as ons               from 'onsenui';
 import { hot }                from "react-hot-loader/root";
 import { AlertInterface }     from '../interface';
 
-class Alert extends React.Component<AlertInterface> {
-  onClick() {}
-
+class OnsAlert extends React.Component<AlertInterface> {
   render() {
     // You can edit more in!
     const { title, message, cancelable } = this.props;
@@ -23,4 +21,4 @@ class Alert extends React.Component<AlertInterface> {
 }
 
 
-export default hot(Alert);
+export default hot(OnsAlert);

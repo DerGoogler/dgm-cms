@@ -15,30 +15,30 @@ const config = {
       {
         test: /\.(js|jsx)$/,
         use: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /(\.css$)/,
-        use:[
+        use: [
           'style-loader',
           'css-loader',
           'postcss-loader'
         ]
-      }, 
+      },
       {
         test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-        use: 'url-loader?limit=100000' 
+        use: 'url-loader?limit=100000'
       }
     ]
   },
   resolveLoader: {
-    modules:[
+    modules: [
       'node_modules',
       path.join(process.env.NPM_CONFIG_PREFIX || __dirname, 'lib/node_modules')
     ]
   },
   resolve: {
-    modules:[
+    modules: [
       'node_modules',
       path.join(process.env.NPM_CONFIG_PREFIX || __dirname, 'lib/node_modules')
     ],
@@ -61,15 +61,15 @@ const config = {
       },
       {
         test: /(\.css$)/,
-        use:[
+        use: [
           'style-loader',
           'css-loader',
           'postcss-loader'
         ]
-      }, 
+      },
       {
         test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-        use: 'url-loader?limit=100000' 
+        use: 'url-loader?limit=100000'
       }
     ]
   },

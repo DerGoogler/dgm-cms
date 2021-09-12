@@ -1,72 +1,76 @@
-import * as React  from "react";
+import * as React from "react";
+import * as ReactDOM from "react-dom";
 import {
   Page,
   Toolbar,
   ToolbarButton,
   Icon,
-  Card,
-  Button,
   List,
   ListItem,
   ListHeader,
   Splitter,
   SplitterContent,
   SplitterSide,
-  Navigator,
-  BackButton
-}                       from "react-onsenui";
-import {
-  BrowserView,
-  MobileView,
-  isBrowser,
-  isMobile,
-  isIE,
-  isIOS,
-  isSafari,
-  isMobileSafari
-}                       from "react-device-detect";
-import * as ons         from 'onsenui';
-import { hot }          from "react-hot-loader/root";
-import Cookies          from 'universal-cookie';
-import Markdown         from 'markdown-to-jsx';
-import { getUrlParam }  from './misc/getUrlParam';
-import axios            from 'axios';
-import Options          from './tools/Options';
-import HeadImg          from './tools/HeadImg';
-import Cooldown         from './tools/Cooldown';
-import XHR              from './tools/XHR';
-import Alert            from './tools/Alert';
-import config           from './config';
-import { MDBBadge }     from 'mdb-react-ui-kit';
-import { AppStates }    from './interface';
-
+} from "react-onsenui";
+import { isIE, isIOS, isSafari, isMobileSafari } from "react-device-detect";
+import * as ons from "onsenui";
+import { hot } from "react-hot-loader/root";
+import Cookies from "universal-cookie";
+import { getUrlParam } from "./misc/getUrlParam";
+import axios from "axios";
+import Storage from "./Storage";
+import config from "./config";
+import MarkdownContent from "./misc/MarkdownContent";
+import { AppStates } from "./interface";
+import Badge from "react-bootstrap/Badge";
 
 const cookies = new Cookies();
 
 class App extends React.Component<{}, AppStates> {
   state = {
-    isDrawerOpen: config.options.page.isDrawerOpen,
-    data: ''
-  }
+    isDrawerOpen: config.options.drawer.isDrawerOpen,
+    data: "",
+    // repo infos
+    stars: 0,
+    watchers: 0,
+    mainlanguege: "",
+    forks: 0,
+    issues: 0,
+    last_repo_update: "",
+  };
 
   componentDidMount() {
-    if (window.location.hash === '') {
+    if (window.location.search === "") {
       // If no search parameters
-      axios
-        .get(config.base.slug + 'home' + config.base.file)
-        .then(res => {
-          const data = res.data;
-          console.log(data);
-          this.setState({ data: data });
-        });
+      axios.get(config.base.slug + "home" + config.base.file).then((res) => {
+        const data = res.data;
+        console.log(data);
+        this.setState({ data: data });
+      });
     } else {
       axios
-        .get(config.base.slug + getUrlParam('') + config.base.file)
-        .then(res => {
+        .get(config.base.slug + getUrlParam("") + config.base.file)
+        .then((res) => {
           const data = res.data;
           this.setState({ data: data });
         });
     }
+    // Get repo infos
+    axios.get("https://api.github.com/repos/DerGoogler/dgm-cms").then((res) => {
+      const data = res.data;
+      var stars = data.stargazers_count;
+      var watchers = data.watchers_count;
+      var mainLanguege = data.language;
+      var issues = data.open_issues;
+      var forks = data.forks;
+      var last_repo_update = data.updated_at;
+      this.setState({ stars: stars });
+      this.setState({ watchers: watchers });
+      this.setState({ mainlanguege: mainLanguege });
+      this.setState({ issues: issues });
+      this.setState({ forks: forks });
+      this.setState({ last_repo_update: last_repo_update });
+    });
   }
 
   drawerHide() {
@@ -80,110 +84,115 @@ class App extends React.Component<{}, AppStates> {
   renderToolbar() {
     return (
       <Toolbar>
-        <div className='left'>
+        <div className="left">
           <ToolbarButton onClick={this.drawerShow}>
-            <Icon icon='ion-ios-menu, material:md-menu' />
+            <Icon icon="ion-ios-menu, material:md-menu" />
           </ToolbarButton>
         </div>
-        <div className='center'>{cookies.get('title')}</div>
+        <div className="center">{cookies.get("title")}</div>
+        <div className="right">
+          <ToolbarButton
+            onClick={() => {
+              ons.notification.prompt({
+                message: "Like: /samples/start/",
+                title: "Jump to source",
+                callback: function (data: string) {
+                  window.location.search = data;
+                },
+              });
+            }}
+          >
+            <Icon icon="md-search" />
+          </ToolbarButton>
+        </div>
       </Toolbar>
     );
   }
 
   render() {
     // iOS devices defaultly not allowed
-    if (isIE) return (<div> IE is not supported. Download Chrome/Opera/Firefox </div>);
-    if (isIOS || isMobileSafari || isSafari) return (<div> iOS/iPhone/Safari are not allowed to view this </div>);
+    if (isIE)
+      return <div> IE is not supported. Download Chrome/Opera/Firefox </div>;
+    if (isIOS || isMobileSafari || isSafari)
+      return <div> iOS/iPhone/Safari are not allowed to view this </div>;
     return (
       <Splitter>
-      <SplitterSide
-        style={{
-          boxShadow: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)'
-        }}
-        side='left'
-        width={200}
-        collapse={true}
-        swipeable={true}
-        isOpen={this.state.isDrawerOpen}
-        onClose={this.drawerHide.bind(this)}
-        onOpen={this.drawerShow.bind(this)}
-      >
-        <Page>
-          <List>
-            <ListHeader>Cookies <MDBBadge className='ms-2'>NEW</MDBBadge></ListHeader>
-            <ListItem onClick={() => {
-              ons.notification.confirm({
-                message: 'This Web App saves your entered Language and Platform.',
-                title: 'About Cookies',
-                buttonLabels: ['Ok'],
-                animation: 'default',
-                primaryButtonIndex: 0,
-                cancelable: false,
-              })
-            }} modifier="chevron" tappable>About Cookies</ListItem>
+        <SplitterSide
+          style={{
+            boxShadow:
+              "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)",
+          }}
+          side="left"
+          width={config.options.drawer.width}
+          collapse={config.options.drawer.collapse}
+          swipeable={config.options.drawer.swipeable}
+          isOpen={this.state.isDrawerOpen}
+          onClose={this.drawerHide.bind(this)}
+          onOpen={this.drawerShow.bind(this)}
+        >
+          <Page>
+            <List>
+              <ListHeader>Infos (Repo)</ListHeader>
+              <ListItem tappable>
+                Stars: <strong>{this.state.stars}</strong>
+              </ListItem>
+              <ListItem tappable>
+                Watchers: <strong>{this.state.watchers}</strong>
+              </ListItem>
+              <ListItem tappable>
+                Main Languege: <strong>{this.state.mainlanguege}</strong>
+              </ListItem>
+              <ListItem tappable>
+                Issues: <strong>{this.state.issues}</strong>
+              </ListItem>
+              <ListItem tappable>
+                Forks: <strong>{this.state.forks}</strong>
+              </ListItem>
+              <ListItem tappable>
+                Last Repo Update: <strong>{this.state.last_repo_update}</strong>
+              </ListItem>
+              <ListHeader>Cookies</ListHeader>
+              <ListItem
+                onClick={() => {
+                  ons.notification.confirm({
+                    message:
+                      "This Web App saves your entered Language and Platform.",
+                    title: "About Cookies",
+                    buttonLabels: ["Ok"],
+                    animation: "default",
+                    primaryButtonIndex: 0,
+                    cancelable: false,
+                  });
+                }}
+                modifier="chevron"
+                tappable
+              >
+                About Cookies
+              </ListItem>
+              <ListHeader>
+                Other <Badge bg="danger">Buggy</Badge>
+              </ListHeader>
+              <ListItem
+                onClick={() => {
+                  var mountNode = document.getElementById("app");
+                  ReactDOM.render(<Storage />, mountNode);
+                }}
+                modifier="chevron"
+                tappable
+              >
+                List files
+              </ListItem>
             </List>
-        </Page>
-      </SplitterSide>
-      <SplitterContent>
-        <Page renderToolbar={this.renderToolbar}>
-          <Card>
-            <article className="markdown-body">
-              <Markdown options={{
-                overrides: {
-                  Options: {
-                    component: Options,
-                  },
-                  Card: {
-                    component: Card,
-                  },
-                  Button: {
-                    component: Button,
-                  },
-                  List: {
-                    component: List,
-                  },
-                  ListItem: {
-                    component: ListItem,
-                  },
-                  ListHeader: {
-                    component: ListHeader,
-                  },
-                  HeadImg: {
-                    component: HeadImg,
-                  },
-                  MobileView: {
-                    component: MobileView,
-                  },
-                  BrowserView: {
-                    component: BrowserView,
-                  },
-                  Cooldown: {
-                    component: Cooldown,
-                  },
-                  Icon: {
-                    component: Icon,
-                  },
-                  XHR: {
-                    component: XHR,
-                  },
-                  Badge: {
-                    component: MDBBadge,
-                  },
-                  Alert: {
-                    component: Alert,
-                  }
-                },
-              }}>
-                {this.state.data}
-              </Markdown>
-            </article>
-          </Card>
-        </Page>
-      </SplitterContent>
-    </Splitter>   
+          </Page>
+        </SplitterSide>
+        <SplitterContent>
+          <Page renderToolbar={this.renderToolbar}>
+            <MarkdownContent data={this.state.data} />
+          </Page>
+        </SplitterContent>
+      </Splitter>
     );
   }
 }
-
 
 export default hot(App);

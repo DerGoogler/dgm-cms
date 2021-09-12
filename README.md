@@ -1,42 +1,24 @@
 # DGM CMS
 Static CMS
 
-Installing:
-- `npm install`
-- ˋnpm run build-devˋ
-- launch any `localhost`
+## Creating a page
 
+The start of the page
 
-## Add components to Markdown
-```jsx
-<Markdown options={{
-    overrides: {
-        New1: {
-            component: New1,
-        },
-        New2: {
-            component: New2,
-        },
-    },
-}}>
-    {this.state.data}
-</Markdown>
-```
-
-## Usage of Custom Components
-Custom Components
-
-**HeadImg**
-```jsx
-<HeadImg src="url" head="Header Title" text="Content Text"/>
-```
-
-**Options**
-```jsx
-<Options title="Page Title" platform="android or ios"/>
-```
-
-**Cooldown**
-```jsx
-<Cooldown date=""/>
-```
+ˋˋˋjs
+<Options
+  title="Hello World!" // Sets the title
+  cardView="yes" // Removes the card view background
+  platform="android" // idk, it dont work right 
+/>
+ˋˋˋ
+----------
+PLEASE DONT USE LIKE THIS
+it will crashs the site
+ ˋˋˋjs
+ <Options
+  title={<Badge bg="primary">NEW</Badge>} // makes the error
+  cardView="yes"
+  platform="android"
+/>
+ ˋˋˋ

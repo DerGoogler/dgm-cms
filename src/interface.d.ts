@@ -1,3 +1,7 @@
+export interface MarkdownContentInterface {
+    data: any;
+}
+
 export interface CooldownInterface {
     date: string;
 }
@@ -11,6 +15,7 @@ export interface HeadImgInterface {
 export interface OptionsInterface {
     title: string;
     platform: string;
+    cardView: string;
     description: string;
     canonical: string;
     keywords: string;
@@ -26,8 +31,20 @@ export interface AlertInterface {
     cancelable: boolean;
 }
 
+export interface ModalInterface {
+    title: string;
+    message: string;
+}
+
 // Interface for <App/> State
 export interface AppStates {
     isDrawerOpen: boolean;
     data: string;
+    // Repo infos
+    stars: number;
+    watchers: number;
+    mainlanguege: string;
+    issues: number;
+    forks: number;
+    last_repo_update: string;
 }

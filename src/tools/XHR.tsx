@@ -8,7 +8,7 @@ class XHR extends React.Component<XHRInterface> {
         content: ''
     }
 
-    componentDidMount = () => {
+    componentDidMount() {
         const { src } = this.props;
         const content = (data: any) => { this.setState({ content: data }) }
         const getContent = new XMLHttpRequest();

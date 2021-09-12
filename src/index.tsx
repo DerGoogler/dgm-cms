@@ -5,11 +5,7 @@ import App from "./App";
 import 'onsenui/css/onsenui.css';
 import 'onsenui/css/onsen-css-components.css';
 import './misc/github-markdown.css';
-import cookiesInit from './misc/cookiesInit';
-
-
-cookiesInit
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 // Build App
