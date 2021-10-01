@@ -5,22 +5,23 @@ Static CMS
 
 The start of the page
 
-ˋˋˋjs       
+
+```jsx
 <Options
-  title="Hello World!" // Sets the title
-  cardView="yes" // Removes the card view background
-  platform="android" // idk, it dont work right 
+  title="Jimmy" // Sets the website title
+  description="Auf dieser Seite findest du ein paar Infos über mich, sowie meinen Musik Geschmack!" // description for the website 
+  keywords="dergoogler,DERGOOGLER,DerGoogler,der_googler,Der_Googler,DER_GOOGLER,JIMMY,jimmy,dergoogler.com,www.dergoogler.com" // keyword for the website
 />
-ˋˋˋ        
+```
+
 ----------
         
 PLEASE DONT USE LIKE THIS       
 it will crashs the site
       
- ˋˋˋjs         
+ ```jsx
  <Options
   title={<Badge bg="primary">NEW</Badge>} // makes the error
   cardView="yes"
-  platform="android"
 />
- ˋˋˋ
+ ```

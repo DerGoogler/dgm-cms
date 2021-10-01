@@ -1,15 +1,13 @@
 <Options
   title="Hello"
   cardView="yes"
-  platform="android"
 />
 
 # Alert & Modal
-<Alert title="Hello World!" message="This is an example" cancelable="true">Open</Alert><br>
-<Modal title="Hello World!" message="This is an example">Open</Modal>
+<Alert title="Hello World!" message="This is an example" cancelable="true">Open</Alert>
 
 # Cooldown 
-Create easy an cooldown for some events
+Create easy an cooldown for some events<br>
 <Cooldown date="Jan 5, 2022 15:37:25"/>
 
 # Badges
@@ -35,3 +33,6 @@ Create easy an cooldown for some events
 <BSAlert variant="primary">
     This is a primary alert—check it out!
 </BSAlert>
+
+<Repos user="DerGoogler"/>
+<Issues user="dergoogler" repo="hybridtts"/>

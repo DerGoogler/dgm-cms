@@ -1,5 +1,4 @@
 import * as React from "react";
-import * as ReactDOM from "react-dom";
 import {
   Page,
   Toolbar,
@@ -18,11 +17,9 @@ import { hot } from "react-hot-loader/root";
 import Cookies from "universal-cookie";
 import { getUrlParam } from "./misc/getUrlParam";
 import axios from "axios";
-import Storage from "./Storage";
 import config from "./config";
 import MarkdownContent from "./misc/MarkdownContent";
 import { AppStates } from "./interface";
-import Badge from "react-bootstrap/Badge";
 
 const cookies = new Cookies();
 
@@ -109,6 +106,14 @@ class App extends React.Component<{}, AppStates> {
     );
   }
 
+  drawerToolbar() {
+    return (
+      <Toolbar>
+        <div className="center">{cookies.get("title")}</div>
+      </Toolbar>
+    );
+  }
+
   render() {
     // iOS devices defaultly not allowed
     if (isIE)
@@ -130,7 +135,7 @@ class App extends React.Component<{}, AppStates> {
           onClose={this.drawerHide.bind(this)}
           onOpen={this.drawerShow.bind(this)}
         >
-          <Page>
+          <Page renderToolbar={this.drawerToolbar}>
             <List>
               <ListHeader>Infos (Repo)</ListHeader>
               <ListItem tappable>
@@ -168,19 +173,6 @@ class App extends React.Component<{}, AppStates> {
                 tappable
               >
                 About Cookies
-              </ListItem>
-              <ListHeader>
-                Other <Badge bg="danger">Buggy</Badge>
-              </ListHeader>
-              <ListItem
-                onClick={() => {
-                  var mountNode = document.getElementById("app");
-                  ReactDOM.render(<Storage />, mountNode);
-                }}
-                modifier="chevron"
-                tappable
-              >
-                List files
               </ListItem>
             </List>
           </Page>

@@ -1,50 +1,59 @@
 export interface MarkdownContentInterface {
-    data: any;
+  data: any;
 }
 
 export interface CooldownInterface {
-    date: string;
+  date: string;
 }
 
 export interface HeadImgInterface {
-    src: string;
-    head: string;
-    text: string;
+  src: string;
+  head: string;
+  text: string;
 }
 
 export interface OptionsInterface {
-    title: string;
-    platform: string;
-    cardView: string;
-    description: string;
-    canonical: string;
-    keywords: string;
+  title: string;
+  platform: string;
+  cardView: string;
+  description: string;
+  canonical: string;
+  keywords: string;
 }
 
 export interface XHRInterface {
-    src: string;
+  src: string;
 }
 
 export interface AlertInterface {
-    title: string;
-    message: string;
-    cancelable: boolean;
+  title: string;
+  message: string;
+  cancelable: boolean;
 }
 
 export interface ModalInterface {
-    title: string;
-    message: string;
+  title: string;
+  message: string;
+}
+
+export interface VideoInterface {
+  src: string;
+}
+
+export interface GitHubInterface {
+  user: string;
+  repo: string;
 }
 
 // Interface for <App/> State
 export interface AppStates {
-    isDrawerOpen: boolean;
-    data: string;
-    // Repo infos
-    stars: number;
-    watchers: number;
-    mainlanguege: string;
-    issues: number;
-    forks: number;
-    last_repo_update: string;
+  isDrawerOpen: boolean;
+  data: string;
+  // Repo infos
+  stars: number;
+  watchers: number;
+  mainlanguege: string;
+  issues: number;
+  forks: number;
+  last_repo_update: string;
 }
