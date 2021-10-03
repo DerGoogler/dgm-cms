@@ -1,4 +1,4 @@
-import { Icon, Card, Button, List, ListItem, ListHeader } from "react-onsenui";
+import { Icon, Card, List, ListItem, ListHeader } from "react-onsenui";
 import { BrowserView, MobileView } from "react-device-detect";
 import Options from "./tools/Options";
 import HeadImg from "./tools/HeadImg";
@@ -10,6 +10,8 @@ import Alert from "react-bootstrap/Alert";
 import Repos from "./tools/github/Repos";
 import Script from "./tools/Script";
 import Issues from "./tools/github/Issues";
+import Carousel from "react-bootstrap/Carousel";
+import Dropdown from "react-bootstrap/Dropdown";
 
 export const override = {
   overrides: {
@@ -18,9 +20,6 @@ export const override = {
     },
     Card: {
       component: Card,
-    },
-    Button: {
-      component: Button,
     },
     List: {
       component: List,
@@ -66,6 +65,27 @@ export const override = {
     },
     Script: {
       component: Script,
+    },
+    Carousel: {
+      component: Carousel,
+    },
+    CarouselItem: {
+      component: Carousel.Item,
+    },
+    CarouselCaption: {
+      component: Carousel.Caption,
+    },
+    Dropdown: {
+      component: Dropdown,
+    },
+    DropdownToggle: {
+      component: Dropdown.Toggle,
+    },
+    DropdownMenu: {
+      component: Dropdown.Menu,
+    },
+    DropdownItem: {
+      component: Dropdown.Item,
     },
   },
 };

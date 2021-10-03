@@ -4,7 +4,7 @@ import { VideoInterface } from "../interface";
 
 class Video extends React.Component<VideoInterface> {
   render() {
-    const { src } = this.props;
+    const { src, type } = this.props;
     return (
       <>
         <video width="100%" controls>

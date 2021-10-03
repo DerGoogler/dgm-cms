@@ -4,22 +4,33 @@ import { hot } from "react-hot-loader/root";
 import { OptionsInterface } from "../interface";
 import DocumentMeta from "react-document-meta";
 import Cookies from "universal-cookie";
+import config from "./../config";
+import snowflakesRAIN from "../misc/view/snowflakes";
+import fireworksSHOWER from "../misc/view/fireworks";
 
 const cookies = new Cookies();
 
 class Options extends React.Component<OptionsInterface> {
   componentDidMount() {
-    const { title, platform, cardView } = this.props;
-    document.title = title;
+    const { title, platform, cardView, rainType } = this.props;
+    document.title = title + config.base.aftertitle;
     ons.platform.select(platform);
-    cookies.set("title", title, { path: "/" });
+    cookies.set("title", title + config.base.aftertitle, { path: "/" });
     cookies.set("cardView", cardView, { path: "/" });
+    switch (rainType) {
+      case "snowflakes":
+        snowflakesRAIN.init();
+        break;
+      case "fireworks":
+        fireworksSHOWER.init();
+        break;
+    }
   }
 
   render() {
     const { title, description, canonical, keywords } = this.props;
     const meta = {
-      title: title,
+      title: title + config.base.aftertitle,
       description: description,
       canonical: canonical,
       meta: {

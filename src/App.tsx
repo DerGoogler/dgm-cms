@@ -15,11 +15,12 @@ import { isIE, isIOS, isSafari, isMobileSafari } from "react-device-detect";
 import * as ons from "onsenui";
 import { hot } from "react-hot-loader/root";
 import Cookies from "universal-cookie";
-import { getUrlParam } from "./misc/getUrlParam";
+import { getUrlParam } from "./misc/others/tools";
 import axios from "axios";
 import config from "./config";
-import MarkdownContent from "./misc/MarkdownContent";
+import MarkdownContent from "./misc/others/MarkdownContent";
 import { AppStates } from "./interface";
+import string from "./strings";
 
 const cookies = new Cookies();
 
@@ -30,7 +31,7 @@ class App extends React.Component<{}, AppStates> {
     // repo infos
     stars: 0,
     watchers: 0,
-    mainlanguege: "",
+    mainlanguage: "",
     forks: 0,
     issues: 0,
     last_repo_update: "",
@@ -41,7 +42,6 @@ class App extends React.Component<{}, AppStates> {
       // If no search parameters
       axios.get(config.base.slug + "home" + config.base.file).then((res) => {
         const data = res.data;
-        console.log(data);
         this.setState({ data: data });
       });
     } else {
@@ -57,13 +57,13 @@ class App extends React.Component<{}, AppStates> {
       const data = res.data;
       var stars = data.stargazers_count;
       var watchers = data.watchers_count;
-      var mainLanguege = data.language;
+      var mainLanguage = data.language;
       var issues = data.open_issues;
       var forks = data.forks;
       var last_repo_update = data.updated_at;
       this.setState({ stars: stars });
       this.setState({ watchers: watchers });
-      this.setState({ mainlanguege: mainLanguege });
+      this.setState({ mainlanguage: mainLanguage });
       this.setState({ issues: issues });
       this.setState({ forks: forks });
       this.setState({ last_repo_update: last_repo_update });
@@ -86,7 +86,7 @@ class App extends React.Component<{}, AppStates> {
             <Icon icon="ion-ios-menu, material:md-menu" />
           </ToolbarButton>
         </div>
-        <div className="center">{cookies.get("title")}</div>
+        <div className="center">{cookies.get("title").replace(config.base.aftertitle, "")}</div>
         <div className="right">
           <ToolbarButton
             onClick={() => {
@@ -109,17 +109,15 @@ class App extends React.Component<{}, AppStates> {
   drawerToolbar() {
     return (
       <Toolbar>
-        <div className="center">{cookies.get("title")}</div>
+        <div className="center">{cookies.get("title").replace(config.base.aftertitle, "")}</div>
       </Toolbar>
     );
   }
 
   render() {
     // iOS devices defaultly not allowed
-    if (isIE)
-      return <div> IE is not supported. Download Chrome/Opera/Firefox </div>;
-    if (isIOS || isMobileSafari || isSafari)
-      return <div> iOS/iPhone/Safari are not allowed to view this </div>;
+    if (isIE) return <div>{string.isIE}</div>;
+    if (isIOS || isMobileSafari || isSafari) return <div>{string.isIOS}</div>;
     return (
       <Splitter>
         <SplitterSide
@@ -137,33 +135,38 @@ class App extends React.Component<{}, AppStates> {
         >
           <Page renderToolbar={this.drawerToolbar}>
             <List>
-              <ListHeader>Infos (Repo)</ListHeader>
+              <ListHeader>{string.repo_infos}</ListHeader>
               <ListItem tappable>
-                Stars: <strong>{this.state.stars}</strong>
+                {string.repo_stars}
+                <strong>{this.state.stars}</strong>
               </ListItem>
               <ListItem tappable>
-                Watchers: <strong>{this.state.watchers}</strong>
+                {string.repo_watchers}
+                <strong>{this.state.watchers}</strong>
               </ListItem>
               <ListItem tappable>
-                Main Languege: <strong>{this.state.mainlanguege}</strong>
+                {string.repo_main_language}
+                <strong>{this.state.mainlanguage}</strong>
               </ListItem>
               <ListItem tappable>
-                Issues: <strong>{this.state.issues}</strong>
+                {string.repo_issues}
+                <strong>{this.state.issues}</strong>
               </ListItem>
               <ListItem tappable>
-                Forks: <strong>{this.state.forks}</strong>
+                {string.repo_forks}
+                <strong>{this.state.forks}</strong>
               </ListItem>
               <ListItem tappable>
-                Last Repo Update: <strong>{this.state.last_repo_update}</strong>
+                {string.repo_last_update}
+                <strong>{this.state.last_repo_update}</strong>
               </ListItem>
               <ListHeader>Cookies</ListHeader>
               <ListItem
                 onClick={() => {
                   ons.notification.confirm({
-                    message:
-                      "This Web App saves your entered Language and Platform.",
-                    title: "About Cookies",
-                    buttonLabels: ["Ok"],
+                    message: string.about_cookies_dialog,
+                    title: string.about_cookies,
+                    buttonLabels: [string.ok],
                     animation: "default",
                     primaryButtonIndex: 0,
                     cancelable: false,
@@ -172,7 +175,7 @@ class App extends React.Component<{}, AppStates> {
                 modifier="chevron"
                 tappable
               >
-                About Cookies
+                {string.about_cookies}
               </ListItem>
             </List>
           </Page>

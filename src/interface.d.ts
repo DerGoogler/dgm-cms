@@ -19,6 +19,7 @@ export interface OptionsInterface {
   description: string;
   canonical: string;
   keywords: string;
+  rainType: string;
 }
 
 export interface XHRInterface {
@@ -38,6 +39,7 @@ export interface ModalInterface {
 
 export interface VideoInterface {
   src: string;
+  type: string;
 }
 
 export interface GitHubInterface {
@@ -52,7 +54,7 @@ export interface AppStates {
   // Repo infos
   stars: number;
   watchers: number;
-  mainlanguege: string;
+  mainlanguage: string;
   issues: number;
   forks: number;
   last_repo_update: string;

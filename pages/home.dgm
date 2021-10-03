@@ -1,38 +1,39 @@
 <Options
   title="Hello"
   cardView="yes"
+  rainType="fireworks"
 />
 
 # Alert & Modal
-<Alert title="Hello World!" message="This is an example" cancelable="true">Open</Alert>
+<Alert class="shake" title="Hello World!" message="This is an example" cancelable="true">Open</Alert>
 
 # Cooldown 
 Create easy an cooldown for some events<br>
-<Cooldown date="Jan 5, 2022 15:37:25"/>
+<Cooldown class="shake" date="Jan 5, 2022 15:37:25"/>
 
 # Badges
 <div>
-  <Badge bg="primary">Primary</Badge><br>
-  <Badge bg="secondary">Secondary</Badge><br>
-  <Badge bg="success">Success</Badge><br>
-  <Badge bg="danger">Danger</Badge><br>
-  <Badge bg="warning" text="dark">
+  <Badge class="shake" bg="primary">Primary</Badge><br>
+  <Badge class="shake" bg="secondary">Secondary</Badge><br>
+  <Badge class="shake" bg="success">Success</Badge><br>
+  <Badge class="shake" bg="danger">Danger</Badge><br>
+  <Badge class="shake" bg="warning" text="dark">
     Warning
   </Badge><br>
-  <Badge bg="info">Info</Badge><br>
-  <Badge bg="light" text="dark">
+  <Badge class="shake" bg="info">Info</Badge><br>
+  <Badge class="shake" bg="light" text="dark">
     Light
   </Badge><br>
-  <Badge bg="dark">Dark</Badge>
+  <Badge class="shake" bg="dark">Dark</Badge>
 </div>
 
 # Alerts (Bootstrap)
-<BSAlert variant="danger">
+<BSAlert class="shake" variant="danger">
     This is a danger alert—check it out!
 </BSAlert><br>
-<BSAlert variant="primary">
+<BSAlert class="shake" variant="primary">
     This is a primary alert—check it out!
 </BSAlert>
 
-<Repos user="DerGoogler"/>
-<Issues user="dergoogler" repo="hybridtts"/>
+<Repos class="shake" user="DerGoogler"/>
+<Issues class="shake" user="dergoogler" repo="hybridtts"/>
