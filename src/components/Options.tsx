@@ -17,6 +17,7 @@ class Options extends React.Component<OptionsInterface> {
     ons.platform.select(platform);
     cookies.set("title", title + config.base.aftertitle, { path: "/" });
     cookies.set("cardView", cardView, { path: "/" });
+    cookies.set("event", event, { path: "/" });
     switch (rainType) {
       case "snowflakes":
         snowflakesRAIN.init();

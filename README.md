@@ -1,7 +1,13 @@
 # DGM CMS
 Static CMS
 
-## Creating a page
+## Installation
+You need to have NPM installed!
+- `npm install` or `npm i`
+- `npm run build-dev` or `npm run build-prod`
+-  launch any `localhost` or Live Server from VS Code
+
+## Creating a page [Extended use of components](https://github.com/DerGoogler/dgm-cms/wiki/Extended-use-of-components)
 
 The start of the page
 

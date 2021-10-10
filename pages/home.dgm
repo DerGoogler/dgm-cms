@@ -1,7 +1,7 @@
 <Options
   title="Hello"
   cardView="yes"
-  rainType="fireworks"
+  event="halloween"
 />
 
 # Alert & Modal
@@ -9,7 +9,7 @@
 
 # Cooldown 
 Create easy an cooldown for some events<br>
-<Cooldown class="shake" date="Jan 5, 2022 15:37:25"/>
+<Cooldown date="Jan 5, 2022 15:37:25"/>
 
 # Badges
 <div>
@@ -34,6 +34,8 @@ Create easy an cooldown for some events<br>
 <BSAlert class="shake" variant="primary">
     This is a primary alert—check it out!
 </BSAlert>
+
+<Video src="https://dergoogler.com/pages/videos/491746339253_status_6b3881efba404332958413c12a053dc5.mp4"/>
 
 <Repos class="shake" user="DerGoogler"/>
 <Issues class="shake" user="dergoogler" repo="hybridtts"/>

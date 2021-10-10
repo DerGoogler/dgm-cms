@@ -2,8 +2,17 @@ export interface MarkdownContentInterface {
   data: any;
 }
 
+export interface SlideInterface {
+  data: any;
+}
+
 export interface CooldownInterface {
   date: string;
+  expiredText: string;
+  days: string;
+  hours: string;
+  minutes: string;
+  seconds: string;
 }
 
 export interface HeadImgInterface {
@@ -37,9 +46,22 @@ export interface ModalInterface {
   message: string;
 }
 
+export interface FaqInterface {
+  data: any;
+}
+
 export interface VideoInterface {
   src: string;
   type: string;
+  controls: boolean;
+  noSupportText: string;
+}
+
+export interface AudioInterface {
+  src: string;
+  type: string;
+  controls: boolean;
+  noSupportText: string;
 }
 
 export interface GitHubInterface {
@@ -51,6 +73,7 @@ export interface GitHubInterface {
 export interface AppStates {
   isDrawerOpen: boolean;
   data: string;
+  progress: number;
   // Repo infos
   stars: number;
   watchers: number;

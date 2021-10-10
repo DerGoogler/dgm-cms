@@ -5,3 +5,11 @@ export function getUrlParam(param) {
   var match = regex.exec(url);
   return match ? match[1] : "";
 }
+
+export function typeCheck(type, outer) {
+  if (type === undefined || type === null || type === "") {
+    return outer;
+  } else {
+    return type;
+  }
+}

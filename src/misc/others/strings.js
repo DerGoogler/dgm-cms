@@ -1,6 +1,6 @@
 const string = {
     about_cookies: "About Cookies",
-    about_cookies_dialog: "This Web App saves your entered Language and Platform.",
+    about_cookies_dialog: "This Web App saves the pages options (e.g Page title, cardView)",
     ok: "Ok",
     repo_infos: "Infos (Repo)",
     repo_stars: "Stars: ",

@@ -1,17 +1,19 @@
+import Options from "../../components/Options";
+import Faq from "../../components/Faq";
+import HeadImg from "../../components/HeadImg";
+import Cooldown from "../../components/Cooldown";
+import XHR from "../../components/XHR";
+import OnsAlert from "../../components/Alert";
+import Repos from "../../components/github/Repos";
+import Issues from "../../components/github/Issues";
+import Video from "../../components/Video";
+import Audio from "../../components/Audio";
 import { Icon, Card, List, ListItem, ListHeader } from "react-onsenui";
 import { BrowserView, MobileView } from "react-device-detect";
-import Options from "./tools/Options";
-import HeadImg from "./tools/HeadImg";
-import Cooldown from "./tools/Cooldown";
-import XHR from "./tools/XHR";
-import OnsAlert from "./tools/Alert";
-import Badge from "react-bootstrap/Badge";
-import Alert from "react-bootstrap/Alert";
-import Repos from "./tools/github/Repos";
-import Script from "./tools/Script";
-import Issues from "./tools/github/Issues";
 import Carousel from "react-bootstrap/Carousel";
 import Dropdown from "react-bootstrap/Dropdown";
+import Badge from "react-bootstrap/Badge";
+import Alert from "react-bootstrap/Alert";
 
 export const override = {
   overrides: {
@@ -63,8 +65,14 @@ export const override = {
     Issues: {
       component: Issues,
     },
-    Script: {
-      component: Script,
+    Video: {
+      component: Video,
+    },
+    Audio: {
+      component: Audio,
+    },
+    FAQ: {
+      component: Faq,
     },
     Carousel: {
       component: Carousel,

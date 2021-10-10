@@ -4,7 +4,7 @@ import { hot } from "react-hot-loader/root";
 import Cookies from "universal-cookie";
 import Markdown from "markdown-to-jsx";
 import { MarkdownContentInterface } from "../../interface";
-import { override } from "../../markdown.overrides";
+import { override } from "./markdown.overrides";
 
 const cookies = new Cookies();
 

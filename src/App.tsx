@@ -20,7 +20,7 @@ import axios from "axios";
 import config from "./config";
 import MarkdownContent from "./misc/others/MarkdownContent";
 import { AppStates } from "./interface";
-import string from "./strings";
+import string from "./misc/others/strings";
 
 const cookies = new Cookies();
 
@@ -28,6 +28,7 @@ class App extends React.Component<{}, AppStates> {
   state = {
     isDrawerOpen: config.options.drawer.isDrawerOpen,
     data: "",
+    progress: 0,
     // repo infos
     stars: 0,
     watchers: 0,
@@ -86,7 +87,9 @@ class App extends React.Component<{}, AppStates> {
             <Icon icon="ion-ios-menu, material:md-menu" />
           </ToolbarButton>
         </div>
-        <div className="center">{cookies.get("title").replace(config.base.aftertitle, "")}</div>
+        <div className="center">
+          {cookies.get("title").replace(config.base.aftertitle, "")}
+        </div>
         <div className="right">
           <ToolbarButton
             onClick={() => {
@@ -109,7 +112,9 @@ class App extends React.Component<{}, AppStates> {
   drawerToolbar() {
     return (
       <Toolbar>
-        <div className="center">{cookies.get("title").replace(config.base.aftertitle, "")}</div>
+        <div className="center">
+          {cookies.get("title").replace(config.base.aftertitle, "")}
+        </div>
       </Toolbar>
     );
   }
