@@ -1,7 +1,7 @@
 <Options
   title="Hello"
-  cardView="yes"
-  event="halloween"
+  rainType="snowflakes"
+  rainTypeChar="🎃"
 />
 
 # Alert & Modal

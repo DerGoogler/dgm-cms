@@ -29,6 +29,7 @@ export interface OptionsInterface {
   canonical: string;
   keywords: string;
   rainType: string;
+  rainTypeChar: string;
 }
 
 export interface XHRInterface {
@@ -73,12 +74,4 @@ export interface GitHubInterface {
 export interface AppStates {
   isDrawerOpen: boolean;
   data: string;
-  progress: number;
-  // Repo infos
-  stars: number;
-  watchers: number;
-  mainlanguage: string;
-  issues: number;
-  forks: number;
-  last_repo_update: string;
 }

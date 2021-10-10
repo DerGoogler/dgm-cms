@@ -5,6 +5,7 @@ import { OptionsInterface } from "../interface";
 import DocumentMeta from "react-document-meta";
 import Cookies from "universal-cookie";
 import config from "./../config";
+import { typeCheck } from "../misc/others/tools";
 import snowflakesRAIN from "../misc/view/snowflakes";
 import fireworksSHOWER from "../misc/view/fireworks";
 
@@ -12,12 +13,12 @@ const cookies = new Cookies();
 
 class Options extends React.Component<OptionsInterface> {
   componentDidMount() {
-    const { title, platform, cardView, rainType } = this.props;
+    const { title, platform, cardView, rainType, rainTypeChar } = this.props;
     document.title = title + config.base.aftertitle;
     ons.platform.select(platform);
     cookies.set("title", title + config.base.aftertitle, { path: "/" });
-    cookies.set("cardView", cardView, { path: "/" });
-    cookies.set("event", event, { path: "/" });
+    cookies.set("cardView", typeCheck(cardView, "yes"), { path: "/" });
+    cookies.set("rainTypeChar", typeCheck(rainTypeChar, "*"), { path: "/" });
     switch (rainType) {
       case "snowflakes":
         snowflakesRAIN.init();

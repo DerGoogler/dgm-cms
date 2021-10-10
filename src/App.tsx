@@ -28,23 +28,17 @@ class App extends React.Component<{}, AppStates> {
   state = {
     isDrawerOpen: config.options.drawer.isDrawerOpen,
     data: "",
-    progress: 0,
-    // repo infos
-    stars: 0,
-    watchers: 0,
-    mainlanguage: "",
-    forks: 0,
-    issues: 0,
-    last_repo_update: "",
   };
 
   componentDidMount() {
     if (window.location.search === "") {
       // If no search parameters
-      axios.get(config.base.slug + "home" + config.base.file).then((res) => {
-        const data = res.data;
-        this.setState({ data: data });
-      });
+      axios
+        .get(config.base.slug + config.base.defaultPage + config.base.file)
+        .then((res) => {
+          const data = res.data;
+          this.setState({ data: data });
+        });
     } else {
       axios
         .get(config.base.slug + getUrlParam("") + config.base.file)
@@ -53,22 +47,6 @@ class App extends React.Component<{}, AppStates> {
           this.setState({ data: data });
         });
     }
-    // Get repo infos
-    axios.get("https://api.github.com/repos/DerGoogler/dgm-cms").then((res) => {
-      const data = res.data;
-      var stars = data.stargazers_count;
-      var watchers = data.watchers_count;
-      var mainLanguage = data.language;
-      var issues = data.open_issues;
-      var forks = data.forks;
-      var last_repo_update = data.updated_at;
-      this.setState({ stars: stars });
-      this.setState({ watchers: watchers });
-      this.setState({ mainlanguage: mainLanguage });
-      this.setState({ issues: issues });
-      this.setState({ forks: forks });
-      this.setState({ last_repo_update: last_repo_update });
-    });
   }
 
   drawerHide() {
@@ -140,32 +118,7 @@ class App extends React.Component<{}, AppStates> {
         >
           <Page renderToolbar={this.drawerToolbar}>
             <List>
-              <ListHeader>{string.repo_infos}</ListHeader>
-              <ListItem tappable>
-                {string.repo_stars}
-                <strong>{this.state.stars}</strong>
-              </ListItem>
-              <ListItem tappable>
-                {string.repo_watchers}
-                <strong>{this.state.watchers}</strong>
-              </ListItem>
-              <ListItem tappable>
-                {string.repo_main_language}
-                <strong>{this.state.mainlanguage}</strong>
-              </ListItem>
-              <ListItem tappable>
-                {string.repo_issues}
-                <strong>{this.state.issues}</strong>
-              </ListItem>
-              <ListItem tappable>
-                {string.repo_forks}
-                <strong>{this.state.forks}</strong>
-              </ListItem>
-              <ListItem tappable>
-                {string.repo_last_update}
-                <strong>{this.state.last_repo_update}</strong>
-              </ListItem>
-              <ListHeader>Cookies</ListHeader>
+              <ListHeader>{string.about}</ListHeader>
               <ListItem
                 onClick={() => {
                   ons.notification.confirm({
@@ -181,6 +134,35 @@ class App extends React.Component<{}, AppStates> {
                 tappable
               >
                 {string.about_cookies}
+              </ListItem>
+              <ListItem
+                onClick={() => {
+                  if (window.location.search === "") {
+                    window.open(
+                      `https://github.com/${config.base.github.gHusername}/${
+                        config.base.github.IoPage
+                      }/blob/${
+                        config.base.github.branch
+                      }/${config.base.slug.replace("/", "")}/${
+                        config.base.defaultPage + config.base.file
+                      }`
+                    );
+                  } else {
+                  }
+                  window.open(
+                    `https://github.com/${config.base.github.gHusername}/${
+                      config.base.github.IoPage
+                    }/blob/${
+                      config.base.github.branch
+                    }/${config.base.slug.replace(/\//g, "")}/${
+                      getUrlParam("") + config.base.file
+                    }`
+                  );
+                }}
+                modifier="chevron"
+                tappable
+              >
+                {string.improve_page}
               </ListItem>
             </List>
           </Page>

@@ -3,6 +3,8 @@
 ////////////////////////////////////////////////////////////////////////
 
 import config from "../../config";
+import { typeCheck } from "../others/tools";
+import Cookies from "universal-cookie";
 
 var snowflakesRAIN = {
   ///////////////////////////// configuration ////////////////////////////
@@ -14,7 +16,7 @@ var snowflakesRAIN = {
   // random fonts
   _type: config.options.snowflakes.type,
   // char used for flake
-  _flakeChar: config.options.snowflakes.flakeChar,
+  _flakeChar: new Cookies().get("rainTypeChar"),
   // speed of flakes
   _speed: config.options.snowflakes.spped,
   // minimum flake font size

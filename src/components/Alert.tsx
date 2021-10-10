@@ -9,7 +9,7 @@ class OnsAlert extends React.Component<AlertInterface> {
     const { title, message, cancelable } = this.props;
     return (
       <>
-        <p
+        <span
           style={{ color: "#0076FF" }}
           onClick={() => {
             ons.notification.confirm({
@@ -22,8 +22,8 @@ class OnsAlert extends React.Component<AlertInterface> {
             });
           }}
         >
-          {this.props.children} <em>(Alert)</em>
-        </p>
+          {this.props.children} <em>(Openable Dialog)</em>
+        </span>
       </>
     );
   }

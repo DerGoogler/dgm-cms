@@ -1,8 +1,14 @@
 const config = {
   base: {
     slug: "/pages/",
+    defaultPage: "home",
     file: ".dgm",
     aftertitle: " | Der_Googler",
+    github: {
+      IoPage: "dergoogler.github.io",
+      gHusername: "DerGoogler",
+      branch: "master"
+    }
   },
   options: {
     drawer: {
