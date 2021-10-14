@@ -1,14 +1,14 @@
 import * as React from "react";
 import * as ons from "onsenui";
 import { hot } from "react-hot-loader/root";
-import { XHRInterface } from "../interface";
+import { XHRInterface } from "../misc/others/d/interface";
 
 class XHR extends React.Component<XHRInterface> {
-  state = {
+  public state = {
     content: "",
   };
 
-  componentDidMount() {
+  public componentDidMount() {
     const { src } = this.props;
     const content = (data: any) => {
       this.setState({ content: data });
@@ -25,7 +25,7 @@ class XHR extends React.Component<XHRInterface> {
     getContent.send();
   }
 
-  render() {
+  public render() {
     return <>{this.state.content}</>;
   }
 }

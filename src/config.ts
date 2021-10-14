@@ -4,11 +4,13 @@ const config = {
     defaultPage: "home",
     file: ".dgm",
     aftertitle: " | Der_Googler",
+    domain: "dergoogler.com",
+    platform: "android",
     github: {
       IoPage: "dergoogler.github.io",
       gHusername: "DerGoogler",
-      branch: "master"
-    }
+      branch: "master",
+    },
   },
   options: {
     drawer: {

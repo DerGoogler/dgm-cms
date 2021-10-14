@@ -1,3 +1,9 @@
+import React, { CSSProperties } from "react";
+
+export interface StylesDictionary {
+  [Key: string]: CSSProperties;
+}
+
 export interface MarkdownContentInterface {
   data: any;
 }
@@ -13,21 +19,55 @@ export interface CooldownInterface {
   hours: string;
   minutes: string;
   seconds: string;
+  click: string;
 }
 
-export interface HeadImgInterface {
+export interface DownloadInterface {
+  filename: string;
+  content: string | any;
+  callback?: Function;
+}
+
+export interface OnClickInterface {
+  click: string;
+}
+
+export interface HeaderInterface {
   src: string;
   head: string;
   text: string;
 }
 
+export interface FrameInterface {
+  css: CSSProperties;
+  src: string;
+}
+
+export interface FakeTweetInterface {
+  avatar: string;
+  nickname: string;
+  name: string;
+  verified: boolean;
+  text: string;
+  app: string;
+  date: string;
+  retweets: number;
+  likes: number;
+}
+
+export interface TranslateInterface {
+  de: string;
+  en: string;
+}
+
 export interface OptionsInterface {
-  title: string;
-  platform: string;
+  title: string | any;
+  // platform: string; // Moved to the config.ts - Platform can seted there
   cardView: string;
   description: string;
   canonical: string;
   keywords: string;
+  favicon: string;
   rainType: string;
   rainTypeChar: string;
 }
@@ -38,7 +78,7 @@ export interface XHRInterface {
 
 export interface AlertInterface {
   title: string;
-  message: string;
+  message: string | any;
   cancelable: boolean;
 }
 
@@ -47,8 +87,15 @@ export interface ModalInterface {
   message: string;
 }
 
-export interface FaqInterface {
+export interface SocialsInterface {
   data: any;
+  // Social props
+  platform: string;
+  username: string;
+  open: {
+    disabled: boolean;
+    link: string;
+  };
 }
 
 export interface VideoInterface {
@@ -73,5 +120,5 @@ export interface GitHubInterface {
 // Interface for <App/> State
 export interface AppStates {
   isDrawerOpen: boolean;
-  data: string;
+  data: any;
 }

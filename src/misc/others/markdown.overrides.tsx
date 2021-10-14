@@ -1,6 +1,5 @@
 import Options from "../../components/Options";
-import Faq from "../../components/Faq";
-import HeadImg from "../../components/HeadImg";
+import Header from "../../components/Header";
 import Cooldown from "../../components/Cooldown";
 import XHR from "../../components/XHR";
 import OnsAlert from "../../components/Alert";
@@ -8,6 +7,12 @@ import Repos from "../../components/github/Repos";
 import Issues from "../../components/github/Issues";
 import Video from "../../components/Video";
 import Audio from "../../components/Audio";
+import Frame from "../../components/Frame";
+import Code from "../../components/Code";
+import Download from "../../components/Download";
+import Click from "../../components/OnClick";
+import Translate from "../../components/Translate";
+import FakeTweet from "../../components/FakeTweet";
 import { Icon, Card, List, ListItem, ListHeader } from "react-onsenui";
 import { BrowserView, MobileView } from "react-device-detect";
 import Carousel from "react-bootstrap/Carousel";
@@ -17,29 +22,22 @@ import Alert from "react-bootstrap/Alert";
 
 export const override = {
   overrides: {
+    // HTML dom components
+    video: {
+      component: Video,
+    },
+    audio: {
+      component: Audio,
+    },
+    // Custom components
     Options: {
       component: Options,
     },
     Card: {
       component: Card,
     },
-    List: {
-      component: List,
-    },
-    ListItem: {
-      component: ListItem,
-    },
-    ListHeader: {
-      component: ListHeader,
-    },
-    HeadImg: {
-      component: HeadImg,
-    },
-    MobileView: {
-      component: MobileView,
-    },
-    BrowserView: {
-      component: BrowserView,
+    Header: {
+      component: Header,
     },
     Cooldown: {
       component: Cooldown,
@@ -56,7 +54,7 @@ export const override = {
     Alert: {
       component: OnsAlert,
     },
-    BSAlert: {
+    NewsAlert: {
       component: Alert,
     },
     Repos: {
@@ -65,35 +63,23 @@ export const override = {
     Issues: {
       component: Issues,
     },
-    Video: {
-      component: Video,
+    Frame: {
+      component: Frame,
     },
-    Audio: {
-      component: Audio,
+    Code: {
+      component: Code,
     },
-    FAQ: {
-      component: Faq,
+    Download: {
+      component: Download,
     },
-    Carousel: {
-      component: Carousel,
+    Click: {
+      component: Click,
     },
-    CarouselItem: {
-      component: Carousel.Item,
+    Translate: {
+      component: Translate,
     },
-    CarouselCaption: {
-      component: Carousel.Caption,
-    },
-    Dropdown: {
-      component: Dropdown,
-    },
-    DropdownToggle: {
-      component: Dropdown.Toggle,
-    },
-    DropdownMenu: {
-      component: Dropdown.Menu,
-    },
-    DropdownItem: {
-      component: Dropdown.Item,
+    FakeTweet: {
+      component: FakeTweet,
     },
   },
 };

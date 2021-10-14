@@ -1,14 +1,39 @@
 import * as React from "react";
 import { hot } from "react-hot-loader/root";
-import { VideoInterface } from "../interface";
+import { VideoInterface } from "../misc/others/d/interface";
 import { typeCheck } from "./../misc/others/tools";
 
 class Video extends React.Component<VideoInterface> {
-  render() {
+  public render() {
     const { src, type, controls, noSupportText } = this.props;
+    const videoStyle = {
+      width: "100%",
+      borderRadius: "8px",
+    };
+
+    const youtubeStyle = {
+      width: "100%",
+      border: "none",
+      borderRadius: "8px",
+    };
+
+    if (type === "video/youtube") {
+      return (
+        <>
+          <iframe
+            style={youtubeStyle}
+            src={`https://www.youtube.com/embed/${src.replace(
+              "https://www.youtube.com/watch?v=",
+              ""
+            )}`}
+          ></iframe>
+        </>
+      );
+    }
+
     return (
       <>
-        <video width="100%" controls={typeCheck(controls, true)}>
+        <video style={videoStyle} controls={typeCheck(controls, true)}>
           <source src={src} type={typeCheck(type, "video/mp4")} />
           {typeCheck(
             noSupportText,

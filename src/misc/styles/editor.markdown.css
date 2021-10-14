@@ -1,0 +1,31 @@
+@import "codemirror/lib/codemirror.css";
+@import "codemirror/theme/material.css";
+
+* {
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: #eee;
+  justify-content: center;
+  align-items: none;
+  display: inline;
+}
+
+header {
+  background-color: gainsboro;
+}
+
+.output-pane {
+  height: 739px;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  overflow: auto;
+}
+.CodeMirror {
+  height: 739px;
+  border-radius: 0.25rem;
+}

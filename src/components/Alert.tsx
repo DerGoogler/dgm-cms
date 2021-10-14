@@ -1,16 +1,17 @@
 import * as React from "react";
 import * as ons from "onsenui";
 import { hot } from "react-hot-loader/root";
-import { AlertInterface } from "../interface";
+import { AlertInterface } from "../misc/others/d/interface";
+import { typeCheck } from "../misc/others/tools";
 
 class OnsAlert extends React.Component<AlertInterface> {
-  render() {
+  public render() {
     // You can edit more in!
     const { title, message, cancelable } = this.props;
     return (
       <>
         <span
-          style={{ color: "#0076FF" }}
+          style={{ color: "#0076FF", cursor: "pointer" }}
           onClick={() => {
             ons.notification.confirm({
               message: message,
@@ -18,7 +19,7 @@ class OnsAlert extends React.Component<AlertInterface> {
               buttonLabels: ["Ok"],
               animation: "default",
               primaryButtonIndex: 0,
-              cancelable: cancelable,
+              cancelable: typeCheck(cancelable, true),
             });
           }}
         >

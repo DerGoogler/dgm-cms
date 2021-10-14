@@ -1,24 +1,26 @@
 import * as React from "react";
 import * as ons from "onsenui";
 import { hot } from "react-hot-loader/root";
-import { OptionsInterface } from "../interface";
+import { OptionsInterface } from "../misc/others/d/interface";
 import DocumentMeta from "react-document-meta";
 import Cookies from "universal-cookie";
 import config from "./../config";
 import { typeCheck } from "../misc/others/tools";
 import snowflakesRAIN from "../misc/view/snowflakes";
 import fireworksSHOWER from "../misc/view/fireworks";
-
-const cookies = new Cookies();
+import Favicon from "react-favicon";
 
 class Options extends React.Component<OptionsInterface> {
-  componentDidMount() {
-    const { title, platform, cardView, rainType, rainTypeChar } = this.props;
+  public cookies = new Cookies();
+
+  public componentDidMount() {
+    const { title, cardView, rainType, rainTypeChar } = this.props;
     document.title = title + config.base.aftertitle;
-    ons.platform.select(platform);
-    cookies.set("title", title + config.base.aftertitle, { path: "/" });
-    cookies.set("cardView", typeCheck(cardView, "yes"), { path: "/" });
-    cookies.set("rainTypeChar", typeCheck(rainTypeChar, "*"), { path: "/" });
+    this.cookies.set("title", title + config.base.aftertitle, { path: "/" });
+    this.cookies.set("cardView", typeCheck(cardView, "yes"), { path: "/" });
+    this.cookies.set("rainTypeChar", typeCheck(rainTypeChar, "*"), {
+      path: "/",
+    });
     switch (rainType) {
       case "snowflakes":
         snowflakesRAIN.init();
@@ -29,8 +31,8 @@ class Options extends React.Component<OptionsInterface> {
     }
   }
 
-  render() {
-    const { title, description, canonical, keywords } = this.props;
+  public render() {
+    const { title, description, canonical, keywords, favicon } = this.props;
     const meta = {
       title: title + config.base.aftertitle,
       description: description,
@@ -38,13 +40,18 @@ class Options extends React.Component<OptionsInterface> {
       meta: {
         charset: "utf-8",
         name: {
-          // usage: react,lol,cats
           keywords: keywords,
         },
       },
     };
     return (
       <>
+        <Favicon
+          url={typeCheck(
+            favicon,
+            "https://avatars.githubusercontent.com/u/54764558?v=4"
+          )}
+        />
         <DocumentMeta {...meta}>{this.props.children}</DocumentMeta>
       </>
     );

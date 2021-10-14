@@ -1,14 +1,14 @@
 import * as React from "react";
 import { hot } from "react-hot-loader/root";
-import { CooldownInterface } from "../interface";
+import { CooldownInterface } from "../misc/others/d/interface";
 import { typeCheck } from "./../misc/others/tools";
 
 class Cooldown extends React.Component<CooldownInterface> {
-  state = {
+  public state = {
     cooldown: "",
   };
 
-  componentDidMount = () => {
+  public componentDidMount = () => {
     const { date, expiredText, days, hours, minutes, seconds } = this.props;
     var countDownDate = new Date(date).getTime();
     var x = setInterval(() => {
@@ -42,8 +42,16 @@ class Cooldown extends React.Component<CooldownInterface> {
     }, 1000);
   };
 
-  render() {
-    return <>{this.state.cooldown}</>;
+  public render() {
+    return (
+      <span
+        onClick={() => {
+          eval(this.props.click);
+        }}
+      >
+        {this.state.cooldown}
+      </span>
+    );
   }
 }
 

@@ -5,13 +5,22 @@
 />
 
 # Alert & Modal
-<Alert class="shake" title="Hello World!" message="This is an example" cancelable="true">Open</Alert>
 
-# Cooldown 
+<Alert class="shake" title="Hello World!" message="This is an example\n" cancelable="true">Open</Alert>
+
+# Cooldown
+
 Create easy an cooldown for some events<br>
-<Cooldown date="Jan 5, 2022 15:37:25"/>
+<Badge bg="primary"><Cooldown click="alert('lol')" date="Jan 5, 2022 15:37:25"/></Badge>
+
+# Fake Tweet with Cooldown
+
+<Click click="alert('your\'e gay rn')">
+<FakeTweet text={<Cooldown date="Jan 5, 2022 15:37:25"/>} app={<Translate de="Twitter für Android" en="Twitter for Android"/>}/>
+</Click>
 
 # Badges
+
 <div>
   <Badge class="shake" bg="primary">Primary</Badge><br>
   <Badge class="shake" bg="secondary">Secondary</Badge><br>
@@ -28,14 +37,19 @@ Create easy an cooldown for some events<br>
 </div>
 
 # Alerts (Bootstrap)
-<BSAlert class="shake" variant="danger">
+
+<NewsAlert variant="danger">
     This is a danger alert—check it out!
-</BSAlert><br>
-<BSAlert class="shake" variant="primary">
+</NewsAlert><br>
+<NewsAlert variant="primary">
     This is a primary alert—check it out!
-</BSAlert>
+</NewsAlert>
 
-<Video src="https://dergoogler.com/pages/videos/491746339253_status_6b3881efba404332958413c12a053dc5.mp4"/>
+<video src="https://dergoogler.com/pages/videos/491746339253_status_6b3881efba404332958413c12a053dc5.mp4"/>
 
-<Repos class="shake" user="DerGoogler"/>
-<Issues class="shake" user="dergoogler" repo="hybridtts"/>
+# Hobbylos
+
+Was mir, dass du nichts besseres zu tun hast ohne mir zu sagen, dass du nichts besseres zu tun hast.
+<video src="https://dergoogler.com/pages/videos/2021-10-12%2019-05-29.mkv" type="video/mp4"/>
+<br/>
+<video src="https://www.youtube.com/watch?v=vF3rjUoerjQ" type="video/youtube"/>

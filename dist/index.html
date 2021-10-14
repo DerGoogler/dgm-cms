@@ -1,24 +1,11 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <title>Hybrid App | Der_Googler</title>
-    <meta charset="utf-8" />
-    <script>
-      (function () {
-        var src = "//cdn.jsdelivr.net/npm/eruda";
-        if (
-          !/eruda=true/.test(window.location) &&
-          localStorage.getItem("active-eruda") != "true"
-        )
-          return;
-        document.write("<scr" + 'ipt src="' + src + '"></scr' + "ipt>");
-        document.write("<scr" + "ipt>eruda.init();</scr" + "ipt>");
-      })();
-    </script>
-  </head>
 
-  <body>
+<head>
+</head>
+
+<body>
     <div id="app"></div>
-    <script id="script" src="bundle.js"></script>
-  </body>
+    <script src="bundle.js"></script>
+</body>
+
 </html>

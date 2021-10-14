@@ -3,7 +3,7 @@ import { Card } from "react-onsenui";
 import { hot } from "react-hot-loader/root";
 import Cookies from "universal-cookie";
 import Markdown from "markdown-to-jsx";
-import { MarkdownContentInterface } from "../../interface";
+import { MarkdownContentInterface } from "./d/interface";
 import { override } from "./markdown.overrides";
 
 const cookies = new Cookies();

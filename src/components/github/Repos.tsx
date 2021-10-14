@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, List, ListItem } from "react-onsenui";
 import { hot } from "react-hot-loader/root";
-import { GitHubInterface } from "../../interface";
+import { GitHubInterface } from "../../misc/others/d/interface";
 import axios from "axios";
 
 class Repos extends React.Component<GitHubInterface> {

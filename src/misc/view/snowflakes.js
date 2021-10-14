@@ -3,7 +3,6 @@
 ////////////////////////////////////////////////////////////////////////
 
 import config from "../../config";
-import { typeCheck } from "../others/tools";
 import Cookies from "universal-cookie";
 
 var snowflakesRAIN = {
