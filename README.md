@@ -1,5 +1,5 @@
 # DGM CMS
-Static CMS
+Static CMS that's supports better Markdown
 
 ## Installation
 You need to have NPM installed!
@@ -7,8 +7,11 @@ You need to have NPM installed!
 - `npm run build-dev` or `npm run build-prod`
 -  launch any `localhost` or Live Server from VS Code
 
-## Creating a page [Extended use of components](https://github.com/DerGoogler/dgm-cms/wiki/Extended-use-of-components)
+# Page
+View the [components](https://github.com/DerGoogler/dgm-cms/blob/master/COMPONENTS.md)
 
+
+# Create Page with `<Options/>`
 The start of the page
 
 
@@ -20,14 +23,4 @@ The start of the page
 />
 ```
 
-----------
-        
-PLEASE DONT USE LIKE THIS       
-it will crashs the site
-      
- ```jsx
- <Options
-  title={<Badge bg="primary">NEW</Badge>} // makes the error
-  cardView="yes"
-/>
- ```
+----
