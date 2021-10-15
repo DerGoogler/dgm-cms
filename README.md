@@ -1,6 +1,8 @@
 # DGM CMS
 Static CMS that's supports better Markdown
 
+Join the Telegram [channel](https://t.me/dergoogler) for news
+
 ## Installation
 You need to have NPM installed!
 - `npm install` or `npm i`
