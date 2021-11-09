@@ -3,7 +3,7 @@ const config = {
     slug: "/pages/",
     defaultPage: "home",
     file: ".dgm",
-    aftertitle: " | Der_Googler",
+    aftertitle: " – Der_Googler",
     domain: "dergoogler.com",
     platform: "android",
     github: {
