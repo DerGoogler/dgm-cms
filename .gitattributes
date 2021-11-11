@@ -57,6 +57,7 @@ Dockerfile        text
 *.ipynb           text
 *.markdown        text diff=markdown
 *.md              text diff=markdown
+*.dgm             text diff=markdown
 *.mdwn            text diff=markdown
 *.mdown           text diff=markdown
 *.mkd             text diff=markdown
