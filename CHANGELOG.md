@@ -1,6 +1,16 @@
-# 1.1.0
+# 1.2.0
 
-Official versions code release
+- Added an option to add an custom drawer
+- Updated `package.json`
+- removed snowflakes and fireworks
+- removed halloween event
+- now can you view the link whit hover the link
+- added `ProjectCard`
+- changed the design from blu to material green
+
+---
+
+# 1.1.0
 
 - added an console for mobile users (to debug error an delete cookies by errors)
 - addedn an translations component

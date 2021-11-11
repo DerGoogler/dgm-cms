@@ -1,7 +1,7 @@
 import * as React from "react";
 import { hot } from "react-hot-loader/root";
-import { TranslateInterface } from "../misc/others/d/interface";
-import { typeCheck } from "./../misc/others/tools";
+import { TranslateInterface } from "../d/interface";
+import { typeCheck } from "../misc/tools";
 
 class Translate extends React.Component<TranslateInterface> {
   public state = {

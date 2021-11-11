@@ -1,12 +1,18 @@
 <Options
   title="Hello"
-  rainType="snowflakes"
-  rainTypeChar="🎃"
 />
 
 # Alert & Modal
 
 <Alert class="shake" title="Hello World!" message="This is an example\n" cancelable="true">Open</Alert>
+
+[Hallo](https://google.com)
+        <br>
+        https://google.com
+
+[Googler](https://dergoogler.com)
+        <br>
+        https://dergoogler.com
 
 # Cooldown
 
@@ -35,6 +41,17 @@ Create easy an cooldown for some events<br>
   </Badge><br>
   <Badge class="shake" bg="dark">Dark</Badge>
 </div>
+
+# Projrcts
+
+<ProjectCard
+  title="Tips & Tricks for Gatsby"
+  href="https://www.lekoarts.de/gatsby/tips-and-tricks-for-gatsby?utm_source=cara&utm_medium=Theme"
+>
+  A collection of short, but useful quick tips shared by me and the community
+  about Gatsby. From GraphQL over local development to deployment.
+</ProjectCard>
+
 
 # Alerts (Bootstrap)
 

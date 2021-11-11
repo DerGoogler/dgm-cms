@@ -1,14 +1,14 @@
 import * as React from "react";
 import { hot } from "react-hot-loader/root";
-import { getText } from "../../../../misc/others/tools";
-import MarkdownContent from "../../../../misc/others/MarkdownContent";
 import { isAndroid, isMobile } from "react-device-detect";
 import { UnControlled as CodeMirror } from "react-codemirror2";
 import SimpleBar from "simplebar-react";
 import "simplebar/dist/simplebar.min.css";
-import "./../../../../misc/styles/editor.markdown.css";
-import "./../../../../misc/styles/github-markdown.css";
+import "./../../../styles/editor.markdown.css";
+import "./../../../styles/github-markdown.css";
 import "codemirror/mode/markdown/markdown";
+import { getText } from "../../../misc/tools";
+import MarkdownContent from "../../../misc/MarkdownContent";
 
 class Editor extends React.Component {
   public state = {

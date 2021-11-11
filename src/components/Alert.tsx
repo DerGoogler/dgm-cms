@@ -1,12 +1,11 @@
 import * as React from "react";
-import * as ons from "onsenui";
+import ons from "onsenui";
 import { hot } from "react-hot-loader/root";
-import { AlertInterface } from "../misc/others/d/interface";
-import { typeCheck } from "../misc/others/tools";
+import { AlertInterface } from "../d/interface";
+import { typeCheck } from "../misc/tools";
 
 class OnsAlert extends React.Component<AlertInterface> {
   public render() {
-    // You can edit more in!
     const { title, message, cancelable } = this.props;
     return (
       <>

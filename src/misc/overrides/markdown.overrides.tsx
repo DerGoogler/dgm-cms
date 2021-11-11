@@ -8,15 +8,14 @@ import Issues from "../../components/github/Issues";
 import Video from "../../components/Video";
 import Audio from "../../components/Audio";
 import Frame from "../../components/Frame";
+import A from "../../components/A";
+import ProjectCard from "../../components/ProjectCard";
 import Code from "../../components/Code";
 import Download from "../../components/Download";
 import Click from "../../components/OnClick";
 import Translate from "../../components/Translate";
 import FakeTweet from "../../components/FakeTweet";
-import { Icon, Card, List, ListItem, ListHeader } from "react-onsenui";
-import { BrowserView, MobileView } from "react-device-detect";
-import Carousel from "react-bootstrap/Carousel";
-import Dropdown from "react-bootstrap/Dropdown";
+import { Icon, Card, Col, Row } from "react-onsenui";
 import Badge from "react-bootstrap/Badge";
 import Alert from "react-bootstrap/Alert";
 
@@ -29,12 +28,18 @@ export const override = {
     audio: {
       component: Audio,
     },
+    a: {
+      component: A,
+    },
     // Custom components
     Options: {
       component: Options,
     },
     Card: {
       component: Card,
+    },
+    ProjectCard: {
+      component: ProjectCard,
     },
     Header: {
       component: Header,
@@ -80,6 +85,12 @@ export const override = {
     },
     FakeTweet: {
       component: FakeTweet,
+    },
+    Row: {
+      component: Row,
+    },
+    Col: {
+      component: Col,
     },
   },
 };

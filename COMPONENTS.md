@@ -10,8 +10,6 @@ All components listed are here
 <Options
   title="Jimmy"
   description="Hellow World!"
-  rainType="snowflakes"
-  rainTypeChar="*"
   canonical="https://dergoogler.com"
   keywords="hello,world,react"
 />
@@ -123,6 +121,14 @@ These components can normel used as normal
 
 ```tsx
 <video src="/pages/videos/hellow.mp4">
+```
+
+Full screen video
+
+```tsx
+<Options cardView="no">
+
+<video style="boder-radius: 0px; width: 100%; height: 100%" src="https://dergoogler.com/pages/videos/491746339253_status_6b3881efba404332958413c12a053dc5.mp4">
 ```
 
 ### `Defaults`

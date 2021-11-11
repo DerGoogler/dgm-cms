@@ -3,13 +3,16 @@ import { Card } from "react-onsenui";
 import { hot } from "react-hot-loader/root";
 import Cookies from "universal-cookie";
 import Markdown from "markdown-to-jsx";
-import { MarkdownContentInterface } from "./d/interface";
-import { override } from "./markdown.overrides";
+import { MarkdownContentInterface } from "../d/interface";
+import { isAndroid, isDesktop } from "react-device-detect";
+import { override } from "./overrides/markdown.overrides";
+import "./../styles/github-markdown.css";
+import { typeIf } from "./tools";
 
 const cookies = new Cookies();
 
 class MarkdownContent extends React.Component<MarkdownContentInterface> {
-  render() {
+  public render() {
     const { data } = this.props;
     if (cookies.get("cardView") === "no") {
       return (
@@ -19,8 +22,10 @@ class MarkdownContent extends React.Component<MarkdownContentInterface> {
       );
     } else {
       return (
-        <Card>
-          <article className="markdown-body">
+        <Card style={typeIf(isDesktop, { padding: "16px" }, null)}>
+          <article
+            className={typeIf(isDesktop, "markdown-body_", "markdown-body")}
+          >
             <Markdown options={override}>{data}</Markdown>
           </article>
         </Card>

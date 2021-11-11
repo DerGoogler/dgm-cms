@@ -1,34 +1,21 @@
 import * as React from "react";
 import * as ons from "onsenui";
 import { hot } from "react-hot-loader/root";
-import { OptionsInterface } from "../misc/others/d/interface";
+import { OptionsInterface } from "../d/interface";
 import DocumentMeta from "react-document-meta";
 import Cookies from "universal-cookie";
 import config from "./../config";
-import { typeCheck } from "../misc/others/tools";
-import snowflakesRAIN from "../misc/view/snowflakes";
-import fireworksSHOWER from "../misc/view/fireworks";
+import { typeCheck } from "../misc/tools";
 import Favicon from "react-favicon";
 
 class Options extends React.Component<OptionsInterface> {
   public cookies = new Cookies();
 
   public componentDidMount() {
-    const { title, cardView, rainType, rainTypeChar } = this.props;
+    const { title, cardView } = this.props;
     document.title = title + config.base.aftertitle;
     this.cookies.set("title", title + config.base.aftertitle, { path: "/" });
     this.cookies.set("cardView", typeCheck(cardView, "yes"), { path: "/" });
-    this.cookies.set("rainTypeChar", typeCheck(rainTypeChar, "*"), {
-      path: "/",
-    });
-    switch (rainType) {
-      case "snowflakes":
-        snowflakesRAIN.init();
-        break;
-      case "fireworks":
-        fireworksSHOWER.init();
-        break;
-    }
   }
 
   public render() {

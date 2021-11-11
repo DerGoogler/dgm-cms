@@ -5,12 +5,13 @@
     "strict": true,
     "noImplicitReturns": true,
     "noImplicitAny": true,
+    "declaration": false,
     "module": "es6",
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "target": "es5",
     "allowJs": true,
-    "jsx": "react"
+    "jsx": "react",
   },
   "include": ["./src/**/*"]
 }

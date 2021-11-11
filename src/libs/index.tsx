@@ -2,7 +2,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import axios from "axios";
 import { isAndroid, isMobile } from "react-device-detect";
-import Editor from "../../components/private/Editor/desktop/Editor";
+import Editor from "../components/private/Editor/Editor";
 
 export function repo() {
   axios.get("https://api.github.com/repos/DerGoogler/dgm-cms").then((res) => {

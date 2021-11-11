@@ -7,7 +7,7 @@ const config = {
   entry: [
     "react-hot-loader/patch",
     "./src/index.tsx",
-    "./src/misc/libs/index.tsx",
+    "./src/libs/index.tsx",
   ],
   output: {
     path: path.resolve(__dirname, "dist"),

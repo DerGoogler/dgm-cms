@@ -1,6 +1,6 @@
 import * as React from "react";
 import { hot } from "react-hot-loader/root";
-import { HeaderInterface, StylesDictionary } from "../misc/others/d/interface";
+import { HeaderInterface, StylesDictionary } from "../d/interface";
 
 class Header extends React.Component<HeaderInterface> {
   public render() {

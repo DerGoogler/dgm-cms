@@ -1,7 +1,7 @@
 import * as React from "react";
 import { hot } from "react-hot-loader/root";
-import { CooldownInterface } from "../misc/others/d/interface";
-import { typeCheck } from "./../misc/others/tools";
+import { CooldownInterface } from "../d/interface";
+import { typeCheck } from "../misc/tools";
 
 class Cooldown extends React.Component<CooldownInterface> {
   public state = {

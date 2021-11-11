@@ -1,7 +1,7 @@
 import * as React from "react";
 import { hot } from "react-hot-loader/root";
-import { FakeTweetInterface } from "../misc/others/d/interface";
-import { typeCheck } from "../misc/others/tools";
+import { FakeTweetInterface } from "../d/interface";
+import { typeCheck } from "../misc/tools";
 import { Tweet } from "react-fake-tweet";
 import * as htmlToImage from "html-to-image";
 import { saveAs } from "file-saver";

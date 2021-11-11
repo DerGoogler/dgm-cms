@@ -1,7 +1,7 @@
 import * as React from "react";
 import { hot } from "react-hot-loader/root";
-import { AudioInterface } from "../misc/others/d/interface";
-import { typeCheck } from "../misc/others/tools";
+import { AudioInterface } from "../d/interface";
+import { typeCheck } from "../misc/tools";
 import { UnControlled as CodeMirror } from "react-codemirror2";
 import "codemirror/mode/markdown/markdown";
 import "codemirror/mode/javascript/javascript";

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { hot } from "react-hot-loader/root";
-import { OnClickInterface } from "../misc/others/d/interface";
+import { OnClickInterface } from "../d/interface";
 
 class Click extends React.Component<OnClickInterface> {
   public render() {

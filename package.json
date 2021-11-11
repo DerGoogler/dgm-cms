@@ -1,13 +1,22 @@
 {
   "name": "dgm-cms",
-  "version": "1.1.0",
-  "description": "",
+  "version": "1.2.0",
+  "description": "Static CMS that's supports better Markdown",
   "main": "index.tsx",
-  "keywords": [],
-  "author": "",
-  "license": "GPL-3.0 License",
+  "repository": "DerGoogler/dgm-cms",
+  "keywords": [
+    "cms",
+    "website",
+    "seo",
+    "content-management-system"
+  ],
+  "author": {
+    "name": "Der_Googler",
+    "email": "jimmyboehm@dergoogler.com",
+    "url": "https://dergoogler.com"
+  },
+  "license": "gpl-3.0",
   "scripts": {
-    "push": "git push -f --set-upstream origin master",
     "clean": "rm dist/bundle.js",
     "install-dep": "npm i @babel/preset-env @babel/preset-react @hot-loader/react-dom react-hot-loader --no-bin-links",
     "build-dev": "webpack --mode development",
@@ -56,7 +65,7 @@
     "@babel/preset-react": "^7.12.7",
     "@hot-loader/react-dom": "^17.0.1+4.13.0",
     "@types/codemirror": "^5.60.5",
-    "@types/react": "^17.0.11",
+    "@types/react": "^17.0.31",
     "@types/react-document-meta": "^3.0.1",
     "@types/react-dom": "^17.0.7",
     "babel-loader": "^8.2.2",

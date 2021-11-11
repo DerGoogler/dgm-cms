@@ -1,7 +1,7 @@
 import * as React from "react";
 import { hot } from "react-hot-loader/root";
-import { DownloadInterface } from "../misc/others/d/interface";
-import { download, typeCheck } from "./../misc/others/tools";
+import { DownloadInterface } from "../d/interface";
+import { download, typeCheck } from "../misc/tools";
 
 class Download extends React.Component<DownloadInterface> {
   public render() {

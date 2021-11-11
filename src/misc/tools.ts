@@ -32,13 +32,28 @@ export function getUrlParamHash(param: string) {
  * Checks if an `undefined`, `null` or `""` returns.
  * @param type The data thats should checked
  * @param outer The data thats shoulds return on fail
- * @returns
+ * @returns type
  */
 export function typeCheck(type: any, outer?: any) {
   if (type === undefined || type === null || type === "") {
     return outer;
   } else {
     return type;
+  }
+}
+
+/**
+ * Inline if satement
+ * @param vaule
+ * @param IF
+ * @param ELSE
+ * @returns
+ */
+export function typeIf(value: any, IF: any, ELSE: any) {
+  if (value) {
+    return IF;
+  } else {
+    return ELSE;
   }
 }
 
@@ -171,4 +186,17 @@ export function getText(url: string, callback?: Function) {
       }
     }
   });
+}
+
+export function validURL(str: string) {
+  var pattern = new RegExp(
+    "^(https?:\\/\\/)?" + // protocol
+      "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name
+      "((\\d{1,3}\\.){3}\\d{1,3}))" + // OR ip (v4) address
+      "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" + // port and path
+      "(\\?[;&a-z\\d%_.~+=-]*)?" + // query string
+      "(\\#[-a-z\\d_]*)?$",
+    "i"
+  ); // fragment locator
+  return !!pattern.test(str);
 }
