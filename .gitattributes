@@ -58,6 +58,7 @@ Dockerfile        text
 *.markdown        text diff=markdown
 *.md              text diff=markdown
 *.dgm             text diff=markdown
+*.dgm             linguist-language=markdown
 *.mdwn            text diff=markdown
 *.mdown           text diff=markdown
 *.mkd             text diff=markdown
