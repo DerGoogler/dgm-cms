@@ -153,3 +153,17 @@ Full screen video
 - controls
 
 ---
+
+## ProjectCard
+
+```tsx
+<ProjectCard title="DGM-CMS" href="https://github.com/DerGoogler/dgm-cms">
+  An CMS that runs with React TS! Uses [Onsen UI](https://onsen.io/) and [React
+  Bootstrap](https://react-bootstrap.github.io/)
+</ProjectCard>
+```
+
+### `Defaults`
+
+- target
+- buttonText
