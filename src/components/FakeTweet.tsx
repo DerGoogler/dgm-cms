@@ -8,6 +8,7 @@ import { saveAs } from "file-saver";
 import "react-fake-tweet/dist/index.css";
 import ons from "onsenui";
 import { Button } from "react-onsenui";
+import config from "./../config";
 
 class FakeTweet extends React.Component<FakeTweetInterface> {
   private makeDownload = React.createRef<FakeTweet>();
@@ -39,10 +40,7 @@ class FakeTweet extends React.Component<FakeTweetInterface> {
         <Tweet
           config={{
             user: {
-              avatar: typeCheck(
-                avatar,
-                "https://avatars.githubusercontent.com/u/54764558?v=4"
-              ),
+              avatar: typeCheck(avatar, config.base.defaultFavicon),
               nickname: typeCheck(nickname, "Der_Googler"),
               name: typeCheck(name, "Jimmy"),
               verified: typeCheck(verified, false),

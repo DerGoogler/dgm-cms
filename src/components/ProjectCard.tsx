@@ -1,20 +1,24 @@
 import * as React from "react";
-import ons from "onsenui";
 import { hot } from "react-hot-loader/root";
 import { ProjectCardInterface } from "../d/interface";
-import { typeCheck, validURL } from "../misc/tools";
+import { typeCheck } from "../misc/tools";
 import Card from "react-bootstrap/Card";
 import string from "../misc/strings";
 import { Button } from "react-onsenui";
 
 class ProjectCard extends React.Component<ProjectCardInterface> {
   public render() {
-    const { title, href, children, target, buttonText } = this.props;
+    const { title, href, children, target, buttonText, language } = this.props;
     return (
       <>
         <Card
           className="text-center"
-          style={{ margin: "0px", marginTop: "8px", marginBottom: "8px" }}
+          style={{
+            margin: "0px",
+            marginTop: "8px",
+            marginBottom: "8px",
+            padding: "0px",
+          }}
         >
           <Card.Body>
             <Card.Title>{title}</Card.Title>
@@ -27,6 +31,9 @@ class ProjectCard extends React.Component<ProjectCardInterface> {
               {typeCheck(buttonText, string.view_project)}
             </Button>
           </Card.Body>
+          <Card.Footer className="text-muted">
+            {typeCheck(language, string.no_project_language)}
+          </Card.Footer>
         </Card>
       </>
     );

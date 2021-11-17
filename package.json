@@ -1,6 +1,6 @@
 {
   "name": "dgm-cms",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Static CMS that's supports better Markdown",
   "main": "index.tsx",
   "repository": "DerGoogler/dgm-cms",
@@ -45,6 +45,7 @@
     "onsenui": "^2.11.2",
     "react": "^16.14.0",
     "react-bootstrap": "^2.0.0-beta.6",
+    "react-changelog": "^1.1.1",
     "react-codemirror2": "^7.2.1",
     "react-device-detect": "^1.17.0",
     "react-document-meta": "^3.0.0-beta.2",
@@ -60,7 +61,7 @@
     "universal-cookie": "^4.0.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9",
+    "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.12.7",
     "@babel/preset-react": "^7.12.7",
     "@hot-loader/react-dom": "^17.0.1+4.13.0",
@@ -68,13 +69,14 @@
     "@types/react": "^17.0.31",
     "@types/react-document-meta": "^3.0.1",
     "@types/react-dom": "^17.0.7",
-    "babel-loader": "^8.2.2",
+    "babel-loader": "^8.2.3",
+    "babel-preset-react-app": "^10.0.0",
     "css-loader": "^5.2.5",
     "favicons": "^6.2.2",
     "favicons-webpack-plugin": "^5.0.2",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
-    "javascript-obfuscator": "^2.19.0",
+    "javascript-obfuscator": "^0.6.2",
     "less-loader": "^9.0.0",
     "postcss-loader": "^5.3.0",
     "sass": "^1.42.1",
@@ -85,7 +87,7 @@
     "url-loader": "^4.1.1",
     "webpack": "^5.57.0",
     "webpack-cli": "^4.2.0",
-    "webpack-dev-server": "^3.11.0",
-    "webpack-obfuscator": "^3.4.1"
+    "webpack-dev-server": "^4.5.0",
+    "webpack-obfuscator": "^0.6.2"
   }
 }

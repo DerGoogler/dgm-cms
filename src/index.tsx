@@ -1,7 +1,6 @@
 import "onsenui/css/onsenui.css";
-import "onsenui/css/onsen-css-components.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./styles/styles.custom.css";
+import "./styles/onsen-css-components.css";
 import "./styles/banned.screen.css";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
@@ -16,9 +15,7 @@ import {
   isSafari,
   isMobileSafari,
   isAndroid,
-  isDesktop,
 } from "react-device-detect";
-import Desktop from "./desktop/Desktop";
 
 class index {
   private mountNode = document.getElementById("app");
@@ -67,22 +64,12 @@ class index {
     }
   }
 
-  private loadAndroid(mount: any) {
+  private loadContent(mount: any) {
     ReactDOM.render(<App />, mount);
   }
 
-  private loadDesktop(mount: any) {
-    ReactDOM.render(<Desktop />, mount);
-  }
-
   public init() {
-    this.checkDevice(() => {
-      if (isDesktop) {
-        this.loadDesktop(this.mountNode);
-      } else {
-        this.loadAndroid(this.mountNode);
-      }
-    });
+    this.loadContent(this.mountNode);
   }
 }
 

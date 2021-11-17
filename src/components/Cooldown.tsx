@@ -43,15 +43,7 @@ class Cooldown extends React.Component<CooldownInterface> {
   };
 
   public render() {
-    return (
-      <span
-        onClick={() => {
-          eval(this.props.click);
-        }}
-      >
-        {this.state.cooldown}
-      </span>
-    );
+    return <>{this.state.cooldown}</>;
   }
 }
 

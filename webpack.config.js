@@ -4,11 +4,7 @@ const path = require("path");
 // const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const config = {
-  entry: [
-    "react-hot-loader/patch",
-    "./src/index.tsx",
-    "./src/libs/index.tsx",
-  ],
+  entry: ["react-hot-loader/patch", "./src/index.tsx", "./src/libs/index.tsx"],
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
@@ -53,11 +49,6 @@ const config = {
     alias: {
       "react-dom": "@hot-loader/react-dom",
     },
-  },
-  devServer: {
-    port: 9950,
-    contentBase: "./dist",
-    writeToDisk: true,
   },
 };
 

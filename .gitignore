@@ -4,6 +4,7 @@ coverage/
 dist/*
 pages/*
 !pages/home.dgm
+!pages/config*
 node_modules/
 *.log
 

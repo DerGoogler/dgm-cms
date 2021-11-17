@@ -142,6 +142,40 @@ class tools {
       });
   }
 
+  public getHeaderContent(callback: Function) {
+    axios
+      .get(
+        config.base.slug +
+          config.base.configPath +
+          "/" +
+          config.base.defaultHeaderFile +
+          config.base.file
+      )
+      .then((res) => {
+        const data = res.data;
+        if (typeof callback == "function") {
+          callback(data);
+        }
+      });
+  }
+
+  public getFooterContent(callback: Function) {
+    axios
+      .get(
+        config.base.slug +
+          config.base.configPath +
+          "/" +
+          config.base.defaultFooterFile +
+          config.base.file
+      )
+      .then((res) => {
+        const data = res.data;
+        if (typeof callback == "function") {
+          callback(data);
+        }
+      });
+  }
+
   public clickImprovePage() {
     if (window.location.hash === "") {
       if (window.location.search === "") {
@@ -178,6 +212,14 @@ class tools {
         );
       }
     }
+  }
+  public parseDGMarkdown(content: string) {
+    const compile = content
+      .replace(/\{#([\s\S]*?)#\}/gim, "<$1>")
+      .replace(/\{#\/([\s\S]*?)#\}/gim, "</$1>")
+      .replace(/\/\/\/ (.*$)/gim, "");
+
+    return compile.trim();
   }
 }
 

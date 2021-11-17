@@ -1,18 +1,21 @@
 import * as React from "react";
+import { isDesktop } from "react-device-detect";
 import { hot } from "react-hot-loader/root";
 import { VideoInterface } from "../d/interface";
-import { typeCheck } from "../misc/tools";
+import { typeCheck, typeIf } from "../misc/tools";
 
 class Video extends React.Component<VideoInterface> {
   public render() {
-    const { src, type, controls, noSupportText, style } = this.props;
+    const { src, type, controls, noSupportText, style, poster } = this.props;
     const videoStyle = {
       width: "100%",
+      height: typeIf(isDesktop, "445px", "181.500px"),
       borderRadius: "8px",
     };
 
     const youtubeStyle = {
       width: "100%",
+      height: typeIf(isDesktop, "445px", "181.500px"),
       border: "none",
       borderRadius: "8px",
     };
@@ -36,6 +39,7 @@ class Video extends React.Component<VideoInterface> {
         <video
           style={typeCheck(style, videoStyle)}
           controls={typeCheck(controls, true)}
+          poster={poster}
         >
           <source src={src} type={typeCheck(type, "video/mp4")} />
           {typeCheck(

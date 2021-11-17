@@ -1,6 +1,7 @@
 import { saveAs } from "file-saver";
 import chalk from "chalk";
 import axios from "axios";
+import config from "../config";
 
 /**
  * To call the files from the local (`/pages/home.dgm`).
@@ -136,35 +137,35 @@ export function logger(color: string, data: string | any) {
   const g = chalk;
   const data_ = data + " ";
   if (color === "") {
-    throw new Error('The "error()" function neds an color');
+    throw new Error('The "logger()" function neds an color');
   } else {
     switch (color) {
       case "red":
-        g.red(data_);
+        console.log(g.red(data_));
         break;
       case "yellow":
-        g.yellow(data_);
+        console.log(g.yellow(data_));
         break;
       case "green":
-        g.green(data_);
+        console.log(g.green(data_));
         break;
       case "white":
-        g.white(data_);
+        console.log(g.white(data_));
         break;
       case "blue":
-        g.blue(data_);
+        console.log(g.blue(data_));
         break;
       case "gray":
-        g.gray(data_);
+        console.log(g.gray(data_));
         break;
       case "underline":
-        g.underline(data_);
+        console.log(g.underline(data_));
         break;
       case "greenBright":
-        g.greenBright(data_);
+        console.log(g.greenBright(data_));
         break;
       case "keyword":
-        g.keyword(data_);
+        console.log(g.keyword(data_));
         break;
     }
   }
@@ -199,4 +200,24 @@ export function validURL(str: string) {
     "i"
   ); // fragment locator
   return !!pattern.test(str);
+}
+
+export function loadSourceFile(filename: string, filetype: string) {
+  var fileref: HTMLElement | null;
+  if (filetype == "js") {
+    // If filename is a external JavaScript file
+    if ((fileref = document.createElement("script"))) {
+      fileref.setAttribute("type", "text/javascript");
+      fileref.setAttribute("src", filename);
+    }
+  } else if (filetype == "css") {
+    // If filename is an external CSS file
+    if ((fileref = document.createElement("link"))) {
+      fileref.setAttribute("rel", "stylesheet");
+      fileref.setAttribute("type", "text/css");
+      fileref.setAttribute("href", filename);
+    }
+  }
+  // if (typeof fileref != "undefined")
+  //  document.getElementsByTagName("head")[0].appendChild(fileref);
 }

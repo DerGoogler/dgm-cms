@@ -1,0 +1,12 @@
+<!-- Only in version 1.2.0 -->
+
+<ListHeader>Site Manager</ListHeader>
+<ListItem href="https://github.com/DerGoogler" modifier="chevron" tappable>
+
+<div class="left">
+<img class="list-item__thumbnail" src="https://avatars.githubusercontent.com/u/54764558?v=4">
+</div>
+<div class="center">
+<span class="list-item__title">Der_Googler</span><span class="list-item__subtitle">Hobby Programmer</span>
+</div>
+</ListItem>

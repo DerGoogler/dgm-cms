@@ -19,6 +19,9 @@
 Create easy an cooldown for some events<br>
 <Badge bg="primary"><Cooldown click="alert('lol')" date="Jan 5, 2022 15:37:25"/></Badge>
 
+<OpenPage>LOL</OpenPage>
+
+
 # Fake Tweet with Cooldown
 
 <Click click="alert('your\'e gay rn')">
@@ -43,10 +46,10 @@ Create easy an cooldown for some events<br>
 </div>
 
 # Projrcts
-
+/// This is an comment
 <ProjectCard
   title="Tips & Tricks for Gatsby"
-  href="https://www.lekoarts.de/gatsby/tips-and-tricks-for-gatsby?utm_source=cara&utm_medium=Theme"
+  href="https://www.lekoarts.de/gatsby/tips-and-tricks-for-gatsby?utm_source=cara&utm_medium=Theme" language="Brainfuck, JavaScript"
 >
   A collection of short, but useful quick tips shared by me and the community
   about Gatsby. From GraphQL over local development to deployment.

@@ -3,6 +3,7 @@
 Static CMS that's supports better Markdown
 
 Join the Telegram [channel](https://t.me/dergoogler) for news.
+
 - [Changelog](https://github.com/DerGoogler/dgm-cms/blob/master/CHANGELOG.md)
 
 ## Installation
@@ -16,6 +17,16 @@ You need to have NPM installed!
 # Page
 
 View the [components](https://github.com/DerGoogler/dgm-cms/blob/master/COMPONENTS.md)
+
+### How to make a custom theme?
+
+- Go to https://onsen.io/theme-roller/?customize
+- Make your theme and download
+- Embed your custom file to the `index.html`
+
+```html
+<link rel="stylesheet" href="onsen-css-components.css" />
+```
 
 # Create Page with `<Options/>`
 
