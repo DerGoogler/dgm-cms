@@ -4,7 +4,7 @@ import { isAndroid } from "react-device-detect";
 import ons from "onsenui";
 import { hot } from "react-hot-loader/root";
 import Cookies from "universal-cookie";
-import { typeCheck } from "../misc/tools";
+import { getCookie, typeCheck } from "../misc/tools";
 import config from "../config";
 import { override } from "../overrides/drawerMarkdown.overrides";
 import string from "../misc/strings";
@@ -36,7 +36,7 @@ class Drawer extends React.Component {
       <Toolbar>
         <div className="center">
           {typeCheck(
-            new Cookies().get("title"),
+            getCookie("title"),
             `NoTitle${config.base.afterTitle}`
           ).replace(config.base.afterTitle, "")}
         </div>

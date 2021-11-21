@@ -4,8 +4,8 @@ import { hot } from "react-hot-loader/root";
 import Cookies from "universal-cookie";
 import Markdown from "markdown-to-jsx";
 import { MarkdownContentInterface } from "../d/interface";
-import { isAndroid, isDesktop } from "react-device-detect";
-import { override } from "../overrides/markdown.overrides";
+import { isDesktop } from "react-device-detect";
+import override from "../overrides/markdown.overrides";
 import { overrideHeader } from "../overrides/headerMarkdown.overrides";
 import { overrideFooter } from "../overrides/footerMarkdown.overrides";
 import "./../styles/github-markdown.css";
@@ -27,7 +27,8 @@ class MarkdownContent extends React.Component<MarkdownContentInterface> {
         >
           <article
             className={typeIf(isDesktop, "markdown-body_", "markdown-body")}
-          >
+          >{/*
+          // @ts-ignore */}
             <Markdown options={override}>
               {new tools().parseDGMarkdown(data)}
             </Markdown>

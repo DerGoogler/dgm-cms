@@ -1,1 +1,16 @@
+<style>
+    .giscus {
+        padding: 8px;
+    }
+</style>
+
 <DiscordWidget token="753360232515764255" theme="light"/>
+<Comments />
+
+<footer class="footer mt-auto py-3 bg-light">
+    <center>
+        <span class="text-muted">
+            Place sticky footer content here.
+        </span>
+    </center>
+</footer>

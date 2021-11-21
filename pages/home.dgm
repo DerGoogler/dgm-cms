@@ -1,8 +1,11 @@
 <Options
   title="Hello"
+  renderPlain="https://raw.githubusercontent.com/Maccraft123/Cadmium/master/README.md"
 />
 
 # Alert & Modal
+
+[Hello](/dist/?/lol/)
 
 <Alert class="shake" title="Hello World!" message="This is an example\n" cancelable="true">Open</Alert>
 
@@ -19,14 +22,14 @@
 Create easy an cooldown for some events<br>
 <Badge bg="primary"><Cooldown click="alert('lol')" date="Jan 5, 2022 15:37:25"/></Badge>
 
-<OpenPage>LOL</OpenPage>
-
+```js
+console.log("Hello World!");
+```
 
 # Fake Tweet with Cooldown
 
-<Click click="alert('your\'e gay rn')">
-<FakeTweet text={<Cooldown date="Jan 5, 2022 15:37:25"/>} app={<Translate de="Twitter für Android" en="Twitter for Android"/>}/>
-</Click>
+
+<FakeTweet text={<Cooldown date="Jan 5, 2022 15:37:25" enableDownload="true"/>} app={<Translate de="Twitter für Android" en="Twitter for Android"/>}/>
 
 # Badges
 

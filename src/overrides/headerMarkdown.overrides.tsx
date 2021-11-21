@@ -1,15 +1,10 @@
 import { Alert, Carousel } from "react-bootstrap";
-import { List, ListHeader, Switch } from "react-onsenui";
-import ListItem from "../components/ListItem";
 import NewsColorCard from "../components/NewsColorCard";
-import SourceFileLoader from "../components/SourceFileLoader";
+import StyleLoader from "../components/StyleLoader";
 
 export const overrideHeader = {
   overrides: {
     // Page options
-    SourceFileLoader: {
-      component: SourceFileLoader,
-    },
     Carousel: {
       component: Carousel,
     },
@@ -24,6 +19,9 @@ export const overrideHeader = {
     },
     NewsColorCard: {
       component: NewsColorCard,
+    },
+    StyleLoader: {
+      component: StyleLoader,
     },
   },
 };

@@ -1,6 +1,6 @@
 import { List, ListHeader, Switch } from "react-onsenui";
 import DiscordWidget from "../components/DiscordWidget";
-import ListItem from "../components/ListItem";
+import ListItem from "../components/ListView";
 
 export const override = {
   overrides: {

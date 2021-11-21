@@ -10,20 +10,7 @@ import config from "../config";
  */
 export function getUrlParam(param: string) {
   param = param.replace(/([\[\](){}*?+^$.\\|])/g, "\\$1");
-  var regex = new RegExp("[?]" + param + "/([^&#]*)/");
-  var url = decodeURIComponent(window.location.href);
-  var match = regex.exec(url);
-  return match ? match[1] : "";
-}
-
-/**
- * To call the user files in the **Storage Less** Service (`https://dergoogler.com/#u/DerGoogler/&p/love/`).
- * @param param `/#/`
- * @returns
- */
-export function getUrlParamHash(param: string) {
-  param = param.replace(/([\[\](){}*?+^$.\\|])/g, "\\$1");
-  var regex = new RegExp("[#&]" + param + "/([^&#]*)/");
+  var regex = new RegExp("[?&]" + param + "/([^&#]*)/");
   var url = decodeURIComponent(window.location.href);
   var match = regex.exec(url);
   return match ? match[1] : "";
@@ -189,19 +176,6 @@ export function getText(url: string, callback?: Function) {
   });
 }
 
-export function validURL(str: string) {
-  var pattern = new RegExp(
-    "^(https?:\\/\\/)?" + // protocol
-      "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name
-      "((\\d{1,3}\\.){3}\\d{1,3}))" + // OR ip (v4) address
-      "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" + // port and path
-      "(\\?[;&a-z\\d%_.~+=-]*)?" + // query string
-      "(\\#[-a-z\\d_]*)?$",
-    "i"
-  ); // fragment locator
-  return !!pattern.test(str);
-}
-
 export function loadSourceFile(filename: string, filetype: string) {
   var fileref: HTMLElement | null;
   if (filetype == "js") {
@@ -220,4 +194,32 @@ export function loadSourceFile(filename: string, filetype: string) {
   }
   // if (typeof fileref != "undefined")
   //  document.getElementsByTagName("head")[0].appendChild(fileref);
+}
+
+/**
+ * Save the entered data to the local storage
+ * @param key
+ * @param value
+ * @param errorCallback
+ */
+export function setCookie(key: string, value: any) {
+  localStorage.setItem(key, value);
+}
+
+/**
+ * Get the entered data from the local storage
+ * @param key
+ * @param errorCallback
+ */
+export function getCookie(key: string) {
+  return localStorage.getItem(key);
+}
+
+/**
+ * Removes the entered cookie from the local storage
+ * @param key
+ * @param errorCallback
+ */
+export function removeCookie(key: string) {
+  localStorage.removeItem(key);
 }

@@ -1,3 +1,4 @@
+import { hot } from "react-hot-loader/root";
 import Options from "../components/Options";
 import Header from "../components/Header";
 import Cooldown from "../components/Cooldown";
@@ -8,7 +9,6 @@ import Audio from "../components/Audio";
 import Frame from "../components/Frame";
 import A from "../components/A";
 import ProjectCard from "../components/ProjectCard";
-import Code from "../components/Code";
 import Download from "../components/Download";
 import Click from "../components/OnClick";
 import Translate from "../components/Translate";
@@ -18,8 +18,9 @@ import Badge from "react-bootstrap/Badge";
 import Alert from "react-bootstrap/Alert";
 import DiscordWidget from "../components/DiscordWidget";
 import NewsColorCard from "../components/NewsColorCard";
+import Aropdown from "../components/Aropdown";
 
-export const override = {
+const override = {
   overrides: {
     // HTML dom components
     video: {
@@ -53,6 +54,9 @@ export const override = {
     XHR: {
       component: XHR,
     },
+    Text: {
+      component: Text,
+    },
     Badge: {
       component: Badge,
     },
@@ -64,9 +68,6 @@ export const override = {
     },
     Frame: {
       component: Frame,
-    },
-    Code: {
-      component: Code,
     },
     Download: {
       component: Download,
@@ -92,5 +93,10 @@ export const override = {
     NewsColorCard: {
       component: NewsColorCard,
     },
+    Aropdown: {
+      component: Aropdown,
+    },
   },
 };
+
+export default hot(override);

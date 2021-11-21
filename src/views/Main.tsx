@@ -12,7 +12,7 @@ import { isIE, isIOS, isSafari, isMobileSafari } from "react-device-detect";
 import ons from "onsenui";
 import { hot } from "react-hot-loader/root";
 import Cookies from "universal-cookie";
-import { typeCheck } from "../misc/tools";
+import { getCookie, typeCheck } from "../misc/tools";
 import config from "../config";
 import MarkdownContent from "../misc/MarkdownContent";
 import string from "../misc/strings";
@@ -28,9 +28,16 @@ class Main extends React.Component<{ navigator: any }> {
   };
 
   public componentDidMount() {
-    new tools().getMarkdownData((data: any) => {
-      this.setState({ data: data });
-    });
+    new tools().getMarkdownData(
+      (data: any) => {
+        this.setState({ data: data });
+      },
+      (error: any, link: string) => {
+        this.setState({
+          data: `The link ${link} has been not found! Error ${error.response.status}`,
+        });
+      }
+    );
 
     new tools().getHeaderContent((data: any) => {
       this.setState({ headerData: data });
@@ -59,7 +66,7 @@ class Main extends React.Component<{ navigator: any }> {
         </div>
         <div className="center">
           {typeCheck(
-            new Cookies().get("title"),
+            getCookie("title"),
             `NoTitle${config.base.afterTitle}`
           ).replace(config.base.afterTitle, "")}
         </div>

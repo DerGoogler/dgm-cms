@@ -1,11 +1,13 @@
-import { List, ListHeader, Switch } from "react-onsenui";
+import Comments from "../components/Comments";
 import DiscordWidget from "../components/DiscordWidget";
-import ListItem from "../components/ListItem";
 
 export const overrideFooter = {
   overrides: {
     DiscordWidget: {
       component: DiscordWidget,
+    },
+    Comments: {
+      component: Comments,
     },
   },
 };

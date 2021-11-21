@@ -2,12 +2,13 @@ import "onsenui/css/onsenui.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/onsen-css-components.css";
 import "./styles/banned.screen.css";
+import "./styles/styles.custom.css";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import ons from "onsenui";
 import eruda from "eruda";
 import App from "./App";
-import { download, logger } from "./misc/tools";
+import { download, logger, setCookie } from "./misc/tools";
 import config from "./config";
 import {
   isIE,
