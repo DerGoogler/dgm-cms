@@ -4,11 +4,21 @@ const path = require("path");
 // const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const config = {
-  entry: ["react-hot-loader/patch", "./src/index.tsx", "./src/libs/index.tsx"],
+  entry: {
+    shared: ["react-hot-loader/patch"],
+    index: {
+      import: "./src/index.tsx",
+      dependOn: "shared",
+    },
+    editor: {
+      import: "./src/libs/editor/index.tsx",
+      dependOn: "shared",
+    },
+  },
+
   output: {
+    filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
-    library: "dgm",
   },
 
   module: {
@@ -28,11 +38,16 @@ const config = {
         use: ["style-loader", "css-loader", "postcss-loader"],
       },
       {
+        test: /\.s[ac]ss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
         test: /\.(png|woff|woff2|eot|ttf|svg)$/,
         use: "url-loader?limit=100000",
       },
     ],
   },
+
   resolveLoader: {
     modules: [
       "node_modules",
@@ -45,7 +60,9 @@ const config = {
       "node_modules",
       path.join(process.env.NPM_CONFIG_PREFIX || __dirname, "lib/node_modules"),
     ],
+
     extensions: [".ts", ".tsx", ".js", ".jsx"],
+
     alias: {
       "react-dom": "@hot-loader/react-dom",
     },

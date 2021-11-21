@@ -11,7 +11,6 @@ import {
 import { isIE, isIOS, isSafari, isMobileSafari } from "react-device-detect";
 import ons from "onsenui";
 import { hot } from "react-hot-loader/root";
-import Cookies from "universal-cookie";
 import { getCookie, typeCheck } from "../misc/tools";
 import config from "../config";
 import MarkdownContent from "../misc/MarkdownContent";
@@ -19,7 +18,7 @@ import string from "../misc/strings";
 import tools from "../misc/private.tools";
 import Drawer from "./Drawer";
 
-class Main extends React.Component<{ navigator: any }> {
+class Main extends React.Component {
   public state = {
     isDrawerOpen: config.options.drawer.isDrawerOpen,
     data: "",

@@ -116,49 +116,6 @@ export function errorReport(check: Function, callback?: Function) {
 }
 
 /**
- * Makes an colorable console texts
- * @param color STRING
- * @param data ANY
- */
-export function logger(color: string, data: string | any) {
-  const g = chalk;
-  const data_ = data + " ";
-  if (color === "") {
-    throw new Error('The "logger()" function neds an color');
-  } else {
-    switch (color) {
-      case "red":
-        console.log(g.red(data_));
-        break;
-      case "yellow":
-        console.log(g.yellow(data_));
-        break;
-      case "green":
-        console.log(g.green(data_));
-        break;
-      case "white":
-        console.log(g.white(data_));
-        break;
-      case "blue":
-        console.log(g.blue(data_));
-        break;
-      case "gray":
-        console.log(g.gray(data_));
-        break;
-      case "underline":
-        console.log(g.underline(data_));
-        break;
-      case "greenBright":
-        console.log(g.greenBright(data_));
-        break;
-      case "keyword":
-        console.log(g.keyword(data_));
-        break;
-    }
-  }
-}
-
-/**
  * Gets an text from an xhr request
  * @param url
  * @param callback
@@ -176,31 +133,10 @@ export function getText(url: string, callback?: Function) {
   });
 }
 
-export function loadSourceFile(filename: string, filetype: string) {
-  var fileref: HTMLElement | null;
-  if (filetype == "js") {
-    // If filename is a external JavaScript file
-    if ((fileref = document.createElement("script"))) {
-      fileref.setAttribute("type", "text/javascript");
-      fileref.setAttribute("src", filename);
-    }
-  } else if (filetype == "css") {
-    // If filename is an external CSS file
-    if ((fileref = document.createElement("link"))) {
-      fileref.setAttribute("rel", "stylesheet");
-      fileref.setAttribute("type", "text/css");
-      fileref.setAttribute("href", filename);
-    }
-  }
-  // if (typeof fileref != "undefined")
-  //  document.getElementsByTagName("head")[0].appendChild(fileref);
-}
-
 /**
  * Save the entered data to the local storage
  * @param key
  * @param value
- * @param errorCallback
  */
 export function setCookie(key: string, value: any) {
   localStorage.setItem(key, value);
@@ -209,16 +145,20 @@ export function setCookie(key: string, value: any) {
 /**
  * Get the entered data from the local storage
  * @param key
- * @param errorCallback
  */
 export function getCookie(key: string) {
-  return localStorage.getItem(key);
+  var item: any = localStorage.getItem(key);
+  if (item === null || item === undefined) {
+    localStorage.setItem(key, "");
+    location.reload();
+  } else {
+    return item;
+  }
 }
 
 /**
  * Removes the entered cookie from the local storage
  * @param key
- * @param errorCallback
  */
 export function removeCookie(key: string) {
   localStorage.removeItem(key);

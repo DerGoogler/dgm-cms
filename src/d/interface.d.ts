@@ -6,8 +6,8 @@ export interface StylesDictionary {
 
 export interface MarkdownContentInterface {
   data: any;
-  headerData: any;
-  footerData: any;
+  headerData?: any;
+  footerData?: any;
 }
 
 export interface GitHubInterface {

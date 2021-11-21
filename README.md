@@ -14,6 +14,16 @@ You need to have NPM installed!
 - `npm run build-dev` or `npm run build-prod`
 - launch any `localhost` or Live Server from VS Code
 
+## Use with out Build
+
+Put these scripts on the html file bottom
+
+```html
+<div id="app"></div>
+<script src="https://cdn.dergoogler.com/others/dgm-cms/index.bundle.js"></script>
+<script src="https://cdn.dergoogler.com/others/dgm-cms/shared.bundle.js"></script>
+```
+
 # Page
 
 View the [components](https://github.com/DerGoogler/dgm-cms/blob/master/COMPONENTS.md)
@@ -22,10 +32,10 @@ View the [components](https://github.com/DerGoogler/dgm-cms/blob/master/COMPONEN
 
 - Go to https://onsen.io/theme-roller/?customize
 - Make your theme and download
-- Embed your custom file to the `index.html`
+- Embed your custom file to the `header.dgm`
 
 ```html
-<link rel="stylesheet" href="onsen-css-components.css" />
+<StyleLoader src="onsen-css-components.css" />
 ```
 
 # Create Page with `<Options/>`
@@ -43,3 +53,16 @@ See [home.dgm](https://github.com/DerGoogler/dgm-cms/blob/master/pages/home.dgm)
 ```
 
 ---
+
+# Editor
+
+The new editor makes the testings and buildings easy!
+
+### Features
+
+- Basic Markdown code highlighing
+- All custom components from DGM-CMS
+- Header and Footer editor
+- `<StyleLoader />` works also in the header editor
+
+View the editor [here!](https://dergoogler.com/editor/)

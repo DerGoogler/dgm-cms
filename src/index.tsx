@@ -8,7 +8,7 @@ import * as ReactDOM from "react-dom";
 import ons from "onsenui";
 import eruda from "eruda";
 import App from "./App";
-import { download, logger, setCookie } from "./misc/tools";
+import { download, setCookie } from "./misc/tools";
 import config from "./config";
 import {
   isIE,
@@ -23,6 +23,7 @@ class index {
   private iOS: string = "https://www.apple.com/";
   private iE: string = "https://www.google.com/chrome/";
   private platform: any = ons.platform;
+  private element!: HTMLElement | null;
 
   public constructor(platform = config.base.platform) {
     this.platform.select(platform);
@@ -44,7 +45,8 @@ class index {
         "In this pages was an error detected, please view in the console to report the error!"
       );
       console.info(
-        logger("red", "ERROR") + "Eruda can't opened, you're not on Android!"
+        console.log("red", "ERROR") +
+          "Eruda can't opened, you're not on Android!"
       );
     }
   }

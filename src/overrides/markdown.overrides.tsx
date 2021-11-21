@@ -20,7 +20,7 @@ import DiscordWidget from "../components/DiscordWidget";
 import NewsColorCard from "../components/NewsColorCard";
 import Aropdown from "../components/Aropdown";
 
-const override = {
+export const override = {
   overrides: {
     // HTML dom components
     video: {
@@ -53,9 +53,6 @@ const override = {
     },
     XHR: {
       component: XHR,
-    },
-    Text: {
-      component: Text,
     },
     Badge: {
       component: Badge,
@@ -98,5 +95,3 @@ const override = {
     },
   },
 };
-
-export default hot(override);
