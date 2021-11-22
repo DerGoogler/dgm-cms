@@ -1,6 +1,7 @@
 import { List, ListHeader, Switch } from "react-onsenui";
 import DiscordWidget from "../components/DiscordWidget";
 import ListItem from "../components/ListView";
+import RandomDog from "../components/RandomDog";
 
 export const override = {
   overrides: {
@@ -18,6 +19,9 @@ export const override = {
     },
     DiscordWidget: {
       component: DiscordWidget,
+    },
+    RandomDog: {
+      component: RandomDog,
     },
   },
 };

@@ -13,7 +13,7 @@ class OnsAlert extends React.Component<AlertInterface> {
           style={{ color: "#0076FF", cursor: "pointer" }}
           onClick={() => {
             ons.notification.confirm({
-              message: message,
+              messageHTML: message,
               title: title,
               buttonLabels: ["Ok"],
               animation: "default",

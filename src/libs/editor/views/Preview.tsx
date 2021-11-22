@@ -1,7 +1,6 @@
 import * as React from "react";
 import { hot } from "react-hot-loader/root";
 import MarkdownContent from "../../../misc/MarkdownContent";
-import { getCookie, setCookie, typeCheck } from "../../../misc/tools";
 
 class Preview extends React.Component {
   public state = {

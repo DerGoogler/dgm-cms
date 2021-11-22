@@ -1,10 +1,19 @@
 import { Alert, Carousel } from "react-bootstrap";
+import { hot } from "react-hot-loader/root";
+import Center from "../components/Center";
+import Font from "../components/Font";
 import NewsColorCard from "../components/NewsColorCard";
 import StyleLoader from "../components/StyleLoader";
 
-export const overrideHeader = {
+const overrideHeader = {
   overrides: {
     // Page options
+    font: {
+      component: Font,
+    },
+    center: {
+      component: Center,
+    },
     Carousel: {
       component: Carousel,
     },
@@ -25,3 +34,5 @@ export const overrideHeader = {
     },
   },
 };
+
+export default hot(overrideHeader);

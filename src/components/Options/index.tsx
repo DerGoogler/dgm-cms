@@ -12,7 +12,7 @@ import Favicon from "react-favicon";
 import OptionsInterface from "./interface";
 
 class Options extends React.Component<OptionsInterface> {
-  public componentDidMount() {
+  public componentWillMount() {
     const { title } = this.props;
     const thisTitle = title + config.base.afterTitle;
     document.title = thisTitle;

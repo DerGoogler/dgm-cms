@@ -64,5 +64,7 @@ The new editor makes the testings and buildings easy!
 - All custom components from DGM-CMS
 - Header and Footer editor
 - `<StyleLoader />` works also in the header editor
+- Working `<font>` and `<center>` on newst methods!
+- VS-Code based
 
 View the editor [here!](https://dergoogler.com/editor/)

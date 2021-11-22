@@ -8,24 +8,38 @@ import {
   ToolbarButton,
   Fab,
   Icon,
+  SpeedDial,
+  SpeedDialItem,
 } from "react-onsenui";
 import TabPage from "./builders/TabPage";
 import Preview from "./views/Preview";
 import config from "./../../config";
 import Write from "./builders/Write";
+import { getCookie, removeCookie, typeCheck } from "../../misc/tools";
 
 class App extends React.Component {
   private renderToolbar() {
     return (
       <Toolbar>
-        <div className="center">DGMarkdown</div>
+        <div className="center">
+          DGMarkdown (
+          {typeCheck(
+            getCookie("title"),
+            `NoTitle${config.base.afterTitle}`
+          ).replace(config.base.afterTitle, "")}
+          )
+        </div>
         <div className="right">
           <ToolbarButton
+            modifier="materialFontSize20"
             onClick={() => {
-              location.reload();
+              window.open(
+                "https://github.com/DerGoogler/dgm-cms/blob/master/COMPONENTS.md",
+                "_blank"
+              );
             }}
           >
-            Update
+            Components
           </ToolbarButton>
         </div>
       </Toolbar>
@@ -82,14 +96,28 @@ class App extends React.Component {
 
   private renderFixed() {
     return (
-      <Fab
-        onClick={() => {
-          location.reload();
-        }}
-        position="bottom right"
-      >
-        <Icon icon="md-refresh" />
-      </Fab>
+      <SpeedDial position="bottom right">
+        <Fab>
+          <Icon icon="md-more" />
+        </Fab>
+        <SpeedDialItem
+          onClick={() => {
+            removeCookie("DGMarkdownValueHome");
+            removeCookie("DGMarkdownValueHeader");
+            removeCookie("DGMarkdownValueFooter");
+            location.reload();
+          }}
+        >
+          <Icon icon="md-delete" />
+        </SpeedDialItem>
+        <SpeedDialItem
+          onClick={() => {
+            location.reload();
+          }}
+        >
+          <Icon icon="md-refresh" />
+        </SpeedDialItem>
+      </SpeedDial>
     );
   }
 

@@ -6,7 +6,7 @@ All components listed are here
 
 ## Options
 
-```tsx
+```html
 <Options
   title="Jimmy"
   description="Hellow World!"
@@ -23,7 +23,7 @@ All components listed are here
 
 ## Alert
 
-```tsx
+```html
 <Alert title="Alert" message="Alert content" />
 ```
 
@@ -35,7 +35,7 @@ All components listed are here
 
 ## Cooldown
 
-```tsx
+```html
 <Cooldown date="Jan 5, 2022 15:37:25" />
 ```
 
@@ -51,7 +51,7 @@ All components listed are here
 
 ## Download (Beta)
 
-```tsx
+```html
 <Download filename="hellow.txt" content="error in line 53" />
 ```
 
@@ -63,8 +63,11 @@ All components listed are here
 
 ## FakeTweet
 
-```tsx
+```html
 <FakeTweet />
+
+<!-- Exprimental -->
+<FakeTweet name={<font color="red">Red text</font>}/>
 ```
 
 ### `Defaults`
@@ -83,15 +86,15 @@ All components listed are here
 
 ## Frame (Beta)
 
-```tsx
-<Frame src="<button>Hellow</button>" />
+```html
+<frame src="<button>Hellow</button>" />
 ```
 
 ---
 
 ## Click
 
-```tsx
+```html
 <Click click="alert('hellow')">
   <FakeTweet />
 </Click>
@@ -101,7 +104,7 @@ All components listed are here
 
 ## Translate (Beta)
 
-```tsx
+```html
 <Translate de="DEUTSCH!" en="English" />
 ```
 
@@ -109,9 +112,39 @@ All components listed are here
 
 ## XHR
 
-```tsx
+```html
 <XHR src="https://example.com/index.txt" />
 ```
+
+---
+
+## ProjectCard
+
+```html
+<ProjectCard title="DGM-CMS" href="https://github.com/DerGoogler/dgm-cms">
+  An CMS that runs with React TS! Uses [Onsen UI](https://onsen.io/) and [React
+  Bootstrap](https://react-bootstrap.github.io/)
+</ProjectCard>
+```
+
+### `Defaults`
+
+- target
+- buttonText
+
+---
+
+## StyleLoader
+
+```html
+<StyleLoader src="..."></StyleLoader>
+```
+
+### `Defaults`
+
+- rel
+
+---
 
 # HTML Dom components (Modified)
 
@@ -119,16 +152,8 @@ These components can normel used as normal
 
 ## Video
 
-```tsx
-<video src="/pages/videos/hellow.mp4">
-```
-
-Full screen video
-
-```tsx
-<Options cardView="no">
-
-<video style="boder-radius: 0px; width: 100%; height: 100%" src="https://dergoogler.com/pages/videos/491746339253_status_6b3881efba404332958413c12a053dc5.mp4">
+```html
+<video src="/pages/videos/hellow.mp4"></video>
 ```
 
 ### `Defaults`
@@ -141,10 +166,8 @@ Full screen video
 
 ## Audio
 
-```tsx
-<audio
-    src="/pages/audios/hellow.mp3"
-    type="video/mpeg"
+```html
+<audio src="/pages/audios/hellow.mp3" type="video/mpeg" />
 ```
 
 ### `Defaults`
@@ -154,16 +177,26 @@ Full screen video
 
 ---
 
-## ProjectCard
+## Font
 
-```tsx
-<ProjectCard title="DGM-CMS" href="https://github.com/DerGoogler/dgm-cms">
-  An CMS that runs with React TS! Uses [Onsen UI](https://onsen.io/) and [React
-  Bootstrap](https://react-bootstrap.github.io/)
-</ProjectCard>
+```html
+<font color="red">Hello World!</font> <font color="#0078ff">Hello World!</font>
 ```
 
 ### `Defaults`
 
-- target
-- buttonText
+N/A
+
+---
+
+## Center
+
+```html
+<center>
+  <font color="red">Hello World!</font>
+</center>
+```
+
+### `Defaults`
+
+N/A

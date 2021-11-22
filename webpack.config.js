@@ -14,6 +14,10 @@ const config = {
       import: "./src/libs/editor/index.tsx",
       dependOn: "shared",
     },
+    contents: {
+      import: "./src/libs/contents/index.tsx",
+      dependOn: "shared",
+    },
   },
 
   output: {

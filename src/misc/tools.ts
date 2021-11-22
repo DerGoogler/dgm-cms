@@ -138,7 +138,7 @@ export function getText(url: string, callback?: Function) {
  * @param key
  * @param value
  */
-export function setCookie(key: string, value: any) {
+export function setCookie(key: any, value: any) {
   localStorage.setItem(key, value);
 }
 

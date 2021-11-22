@@ -1,5 +1,4 @@
 import * as React from "react";
-import * as ons from "onsenui";
 import { hot } from "react-hot-loader/root";
 import axios from "axios";
 import XHRInterface from "./interface";

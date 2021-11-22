@@ -1,24 +1,33 @@
 import * as React from "react";
 import { hot } from "react-hot-loader/root";
-import { typeCheck } from "../../misc/tools";
+import Frame, { FrameContextConsumer } from "react-frame-component";
 import FrameInterface from "./interface";
 
-class Frame extends React.Component<FrameInterface> {
+class XHR extends React.Component<FrameInterface> {
+  private children: React.ReactNode = this.props.children;
+  private style: React.CSSProperties = this.props.style;
+  private head: string = this.props.head;
+  private dom: Function = this.props.dom;
+
   public render() {
-    const { src } = this.props;
     return (
       <>
-        <iframe
-          className="Frame--Custom"
-          srcDoc={src}
-          sandbox="allow-downloads allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation  allow-scripts allow-top-navigation-by-user-activation"
-          allow="accelerometer; camera; encrypted-media; geolocation; gyroscope; microphone; midi; clipboard-read; clipboard-write"
-          allowTransparency={true}
-          allowFullScreen={true}
-        ></iframe>
+        <Frame
+          initialContent={`<!DOCTYPE html><html><head>${this.head}</head><body><div></div></body></html>`}
+          style={this.style}
+        >
+          <FrameContextConsumer>
+            {({ document, window }: any) => {
+              if (typeof this.dom == "function") {
+                this.dom(document, window);
+              }
+              return <>{this.children}</>;
+            }}
+          </FrameContextConsumer>
+        </Frame>
       </>
     );
   }
 }
 
-export default hot(Frame);
+export default hot(XHR);

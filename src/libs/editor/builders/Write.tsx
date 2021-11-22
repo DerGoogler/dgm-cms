@@ -1,9 +1,9 @@
-import { Controlled as CodeMirror } from "react-codemirror2";
 import * as React from "react";
 import { hot } from "react-hot-loader/root";
 import { getCookie, setCookie } from "../../../misc/tools";
+import Editor from "@monaco-editor/react";
 
-class WriteFooter extends React.Component<{ cookie: string }> {
+class Write extends React.Component<{ cookie: string }> {
   public state = {
     value: "",
   };
@@ -16,18 +16,16 @@ class WriteFooter extends React.Component<{ cookie: string }> {
   }
 
   public render() {
-    const { cookie } = this.props;
     return (
       <>
         <div style={{ margin: "0px" }}>
-          <CodeMirror
-            value={this.state.value}
-            options={{
-              mode: "markdown",
-              theme: "darcula",
-              lineNumbers: true,
-            }}
-            onBeforeChange={(editor, data, value) => {
+          <Editor
+            height="calc(100vh - 104px)"
+            theme="vs-dark"
+            defaultLanguage="markdown"
+            defaultValue={this.state.value}
+            onChange={(value, event) => {
+              const { cookie } = this.props;
               this.setState({ value: value });
               setCookie(cookie, value);
             }}
@@ -38,4 +36,4 @@ class WriteFooter extends React.Component<{ cookie: string }> {
   }
 }
 
-export default hot(WriteFooter);
+export default hot(Write);

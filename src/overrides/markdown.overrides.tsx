@@ -6,7 +6,6 @@ import XHR from "../components/XHR";
 import OnsAlert from "../components/Alert";
 import Video from "../components/Video";
 import Audio from "../components/Audio";
-import Frame from "../components/Frame";
 import A from "../components/A";
 import ProjectCard from "../components/ProjectCard";
 import Download from "../components/Download";
@@ -19,8 +18,12 @@ import Alert from "react-bootstrap/Alert";
 import DiscordWidget from "../components/DiscordWidget";
 import NewsColorCard from "../components/NewsColorCard";
 import Aropdown from "../components/Aropdown";
+import Font from "../components/Font";
+import Center from "../components/Center";
+import Frame from "../components/Frame";
+import RandomDog from "../components/RandomDog";
 
-export const override = {
+const override = {
   overrides: {
     // HTML dom components
     video: {
@@ -32,6 +35,12 @@ export const override = {
     a: {
       component: A,
     },
+    font: {
+      component: Font,
+    },
+    center: {
+      component: Center,
+    },
     // Custom components
     Options: {
       component: Options,
@@ -42,11 +51,17 @@ export const override = {
     ProjectCard: {
       component: ProjectCard,
     },
+    Frame: {
+      component: Frame,
+    },
     Header: {
       component: Header,
     },
     Cooldown: {
       component: Cooldown,
+    },
+    RandomDog: {
+      component: RandomDog,
     },
     Icon: {
       component: Icon,
@@ -62,9 +77,6 @@ export const override = {
     },
     NewsAlert: {
       component: Alert,
-    },
-    Frame: {
-      component: Frame,
     },
     Download: {
       component: Download,
@@ -95,3 +107,5 @@ export const override = {
     },
   },
 };
+
+export default hot(override);
