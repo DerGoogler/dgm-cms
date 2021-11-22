@@ -5,7 +5,7 @@ import { Page, Toolbar, Icon, List, ListItem, Button } from "react-onsenui";
 
 class App extends React.Component<{}, { data: any }> {
   private fetchURL: string =
-    "https://api.github.com/repos/DerGoogler/dergoogler.github.io/issues";
+    "https://api.github.com/repos/DerGoogler/dergoogler.github.io/contents/pages";
 
   public constructor(props: any) {
     super(props);
