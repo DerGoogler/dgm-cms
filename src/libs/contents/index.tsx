@@ -10,5 +10,4 @@ import ons from "onsenui";
 
 ons.platform.select("android");
 
-var mountNode = document.getElementById("app");
-ReactDOM.render(<App />, mountNode);
+ReactDOM.render(<App />, document.body);

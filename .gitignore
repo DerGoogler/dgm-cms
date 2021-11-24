@@ -1,10 +1,15 @@
-
-.cache/
-coverage/
+# DGM-CMS base
 dist/*
 pages/*
 !pages/home.dgm
 !pages/config*
+!dist/index.html
+!dist/editor.html
+!dist/contents.html
+
+# Others
+.cache/
+coverage/
 node_modules/
 *.log
 

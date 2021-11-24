@@ -32,16 +32,16 @@ export function typeCheck(type: any, outer?: any) {
 
 /**
  * Inline if satement
- * @param vaule
  * @param IF
- * @param ELSE
+ * @param returnIFtrue
+ * @param returnELSE
  * @returns
  */
-export function typeIf(value: any, IF: any, ELSE: any) {
-  if (value) {
-    return IF;
+export function typeIf(IF: any, returnIFtrue: any, returnELSE: any) {
+  if (IF) {
+    return returnIFtrue;
   } else {
-    return ELSE;
+    return returnELSE;
   }
 }
 

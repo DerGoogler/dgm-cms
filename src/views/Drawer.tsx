@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Page, Toolbar, List, ListItem, ListHeader } from "react-onsenui";
-import { isAndroid } from "react-device-detect";
+import { isAndroid, isDesktop } from "react-device-detect";
 import ons from "onsenui";
 import { hot } from "react-hot-loader/root";
 import App from "./../libs/editor/App";
-import { getCookie, typeCheck } from "../misc/tools";
+import { getCookie, typeCheck, typeIf } from "../misc/tools";
 import config from "../config";
 import { override } from "../overrides/drawerMarkdown.overrides";
 import string from "../misc/strings";
@@ -70,6 +70,9 @@ class Drawer extends React.Component {
               {string.about_cookies}
             </ListItem>
             <ListItem
+              style={{
+                display: typeIf(isDesktop, "none", "flex"),
+              }}
               onClick={() => {
                 if (isAndroid) {
                   eruda.init();

@@ -4,6 +4,8 @@ import Center from "../components/Center";
 import Font from "../components/Font";
 import NewsColorCard from "../components/NewsColorCard";
 import StyleLoader from "../components/StyleLoader";
+import ViewOnlyDesktop from "../components/ViewOnlyDesktop";
+import ViewOnlyMobile from "../components/ViewOnlyMobile";
 
 const overrideHeader = {
   overrides: {
@@ -31,6 +33,12 @@ const overrideHeader = {
     },
     StyleLoader: {
       component: StyleLoader,
+    },
+    ViewOnlyMobile: {
+      component: ViewOnlyMobile,
+    },
+    ViewOnlyDesktop: {
+      component: ViewOnlyDesktop,
     },
   },
 };

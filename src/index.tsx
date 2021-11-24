@@ -19,7 +19,7 @@ import {
 } from "react-device-detect";
 
 class index {
-  private mountNode = document.getElementById("app");
+  private mountNode = document.body;
   private iOS: string = "https://www.apple.com/";
   private iE: string = "https://www.google.com/chrome/";
   private platform: any = ons.platform;

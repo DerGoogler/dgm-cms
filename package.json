@@ -1,6 +1,6 @@
 {
   "name": "dgm-cms",
-  "version": "1.4.6",
+  "version": "1.4.7",
   "description": "Static CMS that's supports better Markdown",
   "main": "index.tsx",
   "repository": "DerGoogler/dgm-cms",

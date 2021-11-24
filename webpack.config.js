@@ -1,27 +1,33 @@
 const webpack = require("webpack");
 const path = require("path");
-// const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 // const HtmlWebpackPlugin = require("html-webpack-plugin");
+// const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
 const config = {
   entry: {
-    shared: ["react-hot-loader/patch"],
-    index: {
+    index: ["react-hot-loader/patch"],
+    cms: {
       import: "./src/index.tsx",
-      dependOn: "shared",
+      dependOn: "index",
     },
     editor: {
       import: "./src/libs/editor/index.tsx",
-      dependOn: "shared",
+      dependOn: "index",
     },
     contents: {
       import: "./src/libs/contents/index.tsx",
-      dependOn: "shared",
+      dependOn: "index",
     },
   },
-
+  // plugins: [
+  //   new HtmlWebpackPlugin({
+  //     filename: "index.html",
+  //     title: "DGM-CMS",
+  //     inject: "body",
+  //   }),
+  // ],
   output: {
-    filename: "[name].bundle.js",
+    filename: "bundles/[name].js",
     path: path.resolve(__dirname, "dist"),
   },
 

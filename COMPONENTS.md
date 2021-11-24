@@ -146,6 +146,30 @@ All components listed are here
 
 ---
 
+## ViewOnlyMobile
+
+```html
+<ViewOnlyMobile> Holloe World! </ViewOnlyMobile>
+```
+
+### `Defaults`
+
+N/A
+
+---
+
+## ViewOnlyDesktop
+
+```html
+<ViewOnlyDesktop> Holloe World! </ViewOnlyDesktop>
+```
+
+### `Defaults`
+
+N/A
+
+---
+
 # HTML Dom components (Modified)
 
 These components can normel used as normal

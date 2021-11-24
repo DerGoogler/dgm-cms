@@ -22,6 +22,8 @@ import Font from "../components/Font";
 import Center from "../components/Center";
 import Frame from "../components/Frame";
 import RandomDog from "../components/RandomDog";
+import ViewOnlyMobile from "../components/ViewOnlyMobile";
+import ViewOnlyDesktop from "../components/ViewOnlyDesktop";
 
 const override = {
   overrides: {
@@ -47,6 +49,12 @@ const override = {
     },
     Card: {
       component: Card,
+    },
+    ViewOnlyMobile: {
+      component: ViewOnlyMobile,
+    },
+    ViewOnlyDesktop: {
+      component: ViewOnlyDesktop,
     },
     ProjectCard: {
       component: ProjectCard,
