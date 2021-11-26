@@ -6,10 +6,18 @@ import { isDesktop } from "react-device-detect";
 import override from "../overrides/markdown.overrides";
 import overrideHeader from "../overrides/headerMarkdown.overrides";
 import overrideFooter from "../overrides/footerMarkdown.overrides";
-import "./../styles/github-markdown.css";
+import "./../styles/github-markdown.scss";
 import { typeIf } from "./tools";
 
 class MarkdownContent extends React.Component<MarkdownContentInterface> {
+  private stlye: any = {
+    boxSizing: "border-box",
+    minWidth: "200px",
+    maxWidth: "980px",
+    margin: "0 auto",
+    padding: "45px",
+  };
+
   public render() {
     const { data, headerData, footerData } = this.props;
     return (
@@ -19,7 +27,8 @@ class MarkdownContent extends React.Component<MarkdownContentInterface> {
           style={typeIf(isDesktop, { padding: "16px" }, { padding: "24px" })}
         >
           <article
-            className={typeIf(isDesktop, "markdown-body_", "markdown-body")}
+            className={"markdown-body"}
+            style={typeIf(isDesktop, this.stlye, {})}
           >
             <Markdown options={override}>{data}</Markdown>
           </article>
