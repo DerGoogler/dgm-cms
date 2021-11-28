@@ -3,7 +3,6 @@ import { Page, Toolbar, List, ListItem, ListHeader } from "react-onsenui";
 import { isAndroid, isDesktop } from "react-device-detect";
 import ons from "onsenui";
 import { hot } from "react-hot-loader/root";
-import App from "./../libs/editor/App";
 import { getCookie, typeCheck, typeIf } from "../misc/tools";
 import config from "../config";
 import { override } from "../overrides/drawerMarkdown.overrides";

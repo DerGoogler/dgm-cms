@@ -1,3 +1,4 @@
+import axios from "axios";
 import { isDesktop } from "react-device-detect";
 import { ConfigInterface } from "./d/interface";
 import { typeIf } from "./misc/tools";

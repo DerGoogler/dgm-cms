@@ -1,6 +1,6 @@
 import * as React from "react";
 import { hot } from "react-hot-loader/root";
-import MarkdownContent from "../../../misc/MarkdownContent";
+import MarkdownContent from "../../misc/MarkdownContent";
 
 class Preview extends React.Component {
   public state = {

@@ -12,12 +12,12 @@ import {
   SpeedDialItem,
 } from "react-onsenui";
 import TabPage from "./builders/TabPage";
-import Preview from "./views/Preview";
-import config from "./../../config";
+import Preview from "../Preview";
+import config from "./../../../config";
 import Write from "./builders/Write";
-import { getCookie, removeCookie, typeCheck } from "../../misc/tools";
+import { getCookie, removeCookie, typeCheck } from "./../../../misc/tools";
 
-class App extends React.Component {
+class Android extends React.Component {
   private renderToolbar() {
     return (
       <Toolbar>
@@ -135,4 +135,4 @@ class App extends React.Component {
   }
 }
 
-export default hot(App);
+export default hot(Android);

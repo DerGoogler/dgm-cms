@@ -1,3 +1,10 @@
+# 1.4.9
+
+- **[BASE]**
+  - N/A
+- **[EDITOR]**
+  - Added desktop and mobile version
+
 # 1.4.7
 
 - **[BASE]**

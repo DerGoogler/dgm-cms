@@ -1,6 +1,6 @@
 {
   "name": "dgm-cms",
-  "version": "1.4.7",
+  "version": "1.4.9",
   "description": "Static CMS that's supports better Markdown",
   "main": "index.tsx",
   "repository": "DerGoogler/dgm-cms",
@@ -65,6 +65,7 @@
     "react-process-string": "^1.2.0",
     "react-syntax-highlighter": "^15.4.5",
     "react-translated": "^2.5.0",
+    "react-windows-ui": "^4.0.7",
     "simplebar-react": "^2.3.6",
     "universal-cookie": "^4.0.4"
   },
@@ -77,6 +78,7 @@
     "@types/react": "^17.0.31",
     "@types/react-document-meta": "^3.0.1",
     "@types/react-dom": "^17.0.7",
+    "@types/react-router-dom": "^5.3.2",
     "babel-loader": "^8.2.3",
     "babel-preset-react-app": "^10.0.0",
     "css-loader": "^5.2.5",
