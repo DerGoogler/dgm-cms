@@ -9,32 +9,32 @@ import MarkdownBody from "../misc/MarkdownBody";
 import DGMarkdownFooter from "./../components/Markdown/Footer";
 
 const overrideFooter = {
-	overrides: {
-		font: {
-			component: Font,
-		},
-		center: {
-			component: Center,
-		},
-		DiscordWidget: {
-			component: DiscordWidget,
-		},
-		Comments: {
-			component: Comments,
-		},
-		ViewOnlyMobile: {
-			component: ViewOnlyMobile,
-		},
-		ViewOnlyDesktop: {
-			component: ViewOnlyDesktop,
-		},
-		MarkdownBody: {
-			component: MarkdownBody,
-		},
-		CompileMarkdown: {
-			component: DGMarkdownFooter,
-		},
-	},
+  overrides: {
+    font: {
+      component: Font,
+    },
+    center: {
+      component: Center,
+    },
+    DiscordWidget: {
+      component: DiscordWidget,
+    },
+    Comments: {
+      component: Comments,
+    },
+    ViewOnlyMobile: {
+      component: ViewOnlyMobile,
+    },
+    ViewOnlyDesktop: {
+      component: ViewOnlyDesktop,
+    },
+    MarkdownBody: {
+      component: MarkdownBody,
+    },
+    CompileMarkdown: {
+      component: DGMarkdownFooter,
+    },
+  },
 };
 
 export default hot(overrideFooter);

@@ -1,7 +1,7 @@
 import React, { CSSProperties } from "react";
 
 interface CenterInterface {
-	children: React.ReactNode;
+  children: React.ReactNode;
 }
 
 export default CenterInterface;

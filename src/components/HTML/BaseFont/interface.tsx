@@ -1,7 +1,7 @@
 interface BaseFontInterface {
-	color: string;
-	font: string;
-	size: string;
+  color: string;
+  font: string;
+  size: string;
 }
 
 export default BaseFontInterface;

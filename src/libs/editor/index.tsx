@@ -20,15 +20,15 @@ import { ifCheck, getCookie } from "../../misc/tools";
 ons.platform.select("android");
 
 ons.ready(() => {
-	if (ifCheck(getCookie("FirstTimeOpen"))) {
-		alert("No fist time open was detectet. Please open the main page first, do want open it now?");
-	} else {
-		customElements.define("cms-app", CMSApp);
-		var domNode = document.querySelector("cms-app");
-		if (isDesktop) {
-			ReactDOM.render(<WindowsEditor />, domNode);
-		} else {
-			ReactDOM.render(<AndroidEditor />, domNode);
-		}
-	}
+  if (ifCheck(getCookie("FirstTimeOpen"))) {
+    alert("No fist time open was detectet. Please open the main page first, do want open it now?");
+  } else {
+    customElements.define("cms-app", CMSApp);
+    var domNode = document.querySelector("cms-app");
+    if (isDesktop) {
+      ReactDOM.render(<WindowsEditor />, domNode);
+    } else {
+      ReactDOM.render(<AndroidEditor />, domNode);
+    }
+  }
 });

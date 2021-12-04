@@ -11,18 +11,18 @@ import { typeIf } from "./tools";
 import MarkdownBody from "./MarkdownBody";
 
 class MarkdownContent extends React.Component<MarkdownContentInterface> {
-	public render() {
-		const { data, headerData, footerData } = this.props;
-		return (
-			<>
-				<Markdown options={overrideHeader}>{headerData}</Markdown>
-				<MarkdownBody>
-					<Markdown options={override}>{data}</Markdown>
-				</MarkdownBody>
-				<Markdown options={overrideFooter}>{footerData}</Markdown>
-			</>
-		);
-	}
+  public render() {
+    const { data, headerData, footerData } = this.props;
+    return (
+      <>
+        <Markdown options={overrideHeader}>{headerData}</Markdown>
+        <MarkdownBody>
+          <Markdown options={override}>{data}</Markdown>
+        </MarkdownBody>
+        <Markdown options={overrideFooter}>{footerData}</Markdown>
+      </>
+    );
+  }
 }
 
 export default hot(MarkdownContent);

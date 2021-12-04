@@ -9,11 +9,11 @@ import config from "../config";
  * @returns
  */
 export function getUrlParam(param: string) {
-	param = param.replace(/([\[\](){}*?+^$.\\|])/g, "\\$1");
-	var regex = new RegExp("[?&]" + param + "/([^&#]*)/");
-	var url = decodeURIComponent(window.location.href);
-	var match = regex.exec(url);
-	return match ? match[1] : "";
+  param = param.replace(/([\[\](){}*?+^$.\\|])/g, "\\$1");
+  var regex = new RegExp("[?&]" + param + "/([^&#]*)/");
+  var url = decodeURIComponent(window.location.href);
+  var match = regex.exec(url);
+  return match ? match[1] : "";
 }
 
 /**
@@ -23,11 +23,11 @@ export function getUrlParam(param: string) {
  * @returns type
  */
 export function typeCheck(type: any, outer?: any) {
-	if (type === undefined || type === null || type === "") {
-		return outer;
-	} else {
-		return type;
-	}
+  if (type === undefined || type === null || type === "") {
+    return outer;
+  } else {
+    return type;
+  }
 }
 
 /**
@@ -38,11 +38,11 @@ export function typeCheck(type: any, outer?: any) {
  * @returns
  */
 export function typeIf(IF: any, returnIFtrue: any, returnELSE: any) {
-	if (IF) {
-		return returnIFtrue;
-	} else {
-		return returnELSE;
-	}
+  if (IF) {
+    return returnIFtrue;
+  } else {
+    return returnELSE;
+  }
 }
 
 /**
@@ -52,17 +52,17 @@ export function typeIf(IF: any, returnIFtrue: any, returnELSE: any) {
  * @param callback Callback on download
  */
 export function download(content: any, filename: string, callback?: Function) {
-	if (confirm(`Do you want download ${filename}?`)) {
-		var blob = new Blob([content], {
-			type: "text/plain;charset=utf-8",
-		});
-		saveAs(blob, filename);
-		if (typeof callback == "function") {
-			callback();
-		}
-	} else {
-		alert("Download was canceled");
-	}
+  if (confirm(`Do you want download ${filename}?`)) {
+    var blob = new Blob([content], {
+      type: "text/plain;charset=utf-8",
+    });
+    saveAs(blob, filename);
+    if (typeof callback == "function") {
+      callback();
+    }
+  } else {
+    alert("Download was canceled");
+  }
 }
 
 /**
@@ -71,17 +71,17 @@ export function download(content: any, filename: string, callback?: Function) {
  * @param callback - Makes an callback when the cooldown is expired
  */
 export function cooldown(date: string, callback: Function) {
-	var countDownDate = new Date(date).getTime();
-	var x = setInterval(function () {
-		var now = new Date().getTime();
-		var distance = countDownDate - now;
-		if (distance < 0) {
-			clearInterval(x);
-			if (typeof callback == "function") {
-				callback(date);
-			}
-		}
-	}, 1000);
+  var countDownDate = new Date(date).getTime();
+  var x = setInterval(function () {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    if (distance < 0) {
+      clearInterval(x);
+      if (typeof callback == "function") {
+        callback(date);
+      }
+    }
+  }, 1000);
 }
 
 /**
@@ -90,27 +90,27 @@ export function cooldown(date: string, callback: Function) {
  * @param callback Custom callback (leave is blank, if you don't want an custom callback)
  */
 export function errorReport(check: Function, callback?: Function) {
-	try {
-		if (typeof check == "function") {
-			check();
-		} else {
-			throw new Error('You need an callable function inside the "errorReport()" function');
-		}
-	} catch (error) {
-		if (typeof callback == "function") {
-			callback();
-		} else {
-			if (
-				confirm(
-					"There was an error detected! Do you want download an error file to report this to an github issuse?"
-				)
-			) {
-				download(error, "pageError.console.txt");
-			} else {
-				alert("Download canceled");
-			}
-		}
-	}
+  try {
+    if (typeof check == "function") {
+      check();
+    } else {
+      throw new Error('You need an callable function inside the "errorReport()" function');
+    }
+  } catch (error) {
+    if (typeof callback == "function") {
+      callback();
+    } else {
+      if (
+        confirm(
+          "There was an error detected! Do you want download an error file to report this to an github issuse?"
+        )
+      ) {
+        download(error, "pageError.console.txt");
+      } else {
+        alert("Download canceled");
+      }
+    }
+  }
 }
 
 /**
@@ -119,16 +119,16 @@ export function errorReport(check: Function, callback?: Function) {
  * @param callback
  */
 export function getText(url: string, callback?: Function) {
-	axios.get(url).then((res) => {
-		const data = res.data;
-		if (callback == undefined) {
-			return data;
-		} else {
-			if (typeof callback == "function") {
-				callback(data);
-			}
-		}
-	});
+  axios.get(url).then((res) => {
+    const data = res.data;
+    if (callback == undefined) {
+      return data;
+    } else {
+      if (typeof callback == "function") {
+        callback(data);
+      }
+    }
+  });
 }
 
 /**
@@ -137,7 +137,7 @@ export function getText(url: string, callback?: Function) {
  * @param value
  */
 export function setCookie(key: any, value: any) {
-	localStorage.setItem(key, value);
+  localStorage.setItem(key, value);
 }
 
 /**
@@ -145,13 +145,13 @@ export function setCookie(key: any, value: any) {
  * @param key
  */
 export function getCookie(key: string) {
-	var item: any = localStorage.getItem(key);
-	if (item === null || item === undefined) {
-		localStorage.setItem(key, "");
-		location.reload();
-	} else {
-		return item;
-	}
+  var item: any = localStorage.getItem(key);
+  if (item === null || item === undefined) {
+    localStorage.setItem(key, "");
+    location.reload();
+  } else {
+    return item;
+  }
 }
 
 /**
@@ -159,7 +159,7 @@ export function getCookie(key: string) {
  * @param key
  */
 export function removeCookie(key: string) {
-	localStorage.removeItem(key);
+  localStorage.removeItem(key);
 }
 
 /**
@@ -168,5 +168,5 @@ export function removeCookie(key: string) {
  * @returns
  */
 export function ifCheck(IF: any) {
-	return IF === undefined || IF === null || IF === "";
+  return IF === undefined || IF === null || IF === "";
 }

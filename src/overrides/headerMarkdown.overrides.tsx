@@ -12,42 +12,42 @@ import ViewOnlyMobile from "../components/ViewOnlyMobile";
 import MarkdownBody from "../misc/MarkdownBody";
 
 const overrideHeader = {
-	overrides: {
-		// Page options
-		font: {
-			component: Font,
-		},
-		center: {
-			component: Center,
-		},
-		NewsAlert: {
-			component: Alert,
-		},
-		NewsColorCard: {
-			component: NewsColorCard,
-		},
-		StyleLoader: {
-			component: StyleLoader,
-		},
-		ViewOnlyMobile: {
-			component: ViewOnlyMobile,
-		},
-		ViewOnlyDesktop: {
-			component: ViewOnlyDesktop,
-		},
-		TitleMapper: {
-			component: TitleMapper,
-		},
-		MarkdownBody: {
-			component: MarkdownBody,
-		},
-		Header: {
-			component: Header,
-		},
-		Snowflakes: {
-			component: Snowflakes,
-		},
-	},
+  overrides: {
+    // Page options
+    font: {
+      component: Font,
+    },
+    center: {
+      component: Center,
+    },
+    NewsAlert: {
+      component: Alert,
+    },
+    NewsColorCard: {
+      component: NewsColorCard,
+    },
+    StyleLoader: {
+      component: StyleLoader,
+    },
+    ViewOnlyMobile: {
+      component: ViewOnlyMobile,
+    },
+    ViewOnlyDesktop: {
+      component: ViewOnlyDesktop,
+    },
+    TitleMapper: {
+      component: TitleMapper,
+    },
+    MarkdownBody: {
+      component: MarkdownBody,
+    },
+    Header: {
+      component: Header,
+    },
+    Snowflakes: {
+      component: Snowflakes,
+    },
+  },
 };
 
 export default hot(overrideHeader);

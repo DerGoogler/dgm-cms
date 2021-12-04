@@ -1,85 +1,85 @@
 body {
-	background: #22a7f0;
-	width: 100%;
-	overflow: hidden;
+  background: #22a7f0;
+  width: 100%;
+  overflow: hidden;
 }
 
 .cloud-container {
-	position: absolute;
-	top: 0px;
-	left: 0px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }
 .cloud-container > svg {
-	display: block;
-	position: absolute;
-	width: 200px;
-	left: 0px;
-	fill: #fff;
-	opacity: 0.2;
-	transform: translateX(-100%);
-	-webkit-animation: cloud-passover linear infinite;
-	animation: cloud-passover linear infinite;
+  display: block;
+  position: absolute;
+  width: 200px;
+  left: 0px;
+  fill: #fff;
+  opacity: 0.2;
+  transform: translateX(-100%);
+  -webkit-animation: cloud-passover linear infinite;
+  animation: cloud-passover linear infinite;
 }
 .cloud-container > svg:nth-child(1) {
-	top: 20px;
-	-webkit-animation-delay: 2s;
-	animation-delay: 2s;
-	-webkit-animation-duration: 12s;
-	animation-duration: 12s;
+  top: 20px;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  -webkit-animation-duration: 12s;
+  animation-duration: 12s;
 }
 .cloud-container > svg:nth-child(2) {
-	top: 160px;
-	-webkit-animation-delay: 4s;
-	animation-delay: 4s;
-	-webkit-animation-duration: 13s;
-	animation-duration: 13s;
+  top: 160px;
+  -webkit-animation-delay: 4s;
+  animation-delay: 4s;
+  -webkit-animation-duration: 13s;
+  animation-duration: 13s;
 }
 .cloud-container > svg:nth-child(3) {
-	top: 280px;
-	-webkit-animation-delay: 6s;
-	animation-delay: 6s;
-	-webkit-animation-duration: 11s;
-	animation-duration: 11s;
+  top: 280px;
+  -webkit-animation-delay: 6s;
+  animation-delay: 6s;
+  -webkit-animation-duration: 11s;
+  animation-duration: 11s;
 }
 
 @-webkit-keyframes cloud-passover {
-	from {
-		transform: translateX(-100%);
-	}
-	to {
-		transform: translateX(100vw);
-	}
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100vw);
+  }
 }
 
 @keyframes cloud-passover {
-	from {
-		transform: translateX(-100%);
-	}
-	to {
-		transform: translateX(100vw);
-	}
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100vw);
+  }
 }
 .container {
-	display: flex;
-	width: 100vw;
-	height: 100vh;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
 }
 
 .content {
-	color: #fff;
-	width: 600px;
+  color: #fff;
+  width: 600px;
 }
 
 .heading {
-	font-size: 100px;
-	font-weight: 300;
+  font-size: 100px;
+  font-weight: 300;
 }
 
 .sorry {
-	margin-top: 20px;
-	font-size: 35px;
-	font-weight: 300;
-	line-height: 1.5;
+  margin-top: 20px;
+  font-size: 35px;
+  font-weight: 300;
+  line-height: 1.5;
 }

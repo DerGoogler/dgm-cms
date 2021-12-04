@@ -1,5 +1,5 @@
 body {
-	overflow: auto;
+  overflow: auto;
 }
 
 /*
@@ -8,7 +8,7 @@ body {
 */
 
 @media (max-width: 767px) {
-	.markdown-body {
-		padding: 0px;
-	}
+  .markdown-body {
+    padding: 0px;
+  }
 }

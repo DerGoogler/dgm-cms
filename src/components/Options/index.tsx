@@ -7,44 +7,44 @@ import Favicon from "react-favicon";
 import OptionsInterface from "./interface";
 
 class Options extends React.Component<OptionsInterface> {
-	private element!: HTMLElement | null;
+  private element!: HTMLElement | null;
 
-	public componentWillMount() {
-		const { title, showFab } = this.props;
-		const thisTitle = title + config.base.afterTitle;
-		document.title = thisTitle;
-		setCookie("title", thisTitle);
-		if ((this.element = document.getElementById("scrollToTop"))) {
-			if (showFab === true) {
-				this.element.style.display = "block";
-			}
-		}
-	}
+  public componentWillMount() {
+    const { title, showFab } = this.props;
+    const thisTitle = title + config.base.afterTitle;
+    document.title = thisTitle;
+    setCookie("title", thisTitle);
+    if ((this.element = document.getElementById("scrollToTop"))) {
+      if (showFab === true) {
+        this.element.style.display = "block";
+      }
+    }
+  }
 
-	public componentWillUnmount() {
-		removeCookie("title");
-	}
+  public componentWillUnmount() {
+    removeCookie("title");
+  }
 
-	public render() {
-		const { title, description, canonical, keywords, favicon, children } = this.props;
-		const meta = {
-			title: title + config.base.afterTitle,
-			description: description,
-			canonical: canonical,
-			meta: {
-				charset: "utf-8",
-				name: {
-					keywords: keywords,
-				},
-			},
-		};
-		return (
-			<>
-				<Favicon url={typeCheck(favicon, config.base.defaultFavicon)} />
-				<DocumentMeta {...meta}>{children}</DocumentMeta>
-			</>
-		);
-	}
+  public render() {
+    const { title, description, canonical, keywords, favicon, children } = this.props;
+    const meta = {
+      title: title + config.base.afterTitle,
+      description: description,
+      canonical: canonical,
+      meta: {
+        charset: "utf-8",
+        name: {
+          keywords: keywords,
+        },
+      },
+    };
+    return (
+      <>
+        <Favicon url={typeCheck(favicon, config.base.defaultFavicon)} />
+        <DocumentMeta {...meta}>{children}</DocumentMeta>
+      </>
+    );
+  }
 }
 
 export default hot(Options);

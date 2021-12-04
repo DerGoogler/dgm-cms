@@ -54,9 +54,9 @@ See [home.dgm](https://github.com/DerGoogler/dgm-cms/blob/master/pages/home.dgm)
 
 ```jsx
 <Options
-	title="Jimmy" // Sets the website title
-	description="Auf dieser Seite findest du ein paar Infos über mich, sowie meinen Musik Geschmack!" // description for the website
-	keywords="dergoogler,DERGOOGLER,DerGoogler,der_googler,Der_Googler,DER_GOOGLER,JIMMY,jimmy,dergoogler.com,www.dergoogler.com" // keyword for the website
+  title="Jimmy" // Sets the website title
+  description="Auf dieser Seite findest du ein paar Infos über mich, sowie meinen Musik Geschmack!" // description for the website
+  keywords="dergoogler,DERGOOGLER,DerGoogler,der_googler,Der_Googler,DER_GOOGLER,JIMMY,jimmy,dergoogler.com,www.dergoogler.com" // keyword for the website
 />
 ```
 

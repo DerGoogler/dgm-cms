@@ -1,5 +1,5 @@
 interface DGMarkdownInterface {
-	children: any | React.ReactNode;
+  children: any | React.ReactNode;
 }
 
 export default DGMarkdownInterface;
