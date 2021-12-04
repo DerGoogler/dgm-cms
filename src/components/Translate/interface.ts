@@ -1,4 +1,4 @@
 export default interface TranslateInterface {
-  de: string;
-  en: string;
+	de: string;
+	en: string;
 }

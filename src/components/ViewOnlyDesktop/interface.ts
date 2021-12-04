@@ -1,5 +1,5 @@
 interface ViewOnlyDesktopInterface {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }
 
 export default ViewOnlyDesktopInterface;

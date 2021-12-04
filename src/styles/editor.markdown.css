@@ -2,30 +2,30 @@
 @import "codemirror/theme/material.css";
 
 * {
-  -ms-overflow-style: none;
+	-ms-overflow-style: none;
 }
 ::-webkit-scrollbar {
-  display: none;
+	display: none;
 }
 
 body {
-  background-color: #eee;
-  justify-content: center;
-  align-items: none;
-  display: inline;
+	background-color: #eee;
+	justify-content: center;
+	align-items: none;
+	display: inline;
 }
 
 header {
-  background-color: gainsboro;
+	background-color: gainsboro;
 }
 
 .output-pane {
-  height: 739px;
-  border: 1px solid #ced4da;
-  border-radius: 0.25rem;
-  overflow: auto;
+	height: 739px;
+	border: 1px solid #ced4da;
+	border-radius: 0.25rem;
+	overflow: auto;
 }
 .CodeMirror {
-  height: 739px;
-  border-radius: 0.25rem;
+	height: 739px;
+	border-radius: 0.25rem;
 }

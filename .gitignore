@@ -4,7 +4,7 @@ pages/*
 !pages/home.dgm
 !pages/config*
 !dist/index.html
-!dist/editor.html
+!dist/editor/
 !dist/contents.html
 
 # Others

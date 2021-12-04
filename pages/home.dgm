@@ -1,6 +1,7 @@
 <Options
   title="Hello"
   renderPlain="https://raw.githubusercontent.com/Maccraft123/Cadmium/master/README.md"
+  showFab={true}
 />
 
 # Alert & Modal
@@ -10,12 +11,12 @@
 <Alert class="shake" title="Hello World!" message="This is an example\n" cancelable="true">Open</Alert>
 
 [Hallo](https://google.com)
-        <br>
-        https://google.com
+<br>
+https://google.com
 
 [Googler](https://dergoogler.com)
-        <br>
-        https://dergoogler.com
+<br>
+https://dergoogler.com
 
 # Cooldown
 
@@ -27,7 +28,6 @@ console.log("Hello World!");
 ```
 
 # Fake Tweet with Cooldown
-
 
 <FakeTweet text={<Cooldown date="Jan 5, 2022 15:37:25" enableDownload="true"/>} app={<Translate de="Twitter für Android" en="Twitter for Android"/>}/>
 
@@ -49,15 +49,15 @@ console.log("Hello World!");
 </div>
 
 # Projrcts
+
 /// This is an comment
 <ProjectCard
-  title="Tips & Tricks for Gatsby"
-  href="https://www.lekoarts.de/gatsby/tips-and-tricks-for-gatsby?utm_source=cara&utm_medium=Theme" language="Brainfuck, JavaScript"
->
-  A collection of short, but useful quick tips shared by me and the community
-  about Gatsby. From GraphQL over local development to deployment.
-</ProjectCard>
+title="Tips & Tricks for Gatsby"
+href="https://www.lekoarts.de/gatsby/tips-and-tricks-for-gatsby?utm_source=cara&utm_medium=Theme" language="Brainfuck, JavaScript"
 
+> A collection of short, but useful quick tips shared by me and the community
+> about Gatsby. From GraphQL over local development to deployment.
+> </ProjectCard>
 
 # Alerts (Bootstrap)
 

@@ -1,3 +1,3 @@
 export default interface XHRInterface {
-  src: string;
+	src: string;
 }

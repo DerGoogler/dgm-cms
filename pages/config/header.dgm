@@ -1,1 +1,5 @@
-<StyleLoader src="https://dergoogler.com/assets/styles/main.styles.css" />
+<StyleLoader src="https://dergoogler.com/assets/styles/main.styles.css"/>
+
+<Header>
+  <TitleMapper removeTitlefromToolbar={true}/>
+</Header>

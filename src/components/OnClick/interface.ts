@@ -1,3 +1,3 @@
 export default interface OnClickInterface {
-  click: string;
+	click: string;
 }

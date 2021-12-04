@@ -19,9 +19,17 @@ You need to have NPM installed!
 Put these scripts on the html file bottom
 
 ```html
-<div id="app"></div>
-<script src="https://cdn.dergoogler.com/others/dgm-cms/index.bundle.js"></script>
-<script src="https://cdn.dergoogler.com/others/dgm-cms/shared.bundle.js"></script>
+<cms-app></cms-app>
+<script src="https://cdn.dergoogler.com/others/dgm-cms/bundles/cms.js"></script>
+<script src="https://cdn.dergoogler.com/others/dgm-cms/bundles/index.js"></script>
+```
+
+Configure the CMS
+
+```html
+<cms-app></cms-app>
+<script src="https://cdn.dergoogler.com/others/dgm-cms/bundles/cms.js?afterTitle= | Google - Support&platform=ios"></script>
+<script src="https://cdn.dergoogler.com/others/dgm-cms/bundles/index.js"></script>
 ```
 
 # Page
@@ -46,9 +54,9 @@ See [home.dgm](https://github.com/DerGoogler/dgm-cms/blob/master/pages/home.dgm)
 
 ```jsx
 <Options
-  title="Jimmy" // Sets the website title
-  description="Auf dieser Seite findest du ein paar Infos über mich, sowie meinen Musik Geschmack!" // description for the website
-  keywords="dergoogler,DERGOOGLER,DerGoogler,der_googler,Der_Googler,DER_GOOGLER,JIMMY,jimmy,dergoogler.com,www.dergoogler.com" // keyword for the website
+	title="Jimmy" // Sets the website title
+	description="Auf dieser Seite findest du ein paar Infos über mich, sowie meinen Musik Geschmack!" // description for the website
+	keywords="dergoogler,DERGOOGLER,DerGoogler,der_googler,Der_Googler,DER_GOOGLER,JIMMY,jimmy,dergoogler.com,www.dergoogler.com" // keyword for the website
 />
 ```
 

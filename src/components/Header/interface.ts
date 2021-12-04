@@ -1,5 +1,9 @@
-export default interface HeaderInterface {
-  src: string;
-  head: string;
-  text: string;
+import React from "react";
+
+interface HeaderInterface {
+	backgroundImage: string;
+	fontSize: string;
+	children: React.ReactNode;
 }
+
+export default HeaderInterface;

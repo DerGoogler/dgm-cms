@@ -10,8 +10,9 @@
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "target": "es5",
+    "resolveJsonModule": true,
     "allowJs": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
   },
   "include": ["./src/**/*"]
 }

@@ -1,16 +1,26 @@
 <style>
-    .giscus {
-        padding: 8px;
+    .header {
+        padding: 60px;
+        text-align: center;
+        background-image: url(https://www.w3schools.com/howto/img_woods_wide.jpg);
+        /*background: #0076ff;*/
+        color: white;
+        font-size: 30px;
     }
 </style>
 
-<DiscordWidget token="753360232515764255" theme="light"/>
+<MarkdownBody>
+
+<center>
 <Comments />
+</center>
+
+</MarkdownBody>
 
 <footer class="footer mt-auto py-3 bg-light">
     <center>
         <span class="text-muted">
-            Place sticky footer content here.
+            [Privacy Police](/?/safety/privacy-police/) • [Terms & Conditions](/?/safety/terms-conditions/)
         </span>
     </center>
 </footer>

@@ -8,35 +8,21 @@ import overrideHeader from "../overrides/headerMarkdown.overrides";
 import overrideFooter from "../overrides/footerMarkdown.overrides";
 import "./../styles/github-markdown.scss";
 import { typeIf } from "./tools";
+import MarkdownBody from "./MarkdownBody";
 
 class MarkdownContent extends React.Component<MarkdownContentInterface> {
-  private stlye: any = {
-    boxSizing: "border-box",
-    minWidth: "200px",
-    maxWidth: "980px",
-    margin: "0 auto",
-    padding: "45px",
-  };
-
-  public render() {
-    const { data, headerData, footerData } = this.props;
-    return (
-      <>
-        <Markdown options={overrideHeader}>{headerData}</Markdown>
-        <div
-          style={typeIf(isDesktop, { padding: "16px" }, { padding: "24px" })}
-        >
-          <article
-            className={"markdown-body"}
-            style={typeIf(isDesktop, this.stlye, {})}
-          >
-            <Markdown options={override}>{data}</Markdown>
-          </article>
-        </div>
-        <Markdown options={overrideFooter}>{footerData}</Markdown>
-      </>
-    );
-  }
+	public render() {
+		const { data, headerData, footerData } = this.props;
+		return (
+			<>
+				<Markdown options={overrideHeader}>{headerData}</Markdown>
+				<MarkdownBody>
+					<Markdown options={override}>{data}</Markdown>
+				</MarkdownBody>
+				<Markdown options={overrideFooter}>{footerData}</Markdown>
+			</>
+		);
+	}
 }
 
 export default hot(MarkdownContent);

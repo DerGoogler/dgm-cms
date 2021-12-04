@@ -1,72 +1,109 @@
 import * as React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import {
-  AppTheme,
-  NavBar,
-  NavBarLink,
-  NavPageContainer,
-} from "react-windows-ui";
+import { AppTheme, NavBar, NavBarLink, NavBarSubMenu, NavPageContainer } from "react-windows-ui";
 import Write from "./builders/Write";
+import axios from "axios";
+import { setCookie } from "../../../misc/tools";
 import Preview from "./../Preview";
+import NabarItem from "./builders/NabarItem";
 
-class Windows extends React.Component {
-  render() {
-    return (
-      <Router basename={window.location.pathname}>
-        <AppTheme scheme="light" />
+class WindowsEditor extends React.Component {
+	private alertBuilder(message: string, inputMessage: string, callback: Function) {
+		var alertValue = prompt(message, inputMessage);
+		if (alertValue != null) {
+			if (typeof callback) {
+				callback(alertValue);
+			}
+		}
+	}
 
-        <NavBar
-          title="DGMarkdown Editor"
-          //mobileHasIcons={true}
-          shadowOnScroll={true}
-        >
-          <h1>Pages</h1>
-          <div className="app-hr"></div>
+	render() {
+		return (
+			<Router basename={window.location.pathname}>
+				<AppTheme scheme="light" />
 
-          <NavBarLink
-            to="/"
-            exact={true}
-            text="Preview"
-            icon={<i className="icons10-grid-2"></i>}
-          />
+				<NavBar title="DGMarkdown Editor" titleShort="DGM" shadowOnScroll={true}>
+					<h1>Pages</h1>
+					<div className="app-hr"></div>
 
-          <NavBarLink
-            to="/home.dgm"
-            text="home.dgm"
-            icon={<i className="icons10-grid-2"></i>}
-          />
+					<NavBarLink
+						to="/"
+						exact={true}
+						text="Preview"
+						icon={<i className="icons10-grid-2"></i>}
+					/>
 
-          <NavBarLink
-            to="/header.dgm"
-            text="header.dgm"
-            icon={<i className="icons10-grid-2"></i>}
-          />
-          <NavBarLink
-            to="/footer.dgm"
-            text="footer.dgm"
-            icon={<i className="icons10-grid-2"></i>}
-          />
-        </NavBar>
+					<NavBarLink to="/home.dgm" text="home.dgm" icon={<i className="icons10-grid-2"></i>} />
 
-        <Switch>
-          <Route path="/" exact>
-            <NavPageContainer animateTransition>
-              <Preview />
-            </NavPageContainer>
-          </Route>
-          <Route path="/home.dgm">
-            <Write key="home" cookie="DGMarkdownValueHome" />
-          </Route>
-          <Route path="/header.dgm">
-            <Write key="header" cookie="DGMarkdownValueHeader" />
-          </Route>
-          <Route path="/footer.dgm">
-            <Write key="footer" cookie="DGMarkdownValueFooter" />
-          </Route>
-        </Switch>
-      </Router>
-    );
-  }
+					<NavBarLink
+						to="/header.dgm"
+						text="header.dgm"
+						icon={<i className="icons10-grid-2"></i>}
+					/>
+					<NavBarLink
+						to="/footer.dgm"
+						text="footer.dgm"
+						icon={<i className="icons10-grid-2"></i>}
+					/>
+
+					<h1>Pages</h1>
+					<div className="app-hr"></div>
+					<NavBarSubMenu title="Tools">
+						<NabarItem
+							icon="icons10-add"
+							onClick={() => {
+								this.alertBuilder(
+									"Enter a URL",
+									"https://raw.githubusercontent.com/virtualvivek/react-windows-ui/main/README.md",
+									(alertValue: any) => {
+										axios.get(alertValue).then((res) => {
+											const data = res.data;
+											setCookie("DGMarkdownValueHome", data);
+										});
+									}
+								);
+							}}
+						>
+							Fetch from URL
+						</NabarItem>
+						<NabarItem
+							icon="icons10-pencil"
+							onClick={() => {
+								this.alertBuilder("Enter a language", "markdown", (alertValue: any) => {
+									// @ts-ignore
+									window.monaco.editor.setModelLanguage(
+										// @ts-ignore
+										window.monaco.editor.getModels()[0],
+										alertValue
+									);
+									setCookie("DMG-Editor-Language", alertValue);
+								});
+							}}
+						>
+							Change editor language
+						</NabarItem>
+					</NavBarSubMenu>
+				</NavBar>
+
+				<Switch>
+					<Route path="/" exact>
+						<NavPageContainer animateTransition>
+							<Preview />
+						</NavPageContainer>
+					</Route>
+					<Route path="/home.dgm">
+						<Write key="home" cookie="DGMarkdownValueHome" />
+					</Route>
+					<Route path="/header.dgm">
+						<Write key="header" cookie="DGMarkdownValueHeader" />
+					</Route>
+					<Route path="/footer.dgm">
+						<Write key="footer" cookie="DGMarkdownValueFooter" />
+					</Route>
+				</Switch>
+			</Router>
+		);
+	}
 }
 
-export default Windows;
+export default WindowsEditor;

@@ -8,10 +8,10 @@ All components listed are here
 
 ```html
 <Options
-  title="Jimmy"
-  description="Hellow World!"
-  canonical="https://dergoogler.com"
-  keywords="hello,world,react"
+	title="Jimmy"
+	description="Hellow World!"
+	canonical="https://dergoogler.com"
+	keywords="hello,world,react"
 />
 ```
 
@@ -61,6 +61,24 @@ All components listed are here
 
 ---
 
+## TitleMapper
+
+```html
+<TitleMapper />
+
+<!-- Color an background -->
+<TitleMapper color="red" bg="white" />
+```
+
+### `Defaults`
+
+- color
+- bg
+- font
+- removeTitlefromToolbar
+
+---
+
 ## FakeTweet
 
 ```html
@@ -96,7 +114,7 @@ All components listed are here
 
 ```html
 <Click click="alert('hellow')">
-  <FakeTweet />
+	<FakeTweet />
 </Click>
 ```
 
@@ -122,8 +140,8 @@ All components listed are here
 
 ```html
 <ProjectCard title="DGM-CMS" href="https://github.com/DerGoogler/dgm-cms">
-  An CMS that runs with React TS! Uses [Onsen UI](https://onsen.io/) and [React
-  Bootstrap](https://react-bootstrap.github.io/)
+	An CMS that runs with React TS! Uses [Onsen UI](https://onsen.io/) and [React
+	Bootstrap](https://react-bootstrap.github.io/)
 </ProjectCard>
 ```
 
@@ -217,7 +235,7 @@ N/A
 
 ```html
 <center>
-  <font color="red">Hello World!</font>
+	<font color="red">Hello World!</font>
 </center>
 ```
 

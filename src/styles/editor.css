@@ -1,25 +1,25 @@
 ::-webkit-scrollbar {
-  display: none;
+	display: none;
 }
 
 .page--material__background {
-  background-color: white;
+	background-color: white;
 }
 .toolbar-button--materialFontSize20 {
-  font-size: 20px;
+	font-size: 20px;
 }
 
 .CodeMirror {
-  line-height: 1em;
-  font-family: monospace;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
+	line-height: 1em;
+	font-family: monospace;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
 }
 
 .CodeMirror-scroll {
-  overflow: auto;
-  height: 100%;
-  position: relative;
-  outline: none;
+	overflow: auto;
+	height: 100%;
+	position: relative;
+	outline: none;
 }

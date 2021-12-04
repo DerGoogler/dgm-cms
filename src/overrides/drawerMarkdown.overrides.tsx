@@ -6,30 +6,30 @@ import ViewOnlyDesktop from "../components/ViewOnlyDesktop";
 import ViewOnlyMobile from "../components/ViewOnlyMobile";
 
 export const override = {
-  overrides: {
-    List: {
-      component: List,
-    },
-    ListHeader: {
-      component: ListHeader,
-    },
-    ListItem: {
-      component: ListItem,
-    },
-    Switch: {
-      component: Switch,
-    },
-    DiscordWidget: {
-      component: DiscordWidget,
-    },
-    RandomDog: {
-      component: RandomDog,
-    },
-    ViewOnlyMobile: {
-      component: ViewOnlyMobile,
-    },
-    ViewOnlyDesktop: {
-      component: ViewOnlyDesktop,
-    },
-  },
+	overrides: {
+		List: {
+			component: List,
+		},
+		ListHeader: {
+			component: ListHeader,
+		},
+		ListItem: {
+			component: ListItem,
+		},
+		Switch: {
+			component: Switch,
+		},
+		DiscordWidget: {
+			component: DiscordWidget,
+		},
+		RandomDog: {
+			component: RandomDog,
+		},
+		ViewOnlyMobile: {
+			component: ViewOnlyMobile,
+		},
+		ViewOnlyDesktop: {
+			component: ViewOnlyDesktop,
+		},
+	},
 };

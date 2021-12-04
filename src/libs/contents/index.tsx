@@ -7,7 +7,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "codemirror/mode/markdown/markdown";
 import "./../../styles/onsen-css-components.css";
 import ons from "onsenui";
+import CMSApp from "../../cms-elements/body";
 
 ons.platform.select("android");
 
-ReactDOM.render(<App />, document.body);
+customElements.define("cms-app", CMSApp);
+ReactDOM.render(<App />, document.querySelector("cms-app"));
