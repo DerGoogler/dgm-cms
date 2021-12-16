@@ -6,4 +6,5 @@ export default interface OptionsInterface {
   favicon?: string | undefined;
   children: React.ReactNode;
   showFab: boolean | string;
+  renderPlain: boolean | string;
 }

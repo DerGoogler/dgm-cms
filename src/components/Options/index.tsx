@@ -5,12 +5,17 @@ import config from "../../config";
 import { typeCheck, setCookie, getCookie, removeCookie } from "../../misc/tools";
 import Favicon from "react-favicon";
 import OptionsInterface from "./interface";
+import ReactDOM from "react-dom";
 
 class Options extends React.Component<OptionsInterface> {
   private element!: HTMLElement | null;
 
   public componentWillMount() {
-    const { title, showFab } = this.props;
+    const { title, showFab, renderPlain, children } = this.props;
+    if (renderPlain === true) {
+      document.body.style.backgroundColor = "#fff";
+      ReactDOM.render(<>{children}</>, document.body);
+    }
     const thisTitle = title + config.base.afterTitle;
     document.title = thisTitle;
     setCookie("title", thisTitle);

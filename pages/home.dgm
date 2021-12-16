@@ -2,6 +2,7 @@
   title="Hello"
   renderPlain="https://raw.githubusercontent.com/Maccraft123/Cadmium/master/README.md"
   showFab={true}
+  renderPlain={false}
 />
 
 # Alert & Modal
