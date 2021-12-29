@@ -7,7 +7,6 @@ import Video from "../components/HTML/Video";
 import Audio from "../components/Audio";
 import A from "../components/HTML/A";
 import ProjectCard from "../components/ProjectCard";
-import Download from "../components/Download";
 import Click from "../components/OnClick";
 import Translate from "../components/Translate";
 import FakeTweet from "../components/FakeTweet";
@@ -26,6 +25,7 @@ import ViewOnlyDesktop from "../components/ViewOnlyDesktop";
 import Img from "../components/HTML/Img";
 import BaseFont from "../components/HTML/BaseFont";
 import DGMarkdownBody from "./../components/Markdown/Body";
+import Script from "../components/HTML/Script";
 
 const override = {
   overrides: {
@@ -35,6 +35,9 @@ const override = {
     },
     audio: {
       component: Audio,
+    },
+    script: {
+      component: Script,
     },
     a: {
       component: A,
@@ -90,9 +93,6 @@ const override = {
     },
     NewsAlert: {
       component: Alert,
-    },
-    Download: {
-      component: Download,
     },
     Click: {
       component: Click,

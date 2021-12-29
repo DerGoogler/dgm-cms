@@ -7,11 +7,15 @@ import ViewOnlyDesktop from "../components/ViewOnlyDesktop";
 import ViewOnlyMobile from "../components/ViewOnlyMobile";
 import MarkdownBody from "../misc/MarkdownBody";
 import DGMarkdownFooter from "./../components/Markdown/Footer";
+import Script from "../components/HTML/Script";
 
 const overrideFooter = {
   overrides: {
     font: {
       component: Font,
+    },
+    script: {
+      component: Script,
     },
     center: {
       component: Center,

@@ -3,6 +3,7 @@ import { hot } from "react-hot-loader/root";
 import Header from "../components/Header";
 import Center from "../components/HTML/Center";
 import Font from "../components/HTML/Font";
+import Script from "../components/HTML/Script";
 import NewsColorCard from "../components/NewsColorCard";
 import Snowflakes from "../components/Snowflakes";
 import StyleLoader from "../components/StyleLoader";
@@ -19,6 +20,9 @@ const overrideHeader = {
     },
     center: {
       component: Center,
+    },
+    script: {
+      component: Script,
     },
     NewsAlert: {
       component: Alert,

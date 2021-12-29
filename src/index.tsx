@@ -7,7 +7,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import ons from "onsenui";
 import eruda from "eruda";
-import App from "./App";
+import App from "./views/App";
 import { download, getCookie, ifCheck, setCookie } from "./misc/tools";
 import config from "./config";
 import { isIE, isIOS, isSafari, isMobileSafari, isAndroid } from "react-device-detect";

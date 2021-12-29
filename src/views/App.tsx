@@ -8,7 +8,7 @@ import {
   SplitterContent,
   SplitterSide,
   Fab,
-} from "react-onsenui"; // this.props.navigator.pushPage({ component: App });
+} from "react-onsenui";
 import { isIE, isIOS, isSafari, isMobileSafari } from "react-device-detect";
 import ons from "onsenui";
 import { hot } from "react-hot-loader/root";
@@ -19,7 +19,11 @@ import string from "../misc/strings";
 import tools from "../misc/private.tools";
 import Drawer from "./Drawer";
 
-class Main extends React.Component {
+// @ts-ignore
+const sourceURL = new URL(document.currentScript.src);
+const params = sourceURL.searchParams;
+
+class App extends React.Component<{ title?: string; content?: string }> {
   private element!: HTMLElement | null;
 
   public state = {
@@ -34,7 +38,7 @@ class Main extends React.Component {
 
     new tools().getMarkdownData(
       (data: any) => {
-        this.setState({ data: data });
+        this.setState({ data: typeCheck(params.get("content"), data) });
       },
       (error: any, link: string) => {
         this.setState({
@@ -170,4 +174,4 @@ class Main extends React.Component {
   }
 }
 
-export default hot(Main);
+export default hot(App);

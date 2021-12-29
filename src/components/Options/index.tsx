@@ -7,6 +7,10 @@ import Favicon from "react-favicon";
 import OptionsInterface from "./interface";
 import ReactDOM from "react-dom";
 
+// @ts-ignore
+const sourceURL = new URL(document.currentScript.src);
+const params = sourceURL.searchParams;
+
 class Options extends React.Component<OptionsInterface> {
   private element!: HTMLElement | null;
 
@@ -16,7 +20,7 @@ class Options extends React.Component<OptionsInterface> {
       document.body.style.backgroundColor = "#fff";
       ReactDOM.render(<>{children}</>, document.body);
     }
-    const thisTitle = title + config.base.afterTitle;
+    const thisTitle = typeCheck(params.get("title"), title + config.base.afterTitle);
     document.title = thisTitle;
     setCookie("title", thisTitle);
     if ((this.element = document.getElementById("scrollToTop"))) {
