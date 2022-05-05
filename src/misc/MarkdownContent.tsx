@@ -1,7 +1,7 @@
 import * as React from "react";
 import { hot } from "react-hot-loader/root";
 import Markdown from "markdown-to-jsx";
-import { MarkdownContentInterface } from "../d/interface";
+import { MarkdownContentInterface } from "../types/interface";
 import { isDesktop } from "react-device-detect";
 import override from "../overrides/markdown.overrides";
 import overrideHeader from "../overrides/headerMarkdown.overrides";

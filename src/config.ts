@@ -1,6 +1,6 @@
 import axios from "axios";
 import { isDesktop } from "react-device-detect";
-import { ConfigInterface } from "./d/interface";
+import { ConfigInterface } from "./types/interface";
 import { typeCheck, typeIf } from "./misc/tools";
 
 // https://github.com/yusanshi/embed-like-gist/blob/master/embed.js#L4-L5

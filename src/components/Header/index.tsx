@@ -1,6 +1,6 @@
 import * as React from "react";
 import { hot } from "react-hot-loader/root";
-import { StylesDictionary } from "../../d/interface";
+import { StylesDictionary } from "../../types/interface";
 import { typeCheck } from "../../misc/tools";
 import HeaderInterface from "./interface";
 
