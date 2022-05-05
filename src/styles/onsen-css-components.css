@@ -492,7 +492,7 @@ h6 {
   box-shadow: 0 0 0 14px rgba(0, 0, 0, 0.12);
 }
 :checked + .switch--material__toggle > .switch--active__handle:before {
-  box-shadow: 0 0 0 14px color-mod(#009688 alpha(20%));
+  box-shadow: 0 0 0 14px color-mod(#009688);
 }
 .switch--material__touch {
   position: absolute;
@@ -6110,7 +6110,7 @@ ons-speed-dial-item.fab:disabled,
 ons-speed-dial-item.fab[disabled],
 button.fab:disabled,
 button.fab[disabled] {
-  background-color: color-mod(black alpha(50%));
+  background-color: color-mod(black);
   box-shadow: none;
   opacity: 0.3;
   cursor: default;
@@ -6225,7 +6225,7 @@ ons-speed-dial-item.fab--material:disabled,
 ons-speed-dial-item.fab--material[disabled],
 button.fab--material:disabled,
 button.fab--material[disabled] {
-  background-color: color-mod(black alpha(50%));
+  background-color: color-mod(black);
   box-shadow: none;
   opacity: 0.3;
   cursor: default;
